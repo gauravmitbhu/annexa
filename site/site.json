@@ -30,7 +30,14 @@
       "subtitle": "Posture, gaps, exceptions, and audit timeline.",
       "aiContext": "Overview",
       "aiContextDetail": "{CONTROLS.length} controls in scope",
-      "sections": [ { "widget": "page-overview" } ]
+      "sections": [
+        { "widget": "overview-kpis" },
+        { "widget": "overview-heatmap" },
+        { "widget": "overview-findings" },
+        { "widget": "overview-risk" },
+        { "widget": "overview-timeline" },
+        { "widget": "overview-systems" }
+      ]
     },
     "core": {
       "title": "ISMS Core (Clauses 4–10)",
