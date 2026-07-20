@@ -13,7 +13,7 @@
     { "id": "core",       "label": "ISMS Core (Cl. 4–10)", "icon": "list-checks" },
     { "id": "controls",   "label": "Controls (Annex A)",   "icon": "shield-check" },
     { "id": "incidents",  "label": "Incidents",            "icon": "siren" },
-    { "id": "risks",      "label": "Risk Register",        "icon": "alert-triangle" },
+    { "id": "risks",      "label": "Risks",                "icon": "alert-triangle" },
     { "id": "policies",   "label": "Policies",             "icon": "file-text" },
     { "id": "vendors",    "label": "Vendors / Suppliers",  "icon": "building-2" },
     { "id": "people",     "label": "People & Training",    "icon": "users" },
@@ -56,7 +56,7 @@
       "sections": [ { "widget": "page-incidents" } ]
     },
     "risks": {
-      "title": "Risk Register",
+      "title": "Risks",
       "subtitle": "3×3 canonical matrix (Policy 23 v1.0) · 50 risks · live risk register.",
       "aiContext": "Risks",
       "aiContextDetail": "whole ISMS",
