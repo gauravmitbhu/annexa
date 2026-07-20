@@ -1,8 +1,12 @@
-# ISMS Dashboard
+# annexa — a living ISMS dashboard
 
 A lightweight, self-hosted **ISO/IEC 27001:2022 compliance dashboard** — a plain-vanilla,
-Sprinto/Vanta-style ISMS cockpit you can run locally. All data in this repo is
-**fictional demo data** for a made-up company ("Acme").
+Sprinto/Vanta-style ISMS cockpit you can run locally — built as a **self-evolving web app**:
+tell the built-in AI agent what to change and the site restructures itself live,
+with every change git-committed and revertable in one click. All data in this repo
+is **fictional demo data** for a made-up company ("Acme").
+
+![annexa overview](docs/screenshot.png)
 
 
 ## What's inside
@@ -50,7 +54,7 @@ schema/            site.json JSON Schema (used by /api/validate)
 ## Run
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt   # flask + jsonschema
 python app.py
 # → http://127.0.0.1:8765
 ```
@@ -65,16 +69,34 @@ Optional environment variables:
 The AI panel requires the `claude` CLI on your PATH; without it the rest of the
 dashboard works fine.
 
+## Evolving the site
+
+Open the AI panel, flip the **Ask / ⚡Evolve** toggle, and describe the change:
+
+> *"Rename the Risks tab to Risk Register"* → one-line edit to `site/site.json`, live in ~2s
+> *"Add a KPI tile row to the Overview"* → new widget file + one spec entry
+> *"Split the Overview into separate widgets"* → the agent refactored its own page composition (that's how `widgets/overview-*.jsx` came to be)
+
+Each turn produces an `evolve:` git commit shown as a diff card with a **Revert**
+button; the history drawer (⏱ icon) lists every change. The engine, server, and
+boot page are protected by hard permission deny-rules — the agent can evolve
+everything else.
+
+Requirements for Evolve mode: the [`claude` CLI](https://claude.com/claude-code)
+on your PATH. Without it, the dashboard itself works fine and you can evolve the
+site the classic way: edit `site/site.json`, `widgets/`, `data/` by hand — the
+browser hot-reloads on save.
+
 ## Adapting it to your organisation
 
-All content lives in plain data structures at the top of the `.jsx` files —
-start with `data.jsx` (controls, owners, findings, navigation) and edit the
-other views' data blocks in place. Replace `#` placeholder links with links to
-your own ticketing / document system.
+Structure and navigation live in `site/site.json`; records (controls, risks,
+incidents, vendors, policies…) live in `data/*.json` — every key becomes a
+window global. Replace `#` placeholder links with links to your own ticketing /
+document system. Or just ask the Evolve agent to do it.
 
 ## License
 
-MIT. Fonts: Poppins (SIL Open Font License).
+MIT (see LICENSE). Fonts: Poppins (SIL Open Font License).
 
 ## Disclaimer
 

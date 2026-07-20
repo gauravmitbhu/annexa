@@ -75,10 +75,10 @@
   "SYSTEMS": [
     {
       "id": "taskhub",
-      "name": "TaskHub",
+      "name": "Tracker",
       "sync": "4 min ago",
       "color": "#7B68EE",
-      "glyph": "TH",
+      "glyph": "TR",
       "connected": true
     },
     {
@@ -91,10 +91,10 @@
     },
     {
       "id": "dochub",
-      "name": "DocHub",
+      "name": "DocStore",
       "sync": null,
       "color": "#0078D4",
-      "glyph": "DH",
+      "glyph": "DS",
       "connected": false
     },
     {
