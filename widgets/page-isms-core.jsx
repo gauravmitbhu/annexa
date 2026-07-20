@@ -271,3 +271,5 @@ function ISMSCorePage() {
 }
 
 Object.assign(window, { ISMSCorePage });
+
+registerWidget('page-core', ISMSCorePage);

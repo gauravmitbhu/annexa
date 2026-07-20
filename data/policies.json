@@ -1,0 +1,253 @@
+{
+  "POLICY_REGISTER": [
+    {
+      "num": "00",
+      "name": "Common Definitions & Reference",
+      "ver": "v1.0",
+      "updated": "19.03.2026",
+      "url": "#",
+      "pdf": "#"
+    },
+    {
+      "num": "01",
+      "name": "Policy Creation & Policy Template",
+      "ver": "v1.0",
+      "updated": "09.06.2026",
+      "url": "#",
+      "pdf": "#"
+    },
+    {
+      "num": "02",
+      "name": "Change Management Policy",
+      "ver": "v1.0",
+      "updated": "09.06.2026",
+      "url": "#",
+      "pdf": "#"
+    },
+    {
+      "num": "03",
+      "name": "Information Security Policy (incl. CI)",
+      "ver": "v1.0",
+      "updated": "09.06.2026",
+      "url": "#",
+      "pdf": "#"
+    },
+    {
+      "num": "04",
+      "name": "Business Continuity Policy & DRP",
+      "ver": "v1.1",
+      "updated": "10.06.2026",
+      "url": "#",
+      "pdf": "#"
+    },
+    {
+      "num": "05",
+      "name": "Security Incident Response Policy",
+      "ver": "v1.0",
+      "updated": "09.06.2026",
+      "url": "#",
+      "pdf": "#"
+    },
+    {
+      "num": "06",
+      "name": "Teleworking (Remote Working) Policy",
+      "ver": "v1.0",
+      "updated": "19.03.2026",
+      "url": "#",
+      "pdf": "#"
+    },
+    {
+      "num": "07",
+      "name": "Physical Security Monitoring Policy",
+      "ver": "v1.0",
+      "updated": "09.06.2026",
+      "url": "#",
+      "pdf": "#"
+    },
+    {
+      "num": "08",
+      "name": "Environmental Security Monitoring Policy",
+      "ver": "v1.0",
+      "updated": "09.06.2026",
+      "url": "#",
+      "pdf": "#"
+    },
+    {
+      "num": "09",
+      "name": "Backup Policy",
+      "ver": "v1.0",
+      "updated": "09.06.2026",
+      "url": "#",
+      "pdf": "#"
+    },
+    {
+      "num": "10",
+      "name": "Access & Password Control Policy",
+      "ver": "v1.0",
+      "updated": "09.06.2026",
+      "url": "#",
+      "pdf": "#"
+    },
+    {
+      "num": "11",
+      "name": "Network Security Policy",
+      "ver": "v1.0",
+      "updated": "09.06.2026",
+      "url": "#",
+      "pdf": "#"
+    },
+    {
+      "num": "12",
+      "name": "Secure Software Development Policy",
+      "ver": "v1.0",
+      "updated": "09.06.2026",
+      "url": "#",
+      "pdf": "#"
+    },
+    {
+      "num": "13",
+      "name": "Logging and Monitoring Policy",
+      "ver": "v1.0",
+      "updated": "09.06.2026",
+      "url": "#",
+      "pdf": "#"
+    },
+    {
+      "num": "14",
+      "name": "Patch Management Policy",
+      "ver": "v1.0",
+      "updated": "09.06.2026",
+      "url": "#",
+      "pdf": "#"
+    },
+    {
+      "num": "15",
+      "name": "Technical Vulnerability Management Policy",
+      "ver": "v1.0",
+      "updated": "09.06.2026",
+      "url": "#",
+      "pdf": "#"
+    },
+    {
+      "num": "16",
+      "name": "Data Classification and Handling Policy",
+      "ver": "v1.0",
+      "updated": "09.06.2026",
+      "url": "#",
+      "pdf": "#"
+    },
+    {
+      "num": "17",
+      "name": "Asset Management Policy",
+      "ver": "v1.0",
+      "updated": "09.06.2026",
+      "url": "#",
+      "pdf": "#"
+    },
+    {
+      "num": "18",
+      "name": "Cryptography Key, Control & Encryption Mgmt",
+      "ver": "v1.0",
+      "updated": "09.06.2026",
+      "url": "#",
+      "pdf": "#"
+    },
+    {
+      "num": "19",
+      "name": "Acceptable Use Policy",
+      "ver": "v1.0",
+      "updated": "19.03.2026",
+      "url": "#",
+      "pdf": "#"
+    },
+    {
+      "num": "20",
+      "name": "InfoSec Awareness and Training Policy",
+      "ver": "v1.0",
+      "updated": "09.06.2026",
+      "url": "#",
+      "pdf": "#"
+    },
+    {
+      "num": "21",
+      "name": "Cloud Policy",
+      "ver": "v2.0",
+      "updated": "09.06.2026",
+      "url": "#",
+      "pdf": "#"
+    },
+    {
+      "num": "22",
+      "name": "Third Party Supplier Security Policy",
+      "ver": "v1.0",
+      "updated": "09.06.2026",
+      "url": "#",
+      "pdf": "#"
+    },
+    {
+      "num": "23",
+      "name": "Information Security Risk Management Policy",
+      "ver": "v1.0",
+      "updated": "10.06.2026",
+      "url": "#",
+      "pdf": "#"
+    },
+    {
+      "num": "24",
+      "name": "Operating Procedures Policy",
+      "ver": "v1.0",
+      "updated": "09.06.2026",
+      "url": "#",
+      "pdf": "#"
+    },
+    {
+      "num": "25",
+      "name": "Information Transfer Policy",
+      "ver": "v1.0",
+      "updated": "09.06.2026",
+      "url": "#",
+      "pdf": "#"
+    },
+    {
+      "num": "26",
+      "name": "Records and Information Management Policy",
+      "ver": "v1.0",
+      "updated": "09.06.2026",
+      "url": "#",
+      "pdf": "#"
+    },
+    {
+      "num": "27",
+      "name": "Outsourcing Policy",
+      "ver": "v1.0",
+      "updated": "2026",
+      "url": "#",
+      "pdf": "#"
+    },
+    {
+      "num": "28",
+      "name": "Artificial Intelligence (AI) Usage Policy",
+      "ver": "v1.1",
+      "updated": "19.05.2026",
+      "url": "#",
+      "pdf": "#"
+    }
+  ],
+  "POLICY_EVIDENCE": [
+    {
+      "label": "ISMS Policy Log (single source of truth)",
+      "url": "#",
+      "type": "doc"
+    },
+    {
+      "label": "Policies folder (canonical)",
+      "url": "#",
+      "type": "doc"
+    },
+    {
+      "label": "Released policies — markdown + branded PDFs",
+      "url": "#",
+      "type": "doc"
+    }
+  ]
+}

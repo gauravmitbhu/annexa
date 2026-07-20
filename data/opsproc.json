@@ -1,0 +1,562 @@
+{
+  "OPSPROC_REGISTER_URL": "#",
+  "OPSPROC_REGISTER_PDF": "#",
+  "OPSPROC_CATEGORIES": [
+    {
+      "id": "4.1",
+      "name": "Security & Compliance"
+    },
+    {
+      "id": "4.2",
+      "name": "IT & Infrastructure"
+    },
+    {
+      "id": "4.3",
+      "name": "Data Protection"
+    },
+    {
+      "id": "4.4",
+      "name": "Incident & Risk Management"
+    },
+    {
+      "id": "4.5",
+      "name": "Change Management"
+    },
+    {
+      "id": "4.6",
+      "name": "Supplier & Vendor"
+    },
+    {
+      "id": "4.7",
+      "name": "People & HR"
+    },
+    {
+      "id": "4.8",
+      "name": "Physical Security"
+    },
+    {
+      "id": "4.9",
+      "name": "Business Continuity"
+    }
+  ],
+  "OPSPROC_PROCEDURES": [
+    {
+      "id": "P-01",
+      "cat": "4.1",
+      "name": "ISMS Security Policy & Guidelines",
+      "owner": "Alex",
+      "ver": "1.3",
+      "last": "15.05.2025",
+      "link": "#",
+      "notes": "Top-level ISMS policy"
+    },
+    {
+      "id": "P-02",
+      "cat": "4.1",
+      "name": "ISMS Scope",
+      "owner": "Alex",
+      "ver": "1.3",
+      "last": "09.06.2026",
+      "link": "#",
+      "notes": "Org chart updated 09.06.2026"
+    },
+    {
+      "id": "P-03",
+      "cat": "4.1",
+      "name": "ISMS Objectives & KPIs",
+      "owner": "Alex",
+      "ver": "1.1",
+      "last": "14.06.2026",
+      "link": "#",
+      "notes": "Reviewed pre-audit; KPI measurements tracked separately"
+    },
+    {
+      "id": "P-04",
+      "cat": "4.1",
+      "name": "Information Security Risk Management",
+      "owner": "Alex",
+      "ver": "Active",
+      "last": "Ongoing",
+      "link": "#",
+      "notes": "Living document; method in Policy 23 v1.0"
+    },
+    {
+      "id": "P-05",
+      "cat": "4.1",
+      "name": "Corrective Measures Procedure",
+      "owner": "Alex",
+      "ver": "Active",
+      "last": "2025",
+      "link": "#",
+      "notes": "Non-conformities and corrective actions"
+    },
+    {
+      "id": "P-06",
+      "cat": "4.1",
+      "name": "Audit Programme",
+      "owner": "Alex",
+      "ver": "Active",
+      "last": "10.06.2026",
+      "link": "#",
+      "notes": "Internal + external audit schedule; branch office Q4 2026"
+    },
+    {
+      "id": "P-07",
+      "cat": "4.1",
+      "name": "Document Classification Procedure",
+      "owner": "Alex",
+      "ver": "Active",
+      "last": "2025",
+      "link": "#",
+      "notes": "Document store = internal default; task tracker = internal; no Confidential in the task tracker"
+    },
+    {
+      "id": "P-07b",
+      "cat": "4.1",
+      "name": "Privileged Access Request",
+      "owner": "Sam",
+      "ver": "Active",
+      "last": "2026",
+      "link": "#",
+      "notes": "Requests/approvals for admin or privileged-utility use"
+    },
+    {
+      "id": "P-08",
+      "cat": "4.2",
+      "name": "Device Security & Compliance",
+      "owner": "Sam",
+      "ver": "Active",
+      "last": "2025",
+      "link": "#",
+      "notes": "MDM (Apple Device Mgmt), antivirus (XProtect), encryption, removable media"
+    },
+    {
+      "id": "P-09",
+      "cat": "4.2",
+      "name": "Password & MFA Management",
+      "owner": "Sam",
+      "ver": "Active",
+      "last": "2025",
+      "link": "#",
+      "notes": "Min 12 chars; password manager; MFA mandatory"
+    },
+    {
+      "id": "P-10",
+      "cat": "4.2",
+      "name": "Access Rights Management",
+      "owner": "Sam",
+      "ver": "Active",
+      "last": "2025",
+      "link": "#",
+      "notes": "Least privilege; revoked on offboarding; no shared accounts"
+    },
+    {
+      "id": "P-11",
+      "cat": "4.2",
+      "name": "Patch & Vulnerability Management",
+      "owner": "Sam",
+      "ver": "Active",
+      "last": "2025",
+      "link": "#",
+      "notes": "macOS updates ≤ 3 days; server patches by IT"
+    },
+    {
+      "id": "P-12",
+      "cat": "4.2",
+      "name": "Backup Procedure",
+      "owner": "Sam",
+      "ver": "Active",
+      "last": "2025",
+      "link": "#",
+      "notes": "Cloud drive auto-backup; server backups by IT; local files not backed up"
+    },
+    {
+      "id": "P-13",
+      "cat": "4.2",
+      "name": "Cloud Usage Policy",
+      "owner": "Sam",
+      "ver": "Active",
+      "last": "2025",
+      "link": "#",
+      "notes": "Approved: M365, task tracker, password manager; no personal cloud for work data"
+    },
+    {
+      "id": "P-14",
+      "cat": "4.2",
+      "name": "Logging & Security Monitoring",
+      "owner": "Sam",
+      "ver": "Active",
+      "last": "2025",
+      "link": "#",
+      "notes": "Elastic Agent + XProtect; ~92% coverage (11/12) — OFI-019"
+    },
+    {
+      "id": "P-15",
+      "cat": "4.2",
+      "name": "Secure Coding Guidelines",
+      "owner": "Sam / Morgan",
+      "ver": "Active",
+      "last": "2025",
+      "link": "#",
+      "notes": "No hardcoded secrets; input validation; PRs required"
+    },
+    {
+      "id": "P-16",
+      "cat": "4.2",
+      "name": "Asset Management & Device Lifecycle",
+      "owner": "Sam",
+      "ver": "Active",
+      "last": "2025",
+      "link": "#",
+      "notes": "Serial tracking; IT manages wipe on return"
+    },
+    {
+      "id": "P-17",
+      "cat": "4.2",
+      "name": "Cryptography Key Management",
+      "owner": "Sam",
+      "ver": "Active",
+      "last": "2025",
+      "link": "#",
+      "notes": "Requests via IT; keys managed per secure standards"
+    },
+    {
+      "id": "P-18",
+      "cat": "4.3",
+      "name": "Secure Data Deletion",
+      "owner": "Alex",
+      "ver": "Active",
+      "last": "2025",
+      "link": "#",
+      "notes": "Factory reset or `rm -P` for Macs; IT handles servers"
+    },
+    {
+      "id": "P-19",
+      "cat": "4.3",
+      "name": "Data Deletion & AI Training Procedure",
+      "owner": "Morgan",
+      "ver": "Active",
+      "last": "2025",
+      "link": "#",
+      "notes": "Client data lifecycle for AI/ML workflows"
+    },
+    {
+      "id": "P-20",
+      "cat": "4.3",
+      "name": "Anonymization Process",
+      "owner": "Morgan",
+      "ver": "Active",
+      "last": "2025",
+      "link": "#",
+      "notes": "PII anonymisation prior to AI training"
+    },
+    {
+      "id": "P-21",
+      "cat": "4.3",
+      "name": "Information Transfer & Data Sharing",
+      "owner": "Alex",
+      "ver": "Active",
+      "last": "2025",
+      "link": "#",
+      "notes": "Approved document store only; no consumer file-transfer tools; no email for sensitive data"
+    },
+    {
+      "id": "P-22",
+      "cat": "4.4",
+      "name": "Security Incident Reporting & Response",
+      "owner": "Alex",
+      "ver": "Active",
+      "last": "2025",
+      "link": "#",
+      "notes": "Report via the Security Incident Form"
+    },
+    {
+      "id": "P-23",
+      "cat": "4.4",
+      "name": "CERT Severity Classification",
+      "owner": "Alex",
+      "ver": "Active",
+      "last": "Feb 2026",
+      "link": "#",
+      "notes": "Urgent/High/Normal/Low; Steps 1–7 of incident mgmt"
+    },
+    {
+      "id": "P-24",
+      "cat": "4.4",
+      "name": "Lessons Learned (Post-Incident)",
+      "owner": "Alex",
+      "ver": "Active",
+      "last": "Feb 2026",
+      "link": "#",
+      "notes": "Step 7 of incident workflow; action items in the task tracker"
+    },
+    {
+      "id": "P-25",
+      "cat": "4.4",
+      "name": "Project Risk Management",
+      "owner": "Alex",
+      "ver": "Active",
+      "last": "2025",
+      "link": "#",
+      "notes": "Context → assessment → treatment → monitoring"
+    },
+    {
+      "id": "P-26",
+      "cat": "4.4",
+      "name": "Business Impact Analysis",
+      "owner": "Alex",
+      "ver": "Active",
+      "last": "2025",
+      "link": "#",
+      "notes": "RTOs/RPOs for critical processes"
+    },
+    {
+      "id": "P-27",
+      "cat": "4.5",
+      "name": "Change Management Procedure",
+      "owner": "Casey",
+      "ver": "Active",
+      "last": "2025",
+      "link": "#",
+      "notes": "Steps 1–6; Change Management Form list"
+    },
+    {
+      "id": "P-28",
+      "cat": "4.6",
+      "name": "Vendor Due Diligence",
+      "owner": "Alex",
+      "ver": "Active",
+      "last": "Jan 2026",
+      "link": "#",
+      "notes": "Excel DD form; latest: VendorOne (Jan 2026)"
+    },
+    {
+      "id": "P-29",
+      "cat": "4.6",
+      "name": "Approved Software & Supplier Policy",
+      "owner": "Alex",
+      "ver": "Active",
+      "last": "2025",
+      "link": "#",
+      "notes": "SaaS decision flow; DPO notification required"
+    },
+    {
+      "id": "P-30",
+      "cat": "4.6",
+      "name": "Outsourcing Policy",
+      "owner": "Alex",
+      "ver": "Active",
+      "last": "2026",
+      "link": "#",
+      "notes": "Outsourced IT roles, contractor access"
+    },
+    {
+      "id": "P-31",
+      "cat": "4.6",
+      "name": "Vendor Onboarding & Offboarding",
+      "owner": "Alex",
+      "ver": "Active",
+      "last": "2025",
+      "link": "#",
+      "notes": "Data export, access revocation, service continuity checklist"
+    },
+    {
+      "id": "P-32",
+      "cat": "4.7",
+      "name": "Screening & Background Check",
+      "owner": "Riley",
+      "ver": "Active",
+      "last": "Jan 2026",
+      "link": "#",
+      "notes": "References, CV confirmation, criminal record for critical roles"
+    },
+    {
+      "id": "P-33",
+      "cat": "4.7",
+      "name": "Employee Onboarding (IS clauses)",
+      "owner": "Riley / Jordan",
+      "ver": "Active",
+      "last": "Jan 2026",
+      "link": "#",
+      "notes": "ISO-compliant employment contracts"
+    },
+    {
+      "id": "P-34",
+      "cat": "4.7",
+      "name": "Offboarding & Post-Termination",
+      "owner": "Riley",
+      "ver": "Active",
+      "last": "Jan 2026",
+      "link": "#",
+      "notes": "Access revocation, device return, NDA reminder"
+    },
+    {
+      "id": "P-35",
+      "cat": "4.7",
+      "name": "Disciplinary Process",
+      "owner": "Riley",
+      "ver": "Active",
+      "last": "Jan 2026",
+      "link": "#",
+      "notes": "Strengthened; all staff acknowledged"
+    },
+    {
+      "id": "P-36",
+      "cat": "4.7",
+      "name": "NDA & Confidentiality Agreement Management",
+      "owner": "Alex",
+      "ver": "Active",
+      "last": "Jan 2026",
+      "link": "#",
+      "notes": "Templates maintained by the CISO"
+    },
+    {
+      "id": "P-37",
+      "cat": "4.7",
+      "name": "Security Awareness & Training",
+      "owner": "Riley",
+      "ver": "Active",
+      "last": "2025",
+      "link": "#",
+      "notes": "Moodle AI Policy training live"
+    },
+    {
+      "id": "P-38",
+      "cat": "4.7",
+      "name": "Remote Working",
+      "owner": "Riley",
+      "ver": "Active",
+      "last": "2025",
+      "link": "#",
+      "notes": "Home network, workspace security, no printing of sensitive docs"
+    },
+    {
+      "id": "P-39",
+      "cat": "4.7",
+      "name": "GenAI Usage Guidelines",
+      "owner": "Morgan / Alex",
+      "ver": "Active",
+      "last": "2025",
+      "link": "#",
+      "notes": "Approved use cases; no client data without DPA"
+    },
+    {
+      "id": "P-40",
+      "cat": "4.8",
+      "name": "Physical Access & Badge Management",
+      "owner": "Riley",
+      "ver": "Active",
+      "last": "Jan 2026",
+      "link": "#",
+      "notes": "Landlord badge process updated Jan 2026"
+    },
+    {
+      "id": "P-41",
+      "cat": "4.8",
+      "name": "Clear Desk & Clear Screen Policy",
+      "owner": "Alex",
+      "ver": "Active",
+      "last": "2025",
+      "link": "#",
+      "notes": "End-of-day lock-up; meeting rooms secured"
+    },
+    {
+      "id": "P-42",
+      "cat": "4.9",
+      "name": "Business Continuity Plan",
+      "owner": "Casey",
+      "ver": "2.0",
+      "last": "27.01.2026",
+      "link": "#",
+      "notes": "Full BCP; BC Planner: Casey (Policy 04 v1.1 App. 1)"
+    },
+    {
+      "id": "P-43",
+      "cat": "4.9",
+      "name": "Emergency Response & Call Tree",
+      "owner": "Alex",
+      "ver": "1.1",
+      "last": "Feb 2026",
+      "link": "#",
+      "notes": "Fire, flood, cyber, medical; call tree with all numbers"
+    },
+    {
+      "id": "P-44",
+      "cat": "4.9",
+      "name": "Black Swan Event Response",
+      "owner": "Alex",
+      "ver": "1.1",
+      "last": "Feb 2026",
+      "link": "#",
+      "notes": "Phone-only escalation; no social media; forensic preservation"
+    },
+    {
+      "id": "P-45",
+      "cat": "4.9",
+      "name": "Emergency Handbook (detailed)",
+      "owner": "Alex",
+      "ver": "Active",
+      "last": "2025",
+      "link": "#",
+      "notes": "Stored in the document store"
+    }
+  ],
+  "OPSPROC_GAPS": [
+    {
+      "id": "G-01",
+      "risk": "Medium",
+      "resp": "Alex",
+      "target": "Closed",
+      "text": "Procedures scattered across the handbook, task tracker and document store — no single index existed. Closed: this register addresses it."
+    },
+    {
+      "id": "G-02",
+      "risk": "Medium",
+      "resp": "Alex",
+      "target": "Q2 2026",
+      "text": "Incident management Steps 1–7 procedure not formally documented as a standalone doc."
+    },
+    {
+      "id": "G-03",
+      "risk": "Medium",
+      "resp": "Sam",
+      "target": "Q2 2026",
+      "text": "No formal standalone \"Privileged Access Management\" procedure document (handbook + ticketing only)."
+    },
+    {
+      "id": "G-04",
+      "risk": "High",
+      "resp": "Sam / Morgan",
+      "target": "Roadmap",
+      "text": "Data deletion automation not in place — client data deletion relies on manual process (OFI-015)."
+    },
+    {
+      "id": "G-05",
+      "risk": "Low",
+      "resp": "Alex",
+      "target": "Q3 2026",
+      "text": "Procedure versioning inconsistent — some docs have formal revision tables, others do not."
+    },
+    {
+      "id": "G-06",
+      "risk": "Low",
+      "resp": "Alex",
+      "target": "Q3 2026",
+      "text": "No formal review schedule enforced for individual procedure documents."
+    },
+    {
+      "id": "G-07",
+      "risk": "Low",
+      "resp": "Alex",
+      "target": "Post-audit",
+      "text": "Standing compliance-review ticket for this register itself not yet filed."
+    },
+    {
+      "id": "G-08",
+      "risk": "Medium",
+      "resp": "Sam",
+      "target": "Pending",
+      "text": "Endpoint agent rollout still has 1 laptop pending — OFI-019 ~92% coverage."
+    }
+  ]
+}

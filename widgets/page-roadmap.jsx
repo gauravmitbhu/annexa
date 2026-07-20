@@ -678,3 +678,5 @@ function RoadmapPage() {
 }
 
 Object.assign(window, { RoadmapPage, AUDIT_2026, AUDIT_2026_THEMES, ROADMAP_2026_27, ISO_42001_PLAN, TIMELINE });
+
+registerWidget('page-roadmap', RoadmapPage);

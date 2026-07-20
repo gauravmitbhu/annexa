@@ -1,0 +1,210 @@
+{
+  "RISK_GRID": [
+    [
+      0,
+      1,
+      2,
+      1,
+      1
+    ],
+    [
+      0,
+      2,
+      4,
+      3,
+      2
+    ],
+    [
+      1,
+      3,
+      6,
+      4,
+      1
+    ],
+    [
+      2,
+      5,
+      8,
+      2,
+      0
+    ],
+    [
+      1,
+      0,
+      1,
+      0,
+      0
+    ]
+  ],
+  "RISK_GRID3": [
+    [
+      3,
+      4,
+      0
+    ],
+    [
+      9,
+      8,
+      4
+    ],
+    [
+      9,
+      9,
+      4
+    ]
+  ],
+  "KEY_RISKS": [
+    {
+      "id": "ISMS-554",
+      "title": "Exclusion of sales processes — super-admin rights assigned in violation of least privilege",
+      "l": 2,
+      "i": 3,
+      "score": 6,
+      "level": "High",
+      "treatment": "Treatment in progress; access recertification + segregation controls. Tracked per Policy 23 §7.3.",
+      "owner": "Alex",
+      "links": [
+        {
+          "label": "Risk Register (Risk Analysis Annex A)",
+          "url": "#",
+          "type": "doc"
+        }
+      ]
+    },
+    {
+      "id": "A.8.10",
+      "title": "Information deletion not automated (data stores: Postgres, S3, Elastic)",
+      "l": 2,
+      "i": 3,
+      "score": 6,
+      "level": "High",
+      "treatment": "Automation target Q3 2026 (GitLab CI deletion jobs, log evidence); manual deletion procedures being formalised under OFI-015.",
+      "owner": "Sam",
+      "links": [
+        {
+          "label": "OFI-015 · formalize info-deletion procedures",
+          "url": "#",
+          "type": "ticket"
+        }
+      ]
+    },
+    {
+      "id": "KPI-3",
+      "title": "Endpoint logging coverage ~92% (11/12) — endpoint agent on all laptops except one",
+      "l": 1,
+      "i": 3,
+      "score": 3,
+      "level": "Medium",
+      "treatment": "Rollout largely complete (13.06): endpoint agent on all company laptops incl. the new contractor device; only one laptop pending. Up from ~50% on 19 May. Tracked as ISMS-2710 / OFI-019.",
+      "owner": "Sam",
+      "links": [
+        {
+          "label": "ISMS-2710 · endpoint coverage incident",
+          "url": "#",
+          "type": "ticket"
+        }
+      ]
+    },
+    {
+      "id": "KPI-2",
+      "title": "Incident-management SLA timeliness ~33% during reduced-headcount period",
+      "l": 3,
+      "i": 2,
+      "score": 6,
+      "level": "High",
+      "treatment": "Triage backlog (7 untouched incidents incl. INCIDENT-335 urgent); time-bounded SLA relaxation still to be FILED as Board-approved exception (ISMS-2711 unstarted since 19 May).",
+      "owner": "Alex",
+      "links": [
+        {
+          "label": "ISMS-2711 · SLA incident + exception proposal",
+          "url": "#",
+          "type": "ticket"
+        }
+      ]
+    },
+    {
+      "id": "CR-002",
+      "title": "Contractor BYOD exception — RESOLVED (company laptop now issued)",
+      "l": 1,
+      "i": 2,
+      "score": 2,
+      "level": "Low",
+      "treatment": "Closed 13.06.2026 — contractor received a company-managed laptop (MDM + endpoint agent enrolled); BYOD exception retired and incident ISMS-2712 closed.",
+      "owner": "Alex",
+      "links": [
+        {
+          "label": "CR-002 · contractor BYOD change request",
+          "url": "#",
+          "type": "ticket"
+        }
+      ]
+    },
+    {
+      "id": "ISMS-2678",
+      "title": "Hazardous & climate risks (consolidation of 7 deprecated physical/environmental risks)",
+      "l": 1,
+      "i": 2,
+      "score": 2,
+      "level": "Low",
+      "treatment": "Mitigated — offloaded to ISO 27001-certified providers (datacenter + serviced-office providers); the office provider obtained certification in 2026.",
+      "owner": "Alex",
+      "links": [
+        {
+          "label": "Risk Analyses (folder)",
+          "url": "#",
+          "type": "doc"
+        }
+      ]
+    }
+  ],
+  "RISK_ACCEPTANCE": [
+    {
+      "level": "Very Low / Low (1–2)",
+      "authority": "Risk Owner"
+    },
+    {
+      "level": "Medium (3–4)",
+      "authority": "CISO"
+    },
+    {
+      "level": "High (6)",
+      "authority": "CISO + CTO joint"
+    },
+    {
+      "level": "Very High (9)",
+      "authority": "Board of Directors via Exception Register, time-bounded ≤ 6 months"
+    }
+  ],
+  "RISK_EVIDENCE": [
+    {
+      "label": "Risk Register — Risk Analysis Annex A (live)",
+      "url": "#",
+      "type": "doc"
+    },
+    {
+      "label": "Risk Analyses (folder)",
+      "url": "#",
+      "type": "doc"
+    },
+    {
+      "label": "Policy 23 · ISRM v1.0 — 3×3 matrix, §7.3/§7.4",
+      "url": "#",
+      "type": "doc"
+    },
+    {
+      "label": "Statement of Applicability — Full v1.0",
+      "url": "#",
+      "type": "doc"
+    },
+    {
+      "label": "Statement of Applicability (spreadsheet)",
+      "url": "#",
+      "type": "sheet"
+    },
+    {
+      "label": "Ticketing Systems (OFI / Incidents / Changes)",
+      "url": "#",
+      "type": "ticket"
+    }
+  ]
+}

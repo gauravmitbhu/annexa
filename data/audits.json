@@ -1,0 +1,173 @@
+{
+  "OFIS": [
+    {
+      "id": "OFI-001",
+      "title": "Policy 23 Very High clarification + 3×3 alignment",
+      "status": "In progress",
+      "source": "Audit /01 /02",
+      "due": "2026-06-02",
+      "link": "#"
+    },
+    {
+      "id": "OFI-002",
+      "title": "Document High/Very High risk acceptance in MR",
+      "status": "In progress",
+      "source": "Audit /01 /02",
+      "due": "2026-06-02",
+      "link": "#"
+    },
+    {
+      "id": "OFI-003",
+      "title": "Track risk treatment via Change Management Form",
+      "status": "Complete",
+      "source": "Audit /01 /02",
+      "due": "2026-06-16",
+      "link": "#"
+    },
+    {
+      "id": "OFI-004",
+      "title": "Verifiable evidence for documented info updates",
+      "status": "Complete",
+      "source": "Audit /01 /02",
+      "due": "2026-06-16",
+      "link": "#"
+    },
+    {
+      "id": "OFI-005",
+      "title": "KPI breaches tracked as security incidents",
+      "status": "Complete",
+      "source": "Audit /01 /02",
+      "due": "2026-06-16",
+      "link": "#"
+    },
+    {
+      "id": "OFI-006",
+      "title": "Branch offices in audit program",
+      "status": "Complete",
+      "source": "Audit /01 /02",
+      "due": "2026-06-16",
+      "link": "#"
+    },
+    {
+      "id": "OFI-007",
+      "title": "Add implementation location to SoA",
+      "status": "Complete",
+      "source": "Audit /01 /02",
+      "due": "2026-06-16",
+      "link": "#"
+    },
+    {
+      "id": "OFI-008",
+      "title": "Document Threat Intelligence activities + workshops",
+      "status": "Open",
+      "source": "Audit /01 /02",
+      "due": "2026-06-16",
+      "link": "#"
+    },
+    {
+      "id": "OFI-009",
+      "title": "Review external services inventory",
+      "status": "In progress",
+      "source": "Audit /01 /02",
+      "due": "2026-06-16",
+      "link": "#"
+    },
+    {
+      "id": "OFI-010",
+      "title": "Detail access-rights recertification; ticket system",
+      "status": "In progress",
+      "source": "Audit /01 /02",
+      "due": "2026-06-02",
+      "link": "#"
+    },
+    {
+      "id": "OFI-011",
+      "title": "HR templates under document control",
+      "status": "In progress",
+      "source": "Audit /01 /02",
+      "due": "2026-06-16",
+      "link": "#"
+    },
+    {
+      "id": "OFI-012",
+      "title": "Formalize awareness/training tracking",
+      "status": "Complete",
+      "source": "Audit /01 /02",
+      "due": "2026-06-16",
+      "link": "#"
+    },
+    {
+      "id": "OFI-013",
+      "title": "Treat AI models like source code",
+      "status": "Open",
+      "source": "Audit /01 /02",
+      "due": "2026-06-02",
+      "link": "#"
+    },
+    {
+      "id": "OFI-014",
+      "title": "Malware top-down threat / attack-tree analysis",
+      "status": "Open",
+      "source": "Audit /01 /02",
+      "due": "2026-06-16",
+      "link": "#"
+    },
+    {
+      "id": "OFI-015",
+      "title": "Formalize info-deletion procedures",
+      "status": "In progress",
+      "source": "Audit /01 /02",
+      "due": "2026-06-02",
+      "link": "#"
+    },
+    {
+      "id": "OFI-016",
+      "title": "Review air-gap backups and retention",
+      "status": "Open",
+      "source": "Audit /01 /02",
+      "due": "2026-06-02",
+      "link": "#"
+    },
+    {
+      "id": "OFI-017",
+      "title": "ISMS docs for org restructuring; obsolete role refs",
+      "status": "Complete",
+      "source": "MR-2026",
+      "due": "2026-06-02",
+      "link": "#"
+    },
+    {
+      "id": "OFI-018",
+      "title": "Separate Incidents / Changes / Corrective Actions workflows",
+      "status": "Complete",
+      "source": "MR-2026",
+      "due": "2026-06-02",
+      "link": "#"
+    },
+    {
+      "id": "OFI-019",
+      "title": "Complete endpoint agent deployment (coverage / RBAC / review schedule)",
+      "status": "In progress",
+      "source": "MR-2026",
+      "due": "2026-06-02",
+      "link": "#"
+    },
+    {
+      "id": "OFI-020",
+      "title": "ISMS operations automation roadmap",
+      "status": "In progress",
+      "source": "MR-2026",
+      "due": "2026-08-11",
+      "link": "#"
+    },
+    {
+      "id": "OFI-021",
+      "title": "Policy 28 — GDPR section for client data via AI",
+      "status": "Complete",
+      "source": "MR-2026",
+      "due": "2026-06-02",
+      "link": "#"
+    }
+  ],
+  "AUDIT_REPORTS": []
+}

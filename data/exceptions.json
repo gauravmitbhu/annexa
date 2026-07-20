@@ -1,0 +1,26 @@
+{
+  "EXCEPTIONS": [
+    {
+      "id": "EX-001",
+      "title": "Streamlined policy approval (CISO drafts, single Board/CTO approver)",
+      "ctrls": [
+        "Cl. 5.2",
+        "A.5.1"
+      ],
+      "approval": "approved",
+      "validity": "05.05.2026 – 05.05.2027",
+      "link": "#"
+    },
+    {
+      "id": "EX-002",
+      "title": "Four-eyes relaxation for code changes (AI/automation as second reviewer)",
+      "ctrls": [
+        "A.8.25",
+        "A.8.32"
+      ],
+      "approval": "pending",
+      "validity": "05.05.2026 – 05.05.2027",
+      "link": "#"
+    }
+  ]
+}

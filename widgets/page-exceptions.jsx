@@ -147,3 +147,5 @@ function ExceptionsPage() {
 }
 
 Object.assign(window, { ExceptionsPage });
+
+registerWidget('page-exceptions', ExceptionsPage);

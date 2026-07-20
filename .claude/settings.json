@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "deny": [
+      "Edit(engine/**)",
+      "Write(engine/**)",
+      "Edit(app.py)",
+      "Write(app.py)",
+      "Edit(index.html)",
+      "Write(index.html)",
+      "Edit(.claude/**)",
+      "Write(.claude/**)",
+      "Edit(schema/**)",
+      "Write(schema/**)"
+    ]
+  }
+}

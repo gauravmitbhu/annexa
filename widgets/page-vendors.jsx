@@ -82,3 +82,5 @@ function VendorsPage() {
 }
 
 Object.assign(window, { VendorsPage });
+
+registerWidget('page-vendors', VendorsPage);

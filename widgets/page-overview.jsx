@@ -672,3 +672,5 @@ function Overview() {
 }
 
 Object.assign(window, { Overview });
+
+registerWidget('page-overview', Overview);

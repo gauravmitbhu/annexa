@@ -1,0 +1,59 @@
+{
+  "INCIDENTS": [
+    {
+      "id": "INCIDENT-335",
+      "list": "Canonical Incidents",
+      "title": "Payment-platform admin role still assigned to a former employee",
+      "severity": "Urgent",
+      "status": "New",
+      "filed": "2026-05-19",
+      "subtasks": 8,
+      "link": "#"
+    },
+    {
+      "id": "ISMS-2710",
+      "list": "ISMS Incidents",
+      "title": "INCIDENT-KPI-3 — Endpoint coverage ~92% (11/12); one laptop pending",
+      "severity": "Medium",
+      "status": "In progress",
+      "filed": "2026-05-19",
+      "link": "#"
+    },
+    {
+      "id": "ISMS-2711",
+      "list": "ISMS Incidents",
+      "title": "INCIDENT-KPI-2 — Incident Management SLA at ~33% + SLA relaxation proposal",
+      "severity": "High",
+      "status": "Open",
+      "filed": "2026-05-19",
+      "link": "#"
+    },
+    {
+      "id": "ISMS-2712",
+      "list": "ISMS Incidents",
+      "title": "Contractor laptop provisioning — RESOLVED (laptop received, MDM + endpoint agent enrolled)",
+      "severity": "High",
+      "status": "Resolved",
+      "filed": "2026-05-19",
+      "link": "#"
+    },
+    {
+      "id": "ISMS-2708",
+      "list": "OFI-list sub-task",
+      "title": "INCIDENT-KPI-2 (OFI-list sibling of ISMS-2711)",
+      "severity": "High",
+      "status": "Open",
+      "filed": "2026-05-19",
+      "link": "#"
+    },
+    {
+      "id": "ISMS-2709",
+      "list": "OFI-list sub-task",
+      "title": "INCIDENT-KPI-4b — Risk-to-control coverage at ~91%",
+      "severity": "Medium",
+      "status": "Open",
+      "filed": "2026-05-19",
+      "link": "#"
+    }
+  ]
+}

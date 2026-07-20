@@ -188,3 +188,5 @@ const btnLink = {
 };
 
 Object.assign(window, { OperatingProceduresPage });
+
+registerWidget('page-opsproc', OperatingProceduresPage);

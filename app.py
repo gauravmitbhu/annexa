@@ -74,6 +74,55 @@ Style:
 # Tools we let Claude Code use in this surface.
 ALLOWED_TOOLS = "Read Grep Glob"
 
+# ---- Evolve mode -------------------------------------------------------------
+# In evolve mode the agent gets write tools inside the dashboard directory and
+# the site becomes self-modifying: edits to site/, widgets/, data/ hot-reload
+# in the browser (~2s) and every turn is auto-committed for one-click revert.
+# The protected core (engine/, app.py, index.html) is hard-denied via
+# .claude/settings.json in this directory — the prompt below is guidance,
+# the settings file is enforcement.
+EVOLVE_ALLOWED_TOOLS = "Read Grep Glob Edit Write"
+
+EVOLVE_SYSTEM_PROMPT = """
+You are the EVOLVE agent for the Acme ISMS dashboard — a self-modifying web
+app. The user asks for changes in plain language; you implement them by
+editing files in this directory. The browser hot-reloads ~2s after any file
+changes, and the server auto-commits your changes to git after each turn
+(the UI offers one-click revert), so apply changes directly — do not ask for
+confirmation.
+
+## Substrate (how this site works)
+- No build step. CDN React 18 + Babel-standalone. Flask (app.py) serves it.
+- `site/site.json` — THE site spec: brand, user, nav[], pages{}, drawers{}.
+  * pages.<id> = { title, subtitle, aiContext, aiContextDetail, drawerType?,
+    sections: [ { widget: "<name>", props?: {...} } ] }
+  * Strings support {expr} templates evaluated against window globals,
+    e.g. "{CONTROLS.length} controls".
+  * Adding a nav item + a pages entry = a new page. No other wiring.
+- `widgets/*.jsx` — one component per file, discovered automatically (no
+  registration list). A widget file defines React components with plain
+  `function Foo() {...}` and MUST end with `registerWidget('<name>', Foo);`.
+  Conventions: no imports/exports (globals only); shared UI primitives are
+  global (Icon, Card, Button, Pill, Avatar, PageHeader…); data is global
+  (CONTROLS, INCIDENTS, OFIS, VENDORS, …); inline styles, Poppins font,
+  purple/pink palette (#6B2FA0, #E91E63). Widgets that open detail drawers
+  receive an `onOpenDrawer(item)` prop.
+- `data/*.json` — each file is { GLOBAL_NAME: value, ... }; every key becomes
+  a window global at boot. Edit or add records here; add new files freely.
+- PROTECTED (never edit, tool calls will be denied): engine/, app.py,
+  index.html. If a request truly requires engine changes, explain why and
+  stop. colors_and_type.css MAY be edited for theme/token changes.
+
+## Rules
+- ALL content must stay fictional (company "Acme", people Alex/Sam/Jordan/
+  Riley/Morgan/Casey/Dana). Never introduce real names, companies, or URLs.
+- Keep edits minimal and consistent with neighbouring style.
+- A broken widget shows an error card (not a crash); if the user reports one,
+  Read the file, fix the error.
+- After structural edits to site/site.json, mentally validate: every
+  sections[].widget must exist in widgets/ (or be registered by one).
+""".strip()
+
 # ---- Flask app -------------------------------------------------------------
 app = Flask(__name__, static_folder=str(DASHBOARD_DIR), static_url_path="")
 
@@ -94,13 +143,34 @@ def health():
 
 @app.get("/api/version")
 def version():
-    """Returns max mtime of all .jsx/.css files — used by the browser for live-reload polling."""
-    exts = {".jsx", ".css", ".html"}
-    ts = max(
-        (p.stat().st_mtime for p in DASHBOARD_DIR.iterdir() if p.suffix in exts),
-        default=0,
-    )
+    """Returns max mtime across engine/site/widgets/data — used by the browser
+    for live-reload polling. Recursive so evolve-mode edits anywhere in the
+    evolvable layer trigger a reload."""
+    exts = {".jsx", ".css", ".html", ".json"}
+    ts = 0.0
+    roots = [DASHBOARD_DIR] + [DASHBOARD_DIR / d for d in ("engine", "site", "widgets", "data")]
+    for root in roots:
+        if not root.is_dir():
+            continue
+        it = root.iterdir() if root == DASHBOARD_DIR else root.rglob("*")
+        for p in it:
+            if p.is_file() and p.suffix in exts:
+                ts = max(ts, p.stat().st_mtime)
     return jsonify(v=ts)
+
+
+@app.get("/api/manifest")
+def manifest():
+    """Discovery endpoint for the boot loader: site spec, data files, widgets.
+    Globbed on every call — the agent can drop new files in and they appear
+    on the next reload with no registration step."""
+    def rel(paths):
+        return sorted(str(p.relative_to(DASHBOARD_DIR)) for p in paths)
+    return jsonify(
+        site="site/site.json",
+        data=rel((DASHBOARD_DIR / "data").glob("*.json")),
+        widgets=rel((DASHBOARD_DIR / "widgets").glob("*.jsx")),
+    )
 
 
 # ---- Moodle bridge ----------------------------------------------------------
@@ -201,21 +271,24 @@ VALID_MODELS = {
     "claude-haiku-4-5-20251001",
 }
 
-def _build_args(user_msg: str, thread_id: str, model: str | None = None) -> list[str]:
+def _build_args(user_msg: str, thread_id: str, model: str | None = None,
+                mode: str = "chat") -> list[str]:
     with _seen_lock:
         first = thread_id not in _seen_threads
         _seen_threads.add(thread_id)
 
+    evolve = mode == "evolve"
     args = [
         CLAUDE_BIN,
         "-p", user_msg,
         "--output-format", "stream-json",
         "--include-partial-messages",
         "--verbose",                       # required for stream-json output
-        "--allowedTools", ALLOWED_TOOLS,
-        "--append-system-prompt", APPEND_SYSTEM_PROMPT,
-        "--add-dir", str(PROJECT_ROOT),
+        "--allowedTools", EVOLVE_ALLOWED_TOOLS if evolve else ALLOWED_TOOLS,
+        "--append-system-prompt", EVOLVE_SYSTEM_PROMPT if evolve else APPEND_SYSTEM_PROMPT,
     ]
+    if not evolve:
+        args += ["--add-dir", str(PROJECT_ROOT)]
     if model and model in VALID_MODELS:
         args += ["--model", model]
     if first:
@@ -225,11 +298,35 @@ def _build_args(user_msg: str, thread_id: str, model: str | None = None) -> list
     return args
 
 
+# ---- git substrate -----------------------------------------------------------
+def _git(*argv: str) -> subprocess.CompletedProcess:
+    return subprocess.run(
+        ["git", *argv], cwd=str(DASHBOARD_DIR),
+        capture_output=True, text=True, timeout=30,
+    )
+
+
+def _git_autocommit(user_msg: str) -> dict | None:
+    """Commit any working-tree changes after an evolve turn. Returns commit
+    info for the UI, or None when the turn changed nothing."""
+    _git("add", "-A")
+    if _git("diff", "--cached", "--quiet").returncode == 0:
+        return None
+    subject = "evolve: " + " ".join(user_msg.split())[:60]
+    r = _git("commit", "-m", subject)
+    if r.returncode != 0:
+        return {"error": r.stderr.strip()[:300]}
+    sha = _git("rev-parse", "HEAD").stdout.strip()
+    files = [f for f in _git("show", "--name-only", "--format=", sha).stdout.splitlines() if f]
+    return {"sha": sha, "subject": subject, "files": files}
+
+
 def _sse(event_obj: dict) -> bytes:
     return f"data: {json.dumps(event_obj)}\n\n".encode("utf-8")
 
 
-def _stream_claude(user_msg: str, thread_id: str, model: str | None = None) -> Iterable[bytes]:
+def _stream_claude(user_msg: str, thread_id: str, model: str | None = None,
+                   mode: str = "chat") -> Iterable[bytes]:
     """
     Spawn `claude -p` and translate its stream-json output to SSE the
     frontend can consume. We forward only what the UI needs:
@@ -238,11 +335,11 @@ def _stream_claude(user_msg: str, thread_id: str, model: str | None = None) -> I
       - {type:"done"}               — terminal
       - {type:"error", message:"..."} — non-recoverable
     """
-    args = _build_args(user_msg, thread_id, model)
+    args = _build_args(user_msg, thread_id, model, mode)
     try:
         proc = subprocess.Popen(
             args,
-            cwd=str(PROJECT_ROOT),
+            cwd=str(DASHBOARD_DIR if mode == "evolve" else PROJECT_ROOT),
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             bufsize=1,
@@ -279,6 +376,10 @@ def _stream_claude(user_msg: str, thread_id: str, model: str | None = None) -> I
                 "message": f"claude exited {rc}: {stderr.strip()[:500]}",
             })
         else:
+            if mode == "evolve":
+                commit = _git_autocommit(user_msg)
+                if commit:
+                    yield _sse({"type": "commit", **commit})
             yield _sse({"type": "done"})
     finally:
         if proc.poll() is None:
@@ -347,13 +448,14 @@ def chat():
     msg = (body.get("message") or "").strip()
     thread_id = (body.get("threadId") or "").strip()
     model = (body.get("model") or "").strip() or None
+    mode = "evolve" if (body.get("mode") or "").strip() == "evolve" else "chat"
     if not msg:
         return jsonify(error="empty message"), 400
     if not thread_id:
         return jsonify(error="missing threadId"), 400
 
     return Response(
-        _stream_claude(msg, thread_id, model),
+        _stream_claude(msg, thread_id, model, mode),
         mimetype="text/event-stream",
         headers={
             "Cache-Control": "no-cache",
@@ -361,6 +463,72 @@ def chat():
             "Connection": "keep-alive",
         },
     )
+
+
+# ---- git history / revert -----------------------------------------------------
+@app.get("/api/git/log")
+def git_log():
+    n = min(int(request.args.get("n", 20)), 100)
+    r = _git("log", f"-{n}", "--format=%H%x1f%s%x1f%ct")
+    commits = []
+    for line in r.stdout.splitlines():
+        sha, subject, ts = line.split("\x1f")
+        files = [f for f in _git("show", "--name-only", "--format=", sha).stdout.splitlines() if f]
+        commits.append({"sha": sha, "subject": subject, "ts": int(ts), "files": files,
+                        "evolve": subject.startswith("evolve:") or subject.startswith("Revert")})
+    return jsonify(commits=commits)
+
+
+@app.get("/api/git/diff/<sha>")
+def git_diff(sha: str):
+    if not all(c in "0123456789abcdef" for c in sha.lower()) or not (7 <= len(sha) <= 40):
+        return jsonify(error="bad sha"), 400
+    r = _git("show", "--format=", sha)
+    return jsonify(diff=r.stdout[:200_000])
+
+
+@app.post("/api/git/revert")
+def git_revert():
+    sha = ((request.get_json(silent=True) or {}).get("sha") or "").strip()
+    if not all(c in "0123456789abcdef" for c in sha.lower()) or not (7 <= len(sha) <= 40):
+        return jsonify(error="bad sha"), 400
+    r = _git("revert", "--no-edit", sha)
+    if r.returncode != 0:
+        _git("revert", "--abort")
+        return jsonify(error=f"revert conflict: {r.stderr.strip()[:300]}"), 409
+    new_sha = _git("rev-parse", "HEAD").stdout.strip()
+    return jsonify(ok=True, sha=new_sha)
+
+
+@app.post("/api/validate")
+def validate():
+    """Validate site/site.json: well-formed JSON, schema shape, and every
+    referenced widget name present in some widgets/*.jsx registerWidget call."""
+    problems = []
+    site_path = DASHBOARD_DIR / "site" / "site.json"
+    try:
+        site = json.loads(site_path.read_text())
+    except Exception as e:
+        return jsonify(ok=False, problems=[f"site.json: {e}"])
+    try:
+        import jsonschema
+        schema = json.loads((DASHBOARD_DIR / "schema" / "site.schema.json").read_text())
+        for err in jsonschema.Draft202012Validator(schema).iter_errors(site):
+            problems.append(f"schema: {'/'.join(map(str, err.path))}: {err.message}")
+    except ImportError:
+        pass
+    registered = set()
+    for w in (DASHBOARD_DIR / "widgets").glob("*.jsx"):
+        import re
+        registered |= set(re.findall(r"registerWidget\(\s*['\"]([\w-]+)['\"]", w.read_text()))
+    for pid, page in (site.get("pages") or {}).items():
+        for sec in page.get("sections") or []:
+            if sec.get("widget") not in registered:
+                problems.append(f"pages.{pid}: widget '{sec.get('widget')}' is not registered by any widgets/*.jsx")
+    for dtype, cfg in (site.get("drawers") or {}).items():
+        if cfg.get("widget") not in registered:
+            problems.append(f"drawers.{dtype}: widget '{cfg.get('widget')}' is not registered")
+    return jsonify(ok=not problems, problems=problems)
 
 
 # ---- entrypoint ------------------------------------------------------------

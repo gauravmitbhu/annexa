@@ -83,3 +83,5 @@ function PoliciesPage() {
 }
 
 Object.assign(window, { PoliciesPage });
+
+registerWidget('page-policies', PoliciesPage);

@@ -163,3 +163,5 @@ function PeoplePage() {
 }
 
 Object.assign(window, { PeoplePage });
+
+registerWidget('page-people', PeoplePage);

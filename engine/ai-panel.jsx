@@ -385,6 +385,8 @@ function AIPanel({ context, contextDetail, mode, onCollapse, drawerOpen, control
   const [streaming, setStreaming] = useAIState(false);
   const [error, setError] = useAIState(null);
   const [pinnedItem, setPinnedItem] = useAIState(null); // item clicked elsewhere in the dashboard
+  const [panelMode, setPanelMode] = useAIState('ask'); // 'ask' | 'evolve'
+  const [showHistory, setShowHistory] = useAIState(false);
   const threadIdRef = useAIRef(newThreadId());
   const abortRef = useAIRef(null);
   const bodyRef = useAIRef(null);
@@ -438,6 +440,15 @@ function AIPanel({ context, contextDetail, mode, onCollapse, drawerOpen, control
           }
           return next;
         });
+      } else if (evt.type === 'commit') {
+        setMessages(prev => {
+          const next = prev.slice();
+          const last = next[next.length - 1];
+          if (last && last.role === 'assistant') {
+            next[next.length - 1] = { ...last, commit: { sha: evt.sha, subject: evt.subject, files: evt.files || [], error: evt.error } };
+          }
+          return next;
+        });
       } else if (evt.type === 'error') {
         setError(evt.message || 'unknown error');
       }
@@ -448,7 +459,7 @@ function AIPanel({ context, contextDetail, mode, onCollapse, drawerOpen, control
       const resp = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ threadId: threadIdRef.current, message: msg, model }),
+        body: JSON.stringify({ threadId: threadIdRef.current, message: msg, model, mode: panelMode === 'evolve' ? 'evolve' : 'chat' }),
         signal: controller.signal,
       });
       if (!resp.ok || !resp.body) throw new Error(`HTTP ${resp.status}`);
@@ -508,15 +519,41 @@ function AIPanel({ context, contextDetail, mode, onCollapse, drawerOpen, control
               <Icon name="sparkles" size={14} color="#fff" />
             </div>
             <div>
-              <div style={{ fontSize: 14, fontWeight: 600, color:'#111827', lineHeight: 1.2 }}>Ask Claude</div>
-              <div style={{ fontSize: 10.5, color:'#6B2FA0', fontWeight: 500 }}>ISMS Co-pilot</div>
+              <div style={{ fontSize: 14, fontWeight: 600, color:'#111827', lineHeight: 1.2 }}>
+                {panelMode === 'evolve' ? 'Evolve' : 'Ask Claude'}
+              </div>
+              <div style={{ fontSize: 10.5, color: panelMode === 'evolve' ? '#E91E63' : '#6B2FA0', fontWeight: 500 }}>
+                {panelMode === 'evolve' ? 'Self-modifying site' : 'ISMS Co-pilot'}
+              </div>
             </div>
           </div>
           <div style={{ display:'flex', alignItems:'center', gap: 4 }}>
             <ModelSelector value={model} onChange={m => { setModel(m); newThread(); }}/>
+            {panelMode === 'evolve' && (
+              <button title="Change history" style={iconBtn} onClick={()=>setShowHistory(h=>!h)}>
+                <Icon name="history" size={14} color={showHistory ? '#E91E63' : '#6B7280'}/>
+              </button>
+            )}
             <button title="New thread" style={iconBtn} onClick={newThread}><Icon name="plus" size={14} color="#6B7280"/></button>
             <button title="Collapse" style={iconBtn} onClick={onCollapse}><Icon name="panel-right-close" size={14} color="#6B7280"/></button>
           </div>
+        </div>
+        {/* Ask / Evolve segmented toggle */}
+        <div style={{ marginTop: 10, display:'inline-flex', background:'#F3F4F6', borderRadius: 7, padding: 2 }}>
+          {['ask','evolve'].map(m => (
+            <button key={m}
+              onClick={()=>{ if (m !== panelMode) { setPanelMode(m); setShowHistory(false); newThread(); } }}
+              style={{
+                fontFamily:'Poppins, sans-serif', fontSize: 11, fontWeight: 600,
+                padding:'4px 12px', borderRadius: 6, border:'none', cursor:'pointer',
+                background: panelMode === m ? (m === 'evolve' ? 'linear-gradient(135deg,#6B2FA0,#E91E63)' : '#fff') : 'transparent',
+                color: panelMode === m ? (m === 'evolve' ? '#fff' : '#111827') : '#6B7280',
+                boxShadow: panelMode === m && m === 'ask' ? '0 1px 2px rgba(0,0,0,0.08)' : 'none',
+                transition:'all 150ms',
+              }}>
+              {m === 'evolve' ? '⚡ Evolve' : 'Ask'}
+            </button>
+          ))}
         </div>
         <div style={{
           marginTop: 10, fontSize: 11.5, color:'#4B5563',
@@ -529,9 +566,13 @@ function AIPanel({ context, contextDetail, mode, onCollapse, drawerOpen, control
       </div>
 
       {/* Body */}
-      <div ref={bodyRef} className="scroll-y" style={{ flex: 1, overflowY:'auto', padding: (!live && mode==='empty') ? 0 : '16px 16px 8px' }}>
-        {live ? (
+      <div ref={bodyRef} className="scroll-y" style={{ flex: 1, overflowY:'auto', padding: (!live && mode==='empty' && panelMode!=='evolve') ? 0 : '16px 16px 8px' }}>
+        {showHistory ? (
+          <HistoryPanel/>
+        ) : live ? (
           <LiveThread messages={messages} streaming={streaming}/>
+        ) : panelMode === 'evolve' ? (
+          <EvolveEmpty onPick={(t)=> setText(t)}/>
         ) : mode === 'empty' ? (
           <EmptyThread onPick={(t)=> setText(t)}/>
         ) : drawerOpen ? (
@@ -555,10 +596,12 @@ function AIPanel({ context, contextDetail, mode, onCollapse, drawerOpen, control
         borderTop:'1px solid #F3F4F6',
       }}>
         <div style={{ display:'flex', alignItems:'center', gap: 6 }}>
-          <Icon name="shield" size={11} color="#10B981"/>
-          <span>Read-only · write actions need confirmation</span>
+          <Icon name={panelMode === 'evolve' ? 'git-commit-horizontal' : 'shield'} size={11} color={panelMode === 'evolve' ? '#E91E63' : '#10B981'}/>
+          <span>{panelMode === 'evolve'
+            ? 'Writes to site/, widgets/, data/ · auto-committed · 1-click revert'
+            : 'Read-only · write actions need confirmation'}</span>
         </div>
-        <span style={{ color:'#9CA3AF' }}>indexed 4 min ago</span>
+        <span style={{ color:'#9CA3AF' }}>{panelMode === 'evolve' ? 'engine protected' : 'indexed 4 min ago'}</span>
       </div>
 
       {/* Slash chips */}
@@ -609,7 +652,9 @@ function AIPanel({ context, contextDetail, mode, onCollapse, drawerOpen, control
             onKeyDown={e=>{
               if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send(); }
             }}
-            placeholder={streaming ? 'Streaming…' : 'Ask about controls, risks, policies, or auditor prep…'}
+            placeholder={streaming ? 'Streaming…' : panelMode === 'evolve'
+              ? 'Describe a change — “add a KPI tile”, “rename this tab”, “new page for …”'
+              : 'Ask about controls, risks, policies, or auditor prep…'}
             disabled={streaming}
             rows={2}
             style={{
@@ -744,13 +789,165 @@ function LiveThread({ messages, streaming }) {
           </div>
         ) : null;
         return (
-          <ClaudeMsg key={i}>
-            <Markdown text={m.text}/>
-            {tools}
-          </ClaudeMsg>
+          <React.Fragment key={i}>
+            <ClaudeMsg>
+              <Markdown text={m.text}/>
+              {tools}
+            </ClaudeMsg>
+            {m.commit && <CommitCard commit={m.commit}/>}
+          </React.Fragment>
         );
       })}
     </>
+  );
+}
+
+// ── Evolve mode UI ───────────────────────────────────────────────────────────
+function CommitCard({ commit }) {
+  const [diff, setDiff] = useAIState(null);      // null | 'loading' | string
+  const [reverted, setReverted] = useAIState(false);
+  const [err, setErr] = useAIState(null);
+  if (commit.error) return (
+    <div style={{ margin:'0 0 14px 32px', padding:'8px 10px', borderRadius: 8,
+      background:'#FEF2F2', border:'1px solid #FECACA', color:'#B91C1C', fontSize: 11.5 }}>
+      auto-commit failed: {commit.error}
+    </div>
+  );
+  const toggleDiff = async () => {
+    if (diff !== null) { setDiff(null); return; }
+    setDiff('loading');
+    try {
+      const r = await (await fetch(`/api/git/diff/${commit.sha}`)).json();
+      setDiff(r.diff || '(empty diff)');
+    } catch (e) { setDiff('failed to load diff: ' + e); }
+  };
+  const revert = async () => {
+    setErr(null);
+    try {
+      const r = await fetch('/api/git/revert', {
+        method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({ sha: commit.sha }),
+      });
+      if (!r.ok) { const j = await r.json(); throw new Error(j.error || `HTTP ${r.status}`); }
+      setReverted(true); // live-reload will refresh the page shortly
+    } catch (e) { setErr(String(e.message || e)); }
+  };
+  return (
+    <div style={{
+      margin:'0 0 16px 32px', borderRadius: 10, overflow:'hidden',
+      border:'1px solid rgba(107,47,160,0.25)', background:'#fff',
+    }}>
+      <div style={{ padding:'8px 12px', display:'flex', alignItems:'center', gap: 8,
+        background:'linear-gradient(90deg, rgba(107,47,160,0.06), rgba(233,30,99,0.05))' }}>
+        <Icon name="git-commit-horizontal" size={13} color="#6B2FA0"/>
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div style={{ fontSize: 12, fontWeight: 600, color:'#111827', whiteSpace:'nowrap', overflow:'hidden', textOverflow:'ellipsis' }}>
+            {commit.subject}
+          </div>
+          <div style={{ fontSize: 10, color:'#6B7280', fontFamily:'ui-monospace, monospace' }}>
+            {commit.sha.slice(0,8)} · {commit.files.length} file{commit.files.length===1?'':'s'}
+          </div>
+        </div>
+        <button onClick={toggleDiff} style={pinChipStyle}>{diff === null ? 'Diff' : 'Hide'}</button>
+        {reverted
+          ? <span style={{ fontSize: 11, color:'#047857', fontWeight: 600 }}>reverted ✓</span>
+          : <button onClick={revert} style={{ ...pinChipStyle, color:'#B91C1C', background:'#FEF2F2', borderColor:'#FECACA' }}>Revert</button>}
+      </div>
+      <div style={{ padding:'6px 12px', display:'flex', flexWrap:'wrap', gap: 4 }}>
+        {commit.files.map(f => (
+          <span key={f} style={{ fontSize: 10, fontFamily:'ui-monospace, monospace',
+            background:'#F3F4F6', borderRadius: 4, padding:'1px 6px', color:'#4B5563' }}>{f}</span>
+        ))}
+      </div>
+      {err && <div style={{ padding:'4px 12px 8px', fontSize: 11, color:'#B91C1C' }}>{err}</div>}
+      {typeof diff === 'string' && diff !== 'loading' && (
+        <pre className="scroll-y" style={{ margin: 0, padding: 12, maxHeight: 260, overflow:'auto',
+          fontSize: 10.5, lineHeight: 1.5, background:'#1F2937', color:'#E5E7EB' }}>
+          {diff.split('\n').map((l, i) => (
+            <div key={i} style={{ color: l.startsWith('+') ? '#6EE7B7' : l.startsWith('-') ? '#FCA5A5' : l.startsWith('@@') ? '#93C5FD' : '#D1D5DB' }}>{l}</div>
+          ))}
+        </pre>
+      )}
+      {diff === 'loading' && <div style={{ padding: 12, fontSize: 11, color:'#6B7280' }}>loading diff…</div>}
+    </div>
+  );
+}
+
+const EVOLVE_SUGGESTIONS = [
+  'Rename the “Risks” tab to “Risk Register”',
+  'Add a KPI tile row to the Overview with incidents, open OFIs and gap count',
+  'Create a new “Metrics” page with a table of the ISMS KPIs',
+  'Change the accent colour to teal',
+  'Add a “days since last incident” counter to the top bar area of Overview',
+  'Split the Overview into separate widgets so each section evolves independently',
+];
+
+function EvolveEmpty({ onPick }) {
+  return (
+    <div style={{ paddingTop: 4 }}>
+      <div style={{ textAlign:'center', margin:'14px 0 18px' }}>
+        <div style={{
+          width: 44, height: 44, borderRadius: 12,
+          background:'linear-gradient(135deg,#6B2FA0,#E91E63)',
+          display:'inline-flex', alignItems:'center', justifyContent:'center',
+          marginBottom: 10,
+        }} className="sparkle-pulse">
+          <Icon name="wand-2" size={22} color="#fff" />
+        </div>
+        <div style={{ fontSize: 15, fontWeight: 600, color:'#111827' }}>Evolve the site</div>
+        <div style={{ fontSize: 12, color:'#6B7280', marginTop: 4, lineHeight: 1.5 }}>
+          Describe any change — structure, pages, widgets, data, or styling.<br/>
+          Changes apply live and every step can be reverted.
+        </div>
+      </div>
+      {EVOLVE_SUGGESTIONS.map((s, i) => (
+        <GhostPrompt key={i} onClick={()=>onPick && onPick(s)}>{s}</GhostPrompt>
+      ))}
+    </div>
+  );
+}
+
+function HistoryPanel() {
+  const [commits, setCommits] = useAIState(null);
+  const [err, setErr] = useAIState(null);
+  const load = async () => {
+    try { setCommits((await (await fetch('/api/git/log?n=30')).json()).commits); }
+    catch (e) { setErr(String(e)); }
+  };
+  useAIEffect(() => { load(); }, []);
+  const revert = async (sha) => {
+    setErr(null);
+    const r = await fetch('/api/git/revert', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ sha }),
+    });
+    if (!r.ok) { const j = await r.json().catch(()=>({})); setErr(j.error || `HTTP ${r.status}`); }
+    else load();
+  };
+  const fmt = (ts) => new Date(ts * 1000).toLocaleString(undefined, { month:'short', day:'numeric', hour:'2-digit', minute:'2-digit' });
+  return (
+    <div>
+      <div style={{ fontSize: 11, color:'#6B7280', marginBottom: 10, textTransform:'uppercase', letterSpacing:'0.06em', fontWeight: 600 }}>
+        Change history
+      </div>
+      {err && <div style={{ fontSize: 11.5, color:'#B91C1C', marginBottom: 8 }}>{err}</div>}
+      {!commits ? <div style={{ fontSize: 12, color:'#6B7280' }}>loading…</div> :
+        commits.map(c => (
+          <div key={c.sha} style={{
+            display:'flex', alignItems:'center', gap: 8, padding:'8px 10px',
+            borderRadius: 8, border:'1px solid #E5E7EB', background:'#fff', marginBottom: 6,
+          }}>
+            <Icon name={c.evolve ? 'wand-2' : 'git-commit-horizontal'} size={12} color={c.evolve ? '#E91E63' : '#9CA3AF'}/>
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <div style={{ fontSize: 11.5, fontWeight: 500, color:'#111827', whiteSpace:'nowrap', overflow:'hidden', textOverflow:'ellipsis' }}>
+                {c.subject}
+              </div>
+              <div style={{ fontSize: 9.5, color:'#9CA3AF' }}>{fmt(c.ts)} · {c.files.length} file{c.files.length===1?'':'s'}</div>
+            </div>
+            <button onClick={()=>revert(c.sha)} style={{ ...pinChipStyle, fontSize: 10, padding:'3px 8px' }}>Revert</button>
+          </div>
+        ))}
+    </div>
   );
 }
 

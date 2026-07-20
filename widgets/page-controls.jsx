@@ -795,3 +795,6 @@ const iconBtnLg = {
 };
 
 Object.assign(window, { ControlsPage, ControlDrawer, PolicyCard, PolicyCardByNum });
+
+registerWidget('page-controls', ControlsPage);
+registerWidget('drawer-control', ControlDrawer);

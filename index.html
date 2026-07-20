@@ -75,23 +75,13 @@
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/lucide@0.544.0/dist/umd/lucide.min.js"></script>
 
-<script type="text/babel" src="data.jsx"></script>
-<script type="text/babel" src="primitives.jsx"></script>
-<script type="text/babel" src="ai-panel.jsx"></script>
-<script type="text/babel" src="overview.jsx"></script>
-<script type="text/babel" src="isms-core.jsx"></script>
-<script type="text/babel" src="risks.jsx"></script>
-<script type="text/babel" src="vendors.jsx"></script>
-<script type="text/babel" src="policies.jsx"></script>
-<script type="text/babel" src="people.jsx"></script>
-<script type="text/babel" src="evidence.jsx"></script>
-<script type="text/babel" src="exceptions.jsx"></script>
-<script type="text/babel" src="operating-procedures.jsx"></script>
-<script type="text/babel" src="controls.jsx"></script>
-<script type="text/babel" src="incidents.jsx"></script>
-<script type="text/babel" src="audits.jsx"></script>
-<script type="text/babel" src="roadmap.jsx"></script>
-<script type="text/babel" src="app.jsx"></script>
+<!-- Protected engine only — everything else (site spec, data, widgets) is
+     discovered via /api/manifest and loaded dynamically by engine/loader.jsx -->
+<script type="text/babel" src="engine/registry.jsx"></script>
+<script type="text/babel" src="engine/primitives.jsx"></script>
+<script type="text/babel" src="engine/ai-panel.jsx"></script>
+<script type="text/babel" src="engine/renderer.jsx"></script>
+<script type="text/babel" src="engine/loader.jsx"></script>
 
 <script>
 // Live-reload: poll /api/version every 2s; reload if files changed

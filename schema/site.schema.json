@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "annexa site spec",
+  "type": "object",
+  "required": ["brand", "nav", "pages"],
+  "properties": {
+    "brand": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": { "type": "string" },
+        "legalName": { "type": "string" },
+        "tagline": { "type": "string" },
+        "section": { "type": "string" }
+      }
+    },
+    "user": {
+      "type": "object",
+      "properties": { "name": { "type": "string" }, "role": { "type": "string" } }
+    },
+    "countdownDays": { "type": ["number", "null"] },
+    "defaultRoute": { "type": "string" },
+    "nav": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "label", "icon"],
+        "properties": {
+          "id": { "type": "string" },
+          "label": { "type": "string" },
+          "icon": { "type": "string" }
+        }
+      }
+    },
+    "pages": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "subtitle": { "type": "string" },
+          "aiContext": { "type": "string" },
+          "aiContextDetail": { "type": "string" },
+          "drawerType": { "type": "string" },
+          "sections": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["widget"],
+              "properties": {
+                "widget": { "type": "string" },
+                "props": { "type": "object" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "drawers": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["widget"],
+        "properties": {
+          "widget": { "type": "string" },
+          "prop": { "type": "string" }
+        }
+      }
+    }
+  }
+}

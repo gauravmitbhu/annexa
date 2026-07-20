@@ -1,0 +1,135 @@
+{
+  "brand": {
+    "name": "acme",
+    "legalName": "Acme S.A.",
+    "tagline": "ISMS · ISO 27001",
+    "section": "ISMS"
+  },
+  "user": { "name": "Alex", "role": "CISO · Acme" },
+  "countdownDays": 56,
+  "defaultRoute": "overview",
+  "nav": [
+    { "id": "overview",   "label": "Overview",             "icon": "layout-dashboard" },
+    { "id": "core",       "label": "ISMS Core (Cl. 4–10)", "icon": "list-checks" },
+    { "id": "controls",   "label": "Controls (Annex A)",   "icon": "shield-check" },
+    { "id": "incidents",  "label": "Incidents",            "icon": "siren" },
+    { "id": "risks",      "label": "Risks",                "icon": "alert-triangle" },
+    { "id": "policies",   "label": "Policies",             "icon": "file-text" },
+    { "id": "vendors",    "label": "Vendors / Suppliers",  "icon": "building-2" },
+    { "id": "people",     "label": "People & Training",    "icon": "users" },
+    { "id": "evidence",   "label": "Evidence Library",     "icon": "folder-archive" },
+    { "id": "opsproc",    "label": "Operating Procedures", "icon": "list-ordered" },
+    { "id": "audits",     "label": "Audits & Findings",    "icon": "clipboard-check" },
+    { "id": "roadmap",    "label": "Post-Audit Plan",      "icon": "route" },
+    { "id": "exceptions", "label": "Exceptions",           "icon": "file-warning" },
+    { "id": "settings",   "label": "Settings",             "icon": "settings" }
+  ],
+  "pages": {
+    "overview": {
+      "title": "Overview",
+      "subtitle": "Posture, gaps, exceptions, and audit timeline.",
+      "aiContext": "Overview",
+      "aiContextDetail": "{CONTROLS.length} controls in scope",
+      "sections": [ { "widget": "page-overview" } ]
+    },
+    "core": {
+      "title": "ISMS Core (Clauses 4–10)",
+      "subtitle": "Management-system requirements — the Day 1 morning audit focus.",
+      "aiContext": "ISMS Core",
+      "aiContextDetail": "{ISMS_CLAUSES.reduce((n,g)=>n+g.items.length,0)} clauses · 4–10",
+      "sections": [ { "widget": "page-core" } ]
+    },
+    "controls": {
+      "title": "Controls (Annex A)",
+      "subtitle": "All 93 ISO/IEC 27001:2022 controls.",
+      "aiContext": "Controls",
+      "aiContextDetail": "{CONTROLS.length} controls",
+      "drawerType": "control",
+      "sections": [ { "widget": "page-controls" } ]
+    },
+    "incidents": {
+      "title": "Incidents",
+      "subtitle": "{INCIDENTS.length} recent incidents across canonical and ISMS lists.",
+      "aiContext": "Incidents",
+      "aiContextDetail": "{INCIDENTS.length} active",
+      "drawerType": "incident",
+      "sections": [ { "widget": "page-incidents" } ]
+    },
+    "risks": {
+      "title": "Risks",
+      "subtitle": "3×3 canonical matrix (Policy 23 v1.0) · 50 risks · live risk register.",
+      "aiContext": "Risks",
+      "aiContextDetail": "whole ISMS",
+      "sections": [ { "widget": "page-risks" } ]
+    },
+    "policies": {
+      "title": "Policies",
+      "subtitle": "{POLICY_REGISTER.length} policies · all released v1.0+ and approved.",
+      "aiContext": "Policies",
+      "aiContextDetail": "{POLICY_REGISTER.length} policies",
+      "sections": [ { "widget": "page-policies" } ]
+    },
+    "vendors": {
+      "title": "Vendors / Suppliers",
+      "subtitle": "{VENDORS.length} suppliers · review cadence per Policy 22.",
+      "aiContext": "Vendors",
+      "aiContextDetail": "{VENDORS.length} suppliers",
+      "sections": [ { "widget": "page-vendors" } ]
+    },
+    "people": {
+      "title": "People & Training",
+      "subtitle": "Security awareness programme · live from Moodle when connected.",
+      "aiContext": "People",
+      "aiContextDetail": "training & awareness",
+      "sections": [ { "widget": "page-people" } ]
+    },
+    "evidence": {
+      "title": "Evidence Library",
+      "subtitle": "Consolidated evidence register across the whole ISMS (clause 7.5).",
+      "aiContext": "Evidence",
+      "aiContextDetail": "clause 7.5 register",
+      "sections": [ { "widget": "page-evidence" } ]
+    },
+    "opsproc": {
+      "title": "Operating Procedures",
+      "subtitle": "",
+      "aiContext": "Operating Procedures",
+      "aiContextDetail": "{OPSPROC_PROCEDURES.length} procedures",
+      "sections": [ { "widget": "page-opsproc" } ]
+    },
+    "audits": {
+      "title": "Audits & Findings",
+      "subtitle": "{AUDIT_REPORTS.length} audit report(s) · {OFIS.length}-item OFI register.",
+      "aiContext": "Audits & Findings",
+      "aiContextDetail": "{AUDIT_REPORTS.length} reports · {OFIS.length} OFIs",
+      "sections": [ { "widget": "page-audits" } ]
+    },
+    "roadmap": {
+      "title": "Post-Audit Plan",
+      "subtitle": "",
+      "aiContext": "Post-Audit Plan",
+      "aiContextDetail": "whole ISMS",
+      "sections": [ { "widget": "page-roadmap" } ]
+    },
+    "exceptions": {
+      "title": "Exceptions",
+      "subtitle": "{EXCEPTIONS.length} exceptions · Exception Request Form · 12-month review cycle.",
+      "aiContext": "Exceptions",
+      "aiContextDetail": "{EXCEPTIONS.length} exceptions",
+      "sections": [ { "widget": "page-exceptions" } ]
+    },
+    "settings": {
+      "title": "Settings",
+      "subtitle": "",
+      "aiContext": "Settings",
+      "aiContextDetail": "site configuration",
+      "sections": []
+    }
+  },
+  "drawers": {
+    "control":  { "widget": "drawer-control",  "prop": "ctrl" },
+    "incident": { "widget": "drawer-incident", "prop": "incident" },
+    "ofi":      { "widget": "drawer-ofi",      "prop": "ofi" },
+    "audit":    { "widget": "drawer-audit",    "prop": "audit" }
+  }
+}

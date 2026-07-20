@@ -236,3 +236,6 @@ function DetailSection({ title, children }) {
 }
 
 Object.assign(window, { IncidentsPage, IncidentDrawer });
+
+registerWidget('page-incidents', IncidentsPage);
+registerWidget('drawer-incident', IncidentDrawer);

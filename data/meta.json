@@ -1,0 +1,184 @@
+{
+  "STATUS_COLOR": {
+    "ok": {
+      "bg": "#10B981",
+      "soft": "#ECFDF5",
+      "fg": "#047857",
+      "label": "Compliant"
+    },
+    "amber": {
+      "bg": "#F59E0B",
+      "soft": "#FFFBEB",
+      "fg": "#B45309",
+      "label": "At risk"
+    },
+    "red": {
+      "bg": "#EF4444",
+      "soft": "#FEF2F2",
+      "fg": "#B91C1C",
+      "label": "Gap"
+    },
+    "na": {
+      "bg": "#9CA3AF",
+      "soft": "#F3F4F6",
+      "fg": "#4B5563",
+      "label": "N/A"
+    }
+  },
+  "SEVERITY_COLOR": {
+    "Urgent": {
+      "bg": "#FEF2F2",
+      "fg": "#B91C1C",
+      "dot": "#EF4444"
+    },
+    "High": {
+      "bg": "#FFFBEB",
+      "fg": "#B45309",
+      "dot": "#F59E0B"
+    },
+    "Medium": {
+      "bg": "#EFF6FF",
+      "fg": "#1D4ED8",
+      "dot": "#3B82F6"
+    },
+    "Low": {
+      "bg": "#ECFDF5",
+      "fg": "#047857",
+      "dot": "#10B981"
+    }
+  },
+  "OFI_STATUS_COLOR": {
+    "Open": {
+      "bg": "#FEF2F2",
+      "fg": "#B91C1C",
+      "dot": "#EF4444"
+    },
+    "In progress": {
+      "bg": "#FFFBEB",
+      "fg": "#B45309",
+      "dot": "#F59E0B"
+    },
+    "Complete": {
+      "bg": "#ECFDF5",
+      "fg": "#047857",
+      "dot": "#10B981"
+    }
+  },
+  "RISK_SCORE_LEVEL": {
+    "1": "Very Low",
+    "2": "Low",
+    "3": "Medium",
+    "4": "Medium",
+    "6": "High",
+    "9": "Very High"
+  },
+  "SYSTEMS": [
+    {
+      "id": "taskhub",
+      "name": "TaskHub",
+      "sync": "4 min ago",
+      "color": "#7B68EE",
+      "glyph": "TH",
+      "connected": true
+    },
+    {
+      "id": "moodle",
+      "name": "Moodle",
+      "sync": "1 hr ago",
+      "color": "#F98012",
+      "glyph": "MD",
+      "connected": true
+    },
+    {
+      "id": "dochub",
+      "name": "DocHub",
+      "sync": null,
+      "color": "#0078D4",
+      "glyph": "DH",
+      "connected": false
+    },
+    {
+      "id": "gitlab",
+      "name": "GitLab",
+      "sync": null,
+      "color": "#FC6D26",
+      "glyph": "GL",
+      "connected": false
+    },
+    {
+      "id": "elastic",
+      "name": "Elastic",
+      "sync": null,
+      "color": "#005571",
+      "glyph": "EL",
+      "connected": false
+    },
+    {
+      "id": "jamf",
+      "name": "Jamf MDM",
+      "sync": null,
+      "color": "#37474F",
+      "glyph": "JF",
+      "connected": false
+    }
+  ],
+  "OWNER_LOAD": [
+    {
+      "name": "Alex",
+      "role": "CISO",
+      "count": 18
+    },
+    {
+      "name": "Sam",
+      "role": "CTO",
+      "count": 11
+    },
+    {
+      "name": "Jordan",
+      "role": "COO",
+      "count": 6
+    },
+    {
+      "name": "Riley",
+      "role": "PM",
+      "count": 4
+    },
+    {
+      "name": "Morgan",
+      "role": "Eng",
+      "count": 3
+    },
+    {
+      "name": "Casey",
+      "role": "Eng",
+      "count": 2
+    },
+    {
+      "name": "Dana (Ext. DPO)",
+      "role": "DPO",
+      "count": 2
+    }
+  ],
+  "FINDINGS": [
+    {
+      "ctrl": "8.10",
+      "issue": "Data deletion not automated",
+      "owner": "Sam",
+      "sev": "HIGH",
+      "target": "Q3 2026",
+      "source": "Task tracker",
+      "ref": "OFI-015",
+      "link": "#"
+    },
+    {
+      "ctrl": "5.32",
+      "issue": "Trademark registration renewal pending",
+      "owner": "Jordan",
+      "sev": "LOW",
+      "target": "In progress",
+      "source": "Task tracker",
+      "ref": "ISMS-877",
+      "link": "#"
+    }
+  ]
+}

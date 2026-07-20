@@ -854,3 +854,7 @@ function AuditDrawer({ audit: a, onClose }) {
 }
 
 Object.assign(window, { AuditsPage, OFIDrawer, AuditDrawer });
+
+registerWidget('page-audits', AuditsPage);
+registerWidget('drawer-ofi', OFIDrawer);
+registerWidget('drawer-audit', AuditDrawer);

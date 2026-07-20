@@ -246,3 +246,5 @@ function EvidenceLibraryPage() {
 }
 
 Object.assign(window, { EvidenceLibraryPage });
+
+registerWidget('page-evidence', EvidenceLibraryPage);

@@ -142,3 +142,5 @@ function RisksPage() {
 }
 
 Object.assign(window, { RisksPage });
+
+registerWidget('page-risks', RisksPage);

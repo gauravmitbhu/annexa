@@ -15,11 +15,37 @@ Sprinto/Vanta-style ISMS cockpit you can run locally. All data in this repo is
 - **Incidents, Audits & Findings, Exceptions, Operating Procedures register, Post-audit roadmap**
 - **AI panel** — optional chat side-panel that bridges to a local [Claude Code](https://claude.com/claude-code) subprocess for Q&A over your ISMS files
 
-## Stack
+## Architecture: a living site
 
-No build step. React (via CDN, JSX transpiled in-browser) + a small Flask backend
-that serves the static app and provides optional API bridges (AI chat, Moodle
-training stats).
+annexa is built as a **self-evolving web app**: a small protected engine renders
+an evolvable layer, and a built-in AI agent (Claude Code) can restructure the
+site by editing that layer — with every change auto-committed to git and
+revertable in one click from the UI.
+
+```
+engine/            PROTECTED CORE — registry, primitives, loader, renderer, AI panel
+app.py, index.html PROTECTED — Flask server + boot page
+site/site.json     EVOLVABLE — brand, nav, page composition, drawers (the site spec)
+widgets/*.jsx      EVOLVABLE — self-registering components, discovered automatically
+data/*.json        EVOLVABLE — all records; each key becomes a window global
+schema/            site.json JSON Schema (used by /api/validate)
+.claude/settings.json  hard deny-rules: the agent can never edit the protected core
+```
+
+- **No build step.** CDN React 18 + Babel-standalone; widgets are transpiled
+  in the browser at boot. `GET /api/manifest` globs `site/`, `data/`,
+  `widgets/` — drop a file in and it exists.
+- **Crash-resilient.** Each widget loads in its own try/catch + ErrorBoundary;
+  a broken widget renders an error card with a "Fix with AI" button, never a
+  white screen.
+- **Evolve mode.** The AI side panel has an Ask/Evolve toggle. In Evolve mode
+  the agent gets Edit/Write inside the repo, the browser hot-reloads ~2s after
+  any change, each turn is auto-committed (`evolve: …`), and the panel shows
+  diff cards + a change-history drawer with one-click revert.
+- **Structure = data.** Adding a page is a nav entry + a pages entry in
+  `site/site.json` plus (optionally) a new widget file. Renaming a tab is a
+  one-line JSON edit. Subtitles support `{expr}` templates evaluated against
+  globals (e.g. `"{CONTROLS.length} controls"`).
 
 ## Run
 

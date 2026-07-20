@@ -1,5 +1,43 @@
-// App shell — sidebar, top breadcrumb bar, route switching, AI panel orchestration
+// Generic App shell — everything it renders (brand, nav, pages, drawers) comes
+// from site/site.json + the widget registry. This file is part of the
+// protected engine: structure changes belong in site.json and widgets/.
 const { useState: useAppState } = React;
+
+class ErrorBoundary extends React.Component {
+  constructor(p) { super(p); this.state = { err: null }; }
+  static getDerivedStateFromError(err) { return { err }; }
+  render() {
+    if (this.state.err) return <WidgetErrorCard name={this.props.name} error={String(this.state.err)} />;
+    return this.props.children;
+  }
+}
+
+function WidgetErrorCard({ name, error }) {
+  const fixPrompt = `The widget "${name}" is broken. Error: ${error}. Please fix it.`;
+  return (
+    <div style={{
+      margin: 24, padding: 20, borderRadius: 10,
+      background: '#FEF2F2', border: '1px solid #FECACA', color: '#B91C1C',
+    }}>
+      <div style={{ fontWeight: 600, fontSize: 14, marginBottom: 6 }}>
+        <Icon name="alert-triangle" size={14} style={{ verticalAlign: 'middle', marginRight: 6 }} />
+        Widget “{name}” failed
+      </div>
+      <pre style={{ whiteSpace: 'pre-wrap', fontSize: 11.5, margin: '0 0 10px' }}>{error}</pre>
+      <button
+        onClick={() => window.dispatchEvent(new CustomEvent('askclaude:item', {
+          detail: { label: `Fix widget ${name}`, prompt: fixPrompt } }))}
+        style={{
+          fontFamily: 'Poppins, sans-serif', fontSize: 12, fontWeight: 500,
+          color: '#fff', background: 'linear-gradient(135deg,#6B2FA0,#E91E63)',
+          border: 'none', borderRadius: 7, padding: '6px 12px', cursor: 'pointer',
+        }}>
+        <Icon name="sparkles" size={11} style={{ verticalAlign: 'middle', marginRight: 5 }} />
+        Fix with AI
+      </button>
+    </div>
+  );
+}
 
 function SidebarItem({ item, active, collapsed, onClick }) {
   const [h, setH] = useAppState(false);
@@ -31,6 +69,7 @@ function SidebarItem({ item, active, collapsed, onClick }) {
 
 function Sidebar({ active, setActive, collapsed, onToggle }) {
   const w = collapsed ? 64 : 220;
+  const brand = SITE.brand || {};
   return (
     <aside style={{
       width: w, background:'#3B1A6B',
@@ -46,10 +85,10 @@ function Sidebar({ active, setActive, collapsed, onToggle }) {
         {!collapsed ? (
           <div>
             <div style={{ fontSize: 18, fontWeight: 1000, color:'#fff', letterSpacing:'-0.02em', lineHeight: 1 }}>
-              acme
+              {brand.name || 'site'}
             </div>
             <div style={{ fontSize: 9.5, color:'#FF5C8D', marginTop: 3, fontWeight: 500, letterSpacing:'0.04em' }}>
-              ISMS · ISO 27001
+              {brand.tagline || ''}
             </div>
           </div>
         ) : (
@@ -58,7 +97,7 @@ function Sidebar({ active, setActive, collapsed, onToggle }) {
             background:'#E91E63', color:'#fff',
             display:'flex', alignItems:'center', justifyContent:'center',
             fontWeight: 1000, fontSize: 13,
-          }}>a</div>
+          }}>{(brand.name || 's')[0]}</div>
         )}
         {!collapsed && (
           <button onClick={onToggle} style={{
@@ -80,7 +119,7 @@ function Sidebar({ active, setActive, collapsed, onToggle }) {
         flex: 1, padding: collapsed ? '0 8px' : '0 10px',
         display:'flex', flexDirection:'column', gap: 2,
       }}>
-        {NAV.map(n => (
+        {SITE.nav.map(n => (
           <SidebarItem key={n.id} item={n} active={n.id === active}
             collapsed={collapsed} onClick={()=>setActive(n.id)}/>
         ))}
@@ -92,12 +131,12 @@ function Sidebar({ active, setActive, collapsed, onToggle }) {
         display:'flex', alignItems:'center',
         justifyContent: collapsed ? 'center' : 'flex-start', gap: 10,
       }}>
-        <Avatar name="Alex" size={collapsed ? 30 : 32} bg="#E91E63"/>
+        <Avatar name={(SITE.user || {}).name || 'U'} size={collapsed ? 30 : 32} bg="#E91E63"/>
         {!collapsed && (
           <>
             <div style={{ flex: 1, minWidth: 0 }}>
-              <div style={{ fontSize: 12.5, color:'#fff', fontWeight: 500 }}>Alex</div>
-              <div style={{ fontSize: 10, color:'#C9B1E0' }}>CISO · Acme</div>
+              <div style={{ fontSize: 12.5, color:'#fff', fontWeight: 500 }}>{(SITE.user || {}).name || ''}</div>
+              <div style={{ fontSize: 10, color:'#C9B1E0' }}>{(SITE.user || {}).role || ''}</div>
             </div>
             <Icon name="log-out" size={14} color="#C9B1E0"/>
           </>
@@ -107,7 +146,8 @@ function Sidebar({ active, setActive, collapsed, onToggle }) {
   );
 }
 
-function TopBar({ collapsed }) {
+function TopBar({ routeLabel }) {
+  const brand = SITE.brand || {};
   return (
     <div style={{
       display:'flex', alignItems:'center', justifyContent:'space-between',
@@ -121,16 +161,16 @@ function TopBar({ collapsed }) {
             background:'#3B1A6B', color:'#fff',
             display:'flex', alignItems:'center', justifyContent:'center',
             fontSize: 11, fontWeight: 700,
-          }}>A</div>
-          <span style={{ color:'#111827', fontWeight: 600 }}>Acme S.A.</span>
+          }}>{(brand.legalName || brand.name || 'S')[0].toUpperCase()}</div>
+          <span style={{ color:'#111827', fontWeight: 600 }}>{brand.legalName || brand.name}</span>
           <span style={{ color:'#D1D5DB' }}>/</span>
-          <span style={{ color:'#6B7280' }}>ISMS</span>
+          <span style={{ color:'#6B7280' }}>{brand.section || 'ISMS'}</span>
           <span style={{ color:'#D1D5DB' }}>/</span>
-          <span style={{ color:'#111827', fontWeight: 500 }}>Overview</span>
+          <span style={{ color:'#111827', fontWeight: 500 }}>{routeLabel}</span>
         </div>
       </div>
       <div style={{ display:'flex', alignItems:'center', gap: 14 }}>
-        <CountdownChip days={56}/>
+        {typeof CountdownChip === 'function' && SITE.countdownDays != null && <CountdownChip days={SITE.countdownDays}/>}
         <div style={{ display:'flex', alignItems:'center', gap: 4 }}>
           <button style={topIconBtn}><Icon name="search" size={15} color="#6B7280"/></button>
           <button style={topIconBtn}>
@@ -186,26 +226,55 @@ function StubPage({ title }) {
   );
 }
 
+// Renders one page's sections[] from the spec via the widget registry.
+function PageBody({ page, pageId, openDrawer }) {
+  if (!page || !page.sections || !page.sections.length) {
+    const label = (SITE.nav.find(n => n.id === pageId) || {}).label || 'Page';
+    return <StubPage title={label}/>;
+  }
+  return (
+    <>
+      {page.sections.map((sec, i) => {
+        const W = getWidget(sec.widget);
+        const loadErr = (window.__WIDGET_ERRORS || []).find(e => e.file.includes(sec.widget));
+        if (!W) return <WidgetErrorCard key={i} name={sec.widget}
+          error={loadErr ? loadErr.error : 'not registered — is the widget file present and does it call registerWidget()?'}/>;
+        // Widgets that open drawers get onOpenDrawer; plain objects are wrapped
+        // with the page's drawerType, pre-shaped {type,data} passes through.
+        const onOpenDrawer = (x) => openDrawer(
+          x && x.type && x.data !== undefined ? x : { type: page.drawerType || 'detail', data: x });
+        return (
+          <ErrorBoundary key={sec.widget + i} name={sec.widget}>
+            <W onOpenDrawer={onOpenDrawer} {...(sec.props || {})}/>
+          </ErrorBoundary>
+        );
+      })}
+    </>
+  );
+}
+
 function App() {
-  const [route, setRoute] = useAppState(() => sessionStorage.getItem('lastRoute') || 'overview');
+  const [route, setRoute] = useAppState(() => {
+    const saved = sessionStorage.getItem('lastRoute');
+    const known = saved && (SITE.pages[saved] || SITE.nav.some(n => n.id === saved));
+    return known ? saved : (SITE.defaultRoute || SITE.nav[0].id);
+  });
   const [sidebarCollapsed, setSidebarCollapsed] = useAppState(false);
   const [aiCollapsed, setAiCollapsed] = useAppState(false);
   const [aiMode, setAiMode] = useAppState('thread'); // 'thread' | 'empty'
-  // Generalized drawer state: { type: 'control'|'incident'|'ofi'|'audit', data: object } | null
   const [drawer, setDrawer] = useAppState(() => {
     try {
       const saved = sessionStorage.getItem('openDrawer');
       if (!saved) return null;
       const { type, id } = JSON.parse(saved);
       if (type === 'control') {
-        const ctrl = CONTROLS.find(c => c.id === id);
+        const ctrl = (window.CONTROLS || []).find(c => c.id === id);
         return ctrl ? { type: 'control', data: ctrl } : null;
       }
     } catch(e) {}
     return null;
   });
 
-  // Persist route and drawer so auto-reload restores position
   React.useEffect(() => { sessionStorage.setItem('lastRoute', route); }, [route]);
 
   // Allow child components (e.g. Overview "View all" button) to navigate.
@@ -221,59 +290,32 @@ function App() {
     else sessionStorage.removeItem('openDrawer');
   }, []);
 
+  const page = SITE.pages[route];
+  const routeLabel = (SITE.nav.find(n => n.id === route) || {}).label || '';
+
   const aiContext = drawer
     ? (drawer.type === 'control'  ? `Control ${drawer.data.id}` :
        drawer.type === 'incident' ? `Incident ${drawer.data.id}` :
        drawer.type === 'ofi'      ? drawer.data.id :
        drawer.type === 'audit'    ? `Audit ${drawer.data.id}` :
        'Detail')
-    : route === 'overview'  ? 'Overview'
-    : route === 'core'      ? 'ISMS Core'
-    : route === 'controls'  ? 'Controls'
-    : route === 'incidents' ? 'Incidents'
-    : route === 'audits'    ? 'Audits & Findings'
-    : route.charAt(0).toUpperCase() + route.slice(1);
+    : (page && page.aiContext) || routeLabel || route;
 
   const aiContextDetail = drawer
     ? (drawer.data.name || drawer.data.title || 'detail view')
-    : route === 'overview'  ? '92 controls in scope'
-    : route === 'core'      ? `${ISMS_CLAUSES.reduce((n,g)=>n+g.items.length,0)} clauses · 4–10`
-    : route === 'controls'  ? `${CONTROLS.length} controls`
-    : route === 'incidents' ? `${INCIDENTS.length} active`
-    : route === 'audits'    ? `${AUDIT_REPORTS.length} ${AUDIT_REPORTS.length === 1 ? 'report' : 'reports'} · ${OFIS.length} OFIs`
-    : 'whole ISMS';
+    : tpl((page && page.aiContextDetail) || 'whole ISMS');
 
-  const renderMain = () => {
-    if (route === 'overview')  return <Overview/>;
-    if (route === 'core')      return <ISMSCorePage/>;
-    if (route === 'controls')  return <ControlsPage  onOpenDrawer={(c)=>setDrawerPersisted({type:'control',  data: c})}/>;
-    if (route === 'incidents') return <IncidentsPage onOpenDrawer={(i)=>setDrawerPersisted({type:'incident', data: i})}/>;
-    if (route === 'audits')    return <AuditsPage    onOpenDrawer={setDrawerPersisted}/>;
-    if (route === 'risks')     return <RisksPage/>;
-    if (route === 'vendors')   return <VendorsPage/>;
-    if (route === 'policies')  return <PoliciesPage/>;
-    if (route === 'people')    return <PeoplePage/>;
-    if (route === 'evidence')  return <EvidenceLibraryPage/>;
-    if (route === 'opsproc')   return <OperatingProceduresPage/>;
-    if (route === 'roadmap')   return <RoadmapPage/>;
-    if (route === 'exceptions')return <ExceptionsPage/>;
-    return <StubPage title={NAV.find(n=>n.id===route)?.label || 'Page'} />;
+  // Drawer rendering from the spec: {"control": {"widget": "...", "prop": "ctrl"}, ...}
+  const renderDrawer = () => {
+    if (!drawer) return null;
+    const cfg = (SITE.drawers || {})[drawer.type];
+    if (!cfg) return null;
+    const W = getWidget(cfg.widget);
+    if (!W) return <WidgetErrorCard name={cfg.widget} error="drawer widget not registered"/>;
+    const props = { onClose: () => setDrawerPersisted(null) };
+    props[cfg.prop || 'data'] = drawer.data;
+    return <ErrorBoundary name={cfg.widget}><W {...props}/></ErrorBoundary>;
   };
-
-  const subtitleFor = (r) => (
-    r === 'overview'  ? 'Posture, gaps, exceptions, and audit timeline.' :
-    r === 'core'      ? 'Management-system requirements — the Day 1 morning audit focus.' :
-    r === 'controls'  ? 'All 93 ISO/IEC 27001:2022 controls.' :
-    r === 'incidents' ? `${INCIDENTS.length} recent incidents across canonical and ISMS lists.` :
-    r === 'audits'    ? `${AUDIT_REPORTS.length} audit report(s) · ${OFIS.length}-item OFI register.` :
-    r === 'risks'     ? '3×3 canonical matrix (Policy 23 v1.0) · 50 risks · live risk register.' :
-    r === 'vendors'   ? `${VENDORS.length} suppliers · review cadence per Policy 22.` :
-    r === 'policies'  ? `${POLICY_REGISTER.length} policies · all released v1.0+ and approved.` :
-    r === 'people'    ? 'Security awareness programme · live from Moodle when connected.' :
-    r === 'evidence'  ? 'Consolidated evidence register across the whole ISMS (clause 7.5).' :
-    r === 'exceptions'? `${EXCEPTIONS.length} exceptions · Exception Request Form · 12-month review cycle.` :
-    ''
-  );
 
   return (
     <div style={{ display:'flex', height:'100vh', overflow:'hidden', fontFamily:'Poppins, sans-serif' }}>
@@ -281,16 +323,11 @@ function App() {
         collapsed={sidebarCollapsed} onToggle={()=>setSidebarCollapsed(!sidebarCollapsed)}/>
 
       <div style={{ flex: 1, display:'flex', flexDirection:'column', minWidth: 0, position:'relative' }}>
-        <TopBar collapsed={sidebarCollapsed}/>
+        <TopBar routeLabel={routeLabel}/>
 
         <PageHeader
-          title={
-            route === 'overview' ? 'Overview' :
-            route === 'core'     ? 'ISMS Core (Clauses 4–10)' :
-            route === 'controls' ? 'Controls (Annex A)' :
-            (NAV.find(n=>n.id===route)?.label || '')
-          }
-          subtitle={subtitleFor(route)}
+          title={(page && page.title) || routeLabel}
+          subtitle={tpl((page && page.subtitle) || '')}
           action={
             <div style={{ display:'flex', gap: 8, padding: '0 0 4px' }}>
               <Button variant="outline" size="sm" icon="download">Export</Button>
@@ -306,13 +343,10 @@ function App() {
         />
 
         <div style={{ flex: 1, overflow:'auto', position:'relative' }} className="scroll-y">
-          {renderMain()}
+          <PageBody page={page} pageId={route} openDrawer={setDrawerPersisted}/>
         </div>
 
-        {drawer && drawer.type === 'control'  && <ControlDrawer  ctrl={drawer.data}     onClose={()=>setDrawerPersisted(null)}/>}
-        {drawer && drawer.type === 'incident' && <IncidentDrawer incident={drawer.data} onClose={()=>setDrawerPersisted(null)}/>}
-        {drawer && drawer.type === 'ofi'      && <OFIDrawer      ofi={drawer.data}      onClose={()=>setDrawerPersisted(null)}/>}
-        {drawer && drawer.type === 'audit'    && <AuditDrawer    audit={drawer.data}    onClose={()=>setDrawerPersisted(null)}/>}
+        {renderDrawer()}
       </div>
 
       {aiCollapsed
@@ -329,4 +363,4 @@ function App() {
   );
 }
 
-ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+Object.assign(window, { App, PageHeader, StubPage, WidgetErrorCard, ErrorBoundary });
