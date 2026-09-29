@@ -3,105 +3,81 @@
     {
       "clause": "4",
       "title": "Context of the organisation",
-      "slot": "Day 1 · 09:30–10:30",
+      "slot": "ISO 27001 · 14001 · 9001",
       "items": [
         {
           "id": "4.1",
           "title": "Understanding the organisation and its context",
           "status": "ok",
-          "owner": "Alex",
-          "note": "Context analysis maintained; refreshed after the recent org restructuring.",
+          "owner": "Alex Morgan",
+          "note": "Requirement 4.1 is met. Evidence is held in the Northwind Ltd document portal and was reviewed at the last internal audit.",
           "links": [
             {
-              "label": "ISMS Context and Guidelines",
+              "label": "Procedure for Understanding the organisation and its context",
               "url": "#",
               "type": "doc"
             },
             {
-              "label": "OFI-017 · ISMS docs for org restructuring",
+              "label": "Evidence register 4.1",
               "url": "#",
-              "type": "ticket"
+              "type": "sheet"
             }
           ]
         },
         {
           "id": "4.2",
           "title": "Needs and expectations of interested parties",
-          "status": "ok",
-          "owner": "Alex",
-          "note": "Interested-parties register current.",
+          "status": "amber",
+          "owner": "Jonas Weber",
+          "note": "Requirement 4.2 is largely met. One open corrective action (CA-2026-03) tracks the remaining work, due Q4 2026.",
           "links": [
             {
-              "label": "Interested Parties Register",
+              "label": "Procedure for Needs and expectations of interested parties",
+              "url": "#",
+              "type": "doc"
+            },
+            {
+              "label": "Evidence register 4.2",
               "url": "#",
               "type": "sheet"
-            },
-            {
-              "label": "Interested parties",
-              "url": "#",
-              "type": "doc"
-            },
-            {
-              "label": "Special Interest Groups",
-              "url": "#",
-              "type": "doc"
             }
           ]
         },
         {
           "id": "4.3",
-          "title": "Determining the scope of the ISMS",
+          "title": "Determining the scope of the management systems",
           "status": "ok",
-          "owner": "Alex",
-          "note": "Scope valid. SoA canonical version: Statement of Applicability — Full v1.0 in the task tracker (Applicability + Implementation columns for all 93 controls). Spreadsheet copy = released snapshot with per-control links.",
+          "owner": "Emma Clarke",
+          "note": "Requirement 4.3 is met. Evidence is held in the Northwind Ltd document portal and was reviewed at the last internal audit.",
           "links": [
             {
-              "label": "Statement of Applicability — Full v1.0",
+              "label": "Procedure for Determining the scope of the management systems",
               "url": "#",
               "type": "doc"
             },
             {
-              "label": "Statement of Applicability (spreadsheet)",
+              "label": "Evidence register 4.3",
               "url": "#",
               "type": "sheet"
-            },
-            {
-              "label": "Scope of the ISMS",
-              "url": "#",
-              "type": "doc"
-            },
-            {
-              "label": "OFI-007 · add implementation location to SoA (closed)",
-              "url": "#",
-              "type": "ticket"
             }
           ]
         },
         {
           "id": "4.4",
-          "title": "Information security management system",
+          "title": "Integrated management system",
           "status": "ok",
-          "owner": "Alex",
-          "note": "ISMS established and maintained.",
+          "owner": "Lena Fischer",
+          "note": "Requirement 4.4 is met. Evidence is held in the Northwind Ltd document portal and was reviewed at the last internal audit.",
           "links": [
             {
-              "label": "ISMS Context and Guidelines",
+              "label": "Procedure for Integrated management system",
               "url": "#",
               "type": "doc"
-            }
-          ]
-        },
-        {
-          "id": "4.x",
-          "title": "Climate change relevance (ISO Annex SL amendment)",
-          "status": "ok",
-          "owner": "Alex",
-          "note": "Assessed and documented: not materially relevant to the ISMS (digital/SaaS, minimal footprint). Monitoring for stakeholder changes.",
-          "links": [
+            },
             {
-              "label": "Climate change — context assessment (4.1/4.2)",
+              "label": "Evidence register 4.4",
               "url": "#",
-              "type": "doc"
+              "type": "sheet"
             }
           ]
         }
@@ -110,19 +86,24 @@
     {
       "clause": "5",
       "title": "Leadership",
-      "slot": "Day 1 · 09:30–10:30",
+      "slot": "ISO 27001 · 14001 · 9001",
       "items": [
         {
           "id": "5.1",
           "title": "Leadership and commitment",
           "status": "ok",
-          "owner": "Jordan",
-          "note": "Top-management commitment evidenced in MR-2026.",
+          "owner": "Priya Shah",
+          "note": "Requirement 5.1 is met. Evidence is held in the Northwind Ltd document portal and was reviewed at the last internal audit.",
           "links": [
             {
-              "label": "ISMS Objectives",
+              "label": "Procedure for Leadership and commitment",
               "url": "#",
               "type": "doc"
+            },
+            {
+              "label": "Evidence register 5.1",
+              "url": "#",
+              "type": "sheet"
             }
           ]
         },
@@ -130,23 +111,18 @@
           "id": "5.2",
           "title": "Policy",
           "status": "ok",
-          "owner": "Alex",
-          "note": "All 29 policies released (v1.0+) in the task tracker and approved (Jordan, COO); Policy Log current as of 10.06.2026, 0 approvals pending.",
+          "owner": "Alex Morgan",
+          "note": "Requirement 5.2 is met. Evidence is held in the Northwind Ltd document portal and was reviewed at the last internal audit.",
           "links": [
             {
-              "label": "Policies folder — all 29 policies",
+              "label": "Procedure for Policy",
               "url": "#",
               "type": "doc"
             },
             {
-              "label": "ISMS Policy Log",
+              "label": "Evidence register 5.2",
               "url": "#",
-              "type": "doc"
-            },
-            {
-              "label": "KPI #1 — Policy & Documentation Compliance",
-              "url": "#",
-              "type": "doc"
+              "type": "sheet"
             }
           ]
         },
@@ -154,18 +130,18 @@
           "id": "5.3",
           "title": "Roles, responsibilities and authorities",
           "status": "ok",
-          "owner": "Alex",
-          "note": "Roles, responsibilities and authorities are documented in the roles table within the Scope of the ISMS document (Knowledge Hub), kept current (org chart updated 09.06.2026). Obsolete role references cleaned (OFI-017).",
+          "owner": "Jonas Weber",
+          "note": "Requirement 5.3 is met. Evidence is held in the Northwind Ltd document portal and was reviewed at the last internal audit.",
           "links": [
             {
-              "label": "Roles & responsibilities table (Scope of the ISMS)",
+              "label": "Procedure for Roles, responsibilities and authorities",
               "url": "#",
               "type": "doc"
             },
             {
-              "label": "OFI-017 · obsolete role refs cleanup",
+              "label": "Evidence register 5.3",
               "url": "#",
-              "type": "ticket"
+              "type": "sheet"
             }
           ]
         }
@@ -174,102 +150,100 @@
     {
       "clause": "6",
       "title": "Planning",
-      "slot": "Day 1 · 10:30 (6.2/6.3) + 11:30–12:30 (6.1 risk)",
+      "slot": "ISO 27001 · 14001 · 9001",
       "items": [
         {
-          "id": "6.1",
-          "title": "Actions to address risks and opportunities (6.1.1–6.1.3)",
-          "status": "ok",
-          "owner": "Alex",
-          "note": "Clause-6 audit finding remediated: Policy 23 v1.0 approved (COO, 10.06.2026) with Very High treatment rules and the 3×3 matrix aligned to the live Risk Register. Live ticketing + risk-analysis registers in the task tracker. Open follow-up: OFI-002 (High/VH acceptance list in Management Review); risk-to-control coverage ~91% tracked via KPI-4b.",
+          "id": "6.1.2",
+          "title": "Environmental aspects",
+          "status": "red",
+          "owner": "Emma Clarke",
+          "note": "Demo nonconformity NC-101 is open against 6.1.2. Corrective actions are planned across HQ, Harbour office and Northgate office.",
           "links": [
             {
-              "label": "Risk Analyses (folder)",
+              "label": "Procedure for Environmental aspects",
               "url": "#",
               "type": "doc"
             },
             {
-              "label": "Ticketing Systems (folder)",
-              "url": "#",
-              "type": "ticket"
-            },
-            {
-              "label": "Policy 23 · ISRM v1.0 (3×3 matrix)",
-              "url": "#",
-              "type": "doc"
-            },
-            {
-              "label": "Policy 23 · ISRM v1.0 (PDF)",
-              "url": "#",
-              "type": "doc"
-            },
-            {
-              "label": "Statement of Applicability (spreadsheet)",
+              "label": "Evidence register 6.1.2",
               "url": "#",
               "type": "sheet"
-            },
+            }
+          ]
+        },
+        {
+          "id": "6.1.3a",
+          "title": "Compliance obligations (ISO 14001)",
+          "status": "red",
+          "owner": "Lena Fischer",
+          "note": "Demo nonconformity NC-102 is open against 6.1.3a. Corrective actions are planned across HQ, Harbour office and Northgate office.",
+          "links": [
             {
-              "label": "Statement of Applicability — Full v1.0",
+              "label": "Procedure for Compliance obligations (ISO 14001)",
               "url": "#",
               "type": "doc"
             },
             {
-              "label": "OFI-002 · document High/VH risk acceptance",
+              "label": "Evidence register 6.1.3a",
               "url": "#",
-              "type": "ticket"
+              "type": "sheet"
+            }
+          ]
+        },
+        {
+          "id": "6.1.3b",
+          "title": "Information security risk treatment",
+          "status": "amber",
+          "owner": "Priya Shah",
+          "note": "Requirement 6.1.3b is largely met. One open corrective action (CA-2026-02) tracks the remaining work, due Q4 2026.",
+          "links": [
+            {
+              "label": "Procedure for Information security risk treatment",
+              "url": "#",
+              "type": "doc"
+            },
+            {
+              "label": "Evidence register 6.1.3b",
+              "url": "#",
+              "type": "sheet"
             }
           ]
         },
         {
           "id": "6.2",
-          "title": "Information security objectives and planning",
+          "title": "Objectives and planning to achieve them",
           "status": "amber",
-          "owner": "Alex",
-          "note": "KPI #3 endpoint coverage largely remediated (13.06): endpoint agent now on 11/12 laptops (~92%, incl. the new contractor device) — only one laptop pending; up from ~50% on 19 May (OFI-019). KPI #2 incident-mgmt SLA still ~33% (ISMS-2711); backlog reduced as the contractor-laptop incident (ISMS-2712) is now closed. The planned Board-approved SLA relaxation has NOT yet been filed in the Exception Register. Auditor story: breaches self-detected by the KPI framework, raised as ISMS incidents with documented corrective plans.",
+          "owner": "Alex Morgan",
+          "note": "Requirement 6.2 is largely met. One open corrective action (CA-2026-03) tracks the remaining work, due Q4 2026.",
           "links": [
             {
-              "label": "ISMS Objectives",
+              "label": "Procedure for Objectives and planning to achieve them",
               "url": "#",
               "type": "doc"
             },
             {
-              "label": "KPIs",
+              "label": "Evidence register 6.2",
               "url": "#",
-              "type": "doc"
-            },
-            {
-              "label": "ISMS-2711 · SLA KPI incident (unstarted)",
-              "url": "#",
-              "type": "ticket"
-            },
-            {
-              "label": "ISMS-2710 · endpoint coverage incident",
-              "url": "#",
-              "type": "ticket"
-            },
-            {
-              "label": "OFI-019 · endpoint agent rollout",
-              "url": "#",
-              "type": "ticket"
+              "type": "sheet"
             }
           ]
         },
         {
           "id": "6.3",
           "title": "Planning of changes",
-          "status": "ok",
-          "owner": "Sam",
-          "note": "Change Management Form drives change planning; risk treatment now tracked through it.",
+          "status": "amber",
+          "owner": "Jonas Weber",
+          "note": "Requirement 6.3 is largely met. One open corrective action (CA-2026-04) tracks the remaining work, due Q4 2026.",
           "links": [
             {
-              "label": "Corrective Measures",
+              "label": "Procedure for Planning of changes",
               "url": "#",
               "type": "doc"
             },
             {
-              "label": "OFI-003 · risk treatment via Change Mgmt Form",
+              "label": "Evidence register 6.3",
               "url": "#",
-              "type": "ticket"
+              "type": "sheet"
             }
           ]
         }
@@ -278,37 +252,43 @@
     {
       "clause": "7",
       "title": "Support",
-      "slot": "Day 1 · 10:30–11:30",
+      "slot": "ISO 27001 · 14001 · 9001",
       "items": [
         {
           "id": "7.1",
           "title": "Resources",
-          "status": "ok",
-          "owner": "Jordan",
-          "note": "ISMS resourcing confirmed in MR-2026.",
-          "links": []
+          "status": "amber",
+          "owner": "Emma Clarke",
+          "note": "Requirement 7.1 is largely met. One open corrective action (CA-2026-05) tracks the remaining work, due Q4 2026.",
+          "links": [
+            {
+              "label": "Procedure for Resources",
+              "url": "#",
+              "type": "doc"
+            },
+            {
+              "label": "Evidence register 7.1",
+              "url": "#",
+              "type": "sheet"
+            }
+          ]
         },
         {
           "id": "7.2",
           "title": "Competence",
-          "status": "ok",
-          "owner": "Riley",
-          "note": "Competence and training records maintained. Security-awareness / competence training is delivered and tracked in Moodle (AI Policy training, completion gradebook). Roles, responsibilities and the current org chart are documented in the Scope of the ISMS.",
+          "status": "amber",
+          "owner": "Lena Fischer",
+          "note": "Requirement 7.2 is largely met. One open corrective action (CA-2026-06) tracks the remaining work, due Q4 2026.",
           "links": [
             {
-              "label": "Moodle — training & competence records (AI Policy training)",
-              "url": "#",
-              "type": "ext"
-            },
-            {
-              "label": "Roles & responsibilities table (Scope of the ISMS)",
+              "label": "Procedure for Competence",
               "url": "#",
               "type": "doc"
             },
             {
-              "label": "Organisational chart (Scope of the ISMS §5.1)",
+              "label": "Evidence register 7.2",
               "url": "#",
-              "type": "doc"
+              "type": "sheet"
             }
           ]
         },
@@ -316,18 +296,18 @@
           "id": "7.3",
           "title": "Awareness",
           "status": "ok",
-          "owner": "Riley",
-          "note": "Awareness programme operational: AI Policy training (AI-POLICY-101) live on Moodle, assigned at onboarding and reinforced via Teams posts; participation tracking formalised (OFI-012 complete). CISO maintains the completion register.",
+          "owner": "Priya Shah",
+          "note": "Requirement 7.3 is met. Evidence is held in the Northwind Ltd document portal and was reviewed at the last internal audit.",
           "links": [
             {
-              "label": "Moodle — AI Policy training",
+              "label": "Procedure for Awareness",
               "url": "#",
-              "type": "ext"
+              "type": "doc"
             },
             {
-              "label": "OFI-012 · formalize awareness/training tracking",
+              "label": "Evidence register 7.3",
               "url": "#",
-              "type": "ticket"
+              "type": "sheet"
             }
           ]
         },
@@ -335,52 +315,37 @@
           "id": "7.4",
           "title": "Communication",
           "status": "ok",
-          "owner": "Alex",
-          "note": "Internal and external communication needs are defined in the ISMS Communication Plan (what, when, with whom, and how to communicate).",
+          "owner": "Alex Morgan",
+          "note": "Requirement 7.4 is met. Evidence is held in the Northwind Ltd document portal and was reviewed at the last internal audit.",
           "links": [
             {
-              "label": "ISMS Communication Plan (PPTX)",
+              "label": "Procedure for Communication",
               "url": "#",
               "type": "doc"
+            },
+            {
+              "label": "Evidence register 7.4",
+              "url": "#",
+              "type": "sheet"
             }
           ]
         },
         {
           "id": "7.5",
           "title": "Documented information",
-          "status": "ok",
-          "owner": "Alex",
-          "note": "Documented-info updates evidenced via version tables + doc history across all released policies (OFI-004 complete). HR documents under document control in the HR space Documents folder (OFI-011 — formal inventory with Riley in progress).",
+          "status": "amber",
+          "owner": "Jonas Weber",
+          "note": "Requirement 7.5 is largely met. One open corrective action (CA-2026-09) tracks the remaining work, due Q4 2026.",
           "links": [
             {
-              "label": "ISMS Documented Information — Master Register",
+              "label": "Procedure for Documented information",
               "url": "#",
               "type": "doc"
             },
             {
-              "label": "Employee Handbook",
+              "label": "Evidence register 7.5",
               "url": "#",
-              "type": "doc"
-            },
-            {
-              "label": "Knowledge Hub — ISO Mandatory Documents",
-              "url": "#",
-              "type": "doc"
-            },
-            {
-              "label": "HR Documents (document control)",
-              "url": "#",
-              "type": "doc"
-            },
-            {
-              "label": "OFI-004 · verifiable evidence for doc updates (closed)",
-              "url": "#",
-              "type": "ticket"
-            },
-            {
-              "label": "OFI-011 · HR templates under document control",
-              "url": "#",
-              "type": "ticket"
+              "type": "sheet"
             }
           ]
         }
@@ -389,112 +354,81 @@
     {
       "clause": "8",
       "title": "Operation",
-      "slot": "Day 1 · 11:30–12:30 (with 6.1)",
+      "slot": "ISO 27001 · 14001 · 9001",
       "items": [
         {
           "id": "8.1",
           "title": "Operational planning and control",
           "status": "amber",
-          "owner": "Alex",
-          "note": "Operating Procedures Register in place (45 procedures, 9 categories; last reviewed Mar 2026). Correction 12.06: the endpoint-logging deployment item is tracked as OFI-019 (now ~92% / 11 of 12 laptops) — no standing compliance-review ticket for the register exists; either file one before the audit or present the Mar 2026 review as current. Changes controlled via the change register (CR-NNN) per Policy 02 v1.0; outsourced processes governed by Policies 22/27.",
+          "owner": "Emma Clarke",
+          "note": "Requirement 8.1 is largely met. One open corrective action (CA-2026-01) tracks the remaining work, due Q4 2026.",
           "links": [
             {
-              "label": "5.37 Operating Procedures Register v1.1",
+              "label": "Procedure for Operational planning and control",
               "url": "#",
               "type": "doc"
             },
             {
-              "label": "5.37 Operating Procedures Register v1.1 (PDF)",
+              "label": "Evidence register 8.1",
               "url": "#",
-              "type": "doc"
-            },
-            {
-              "label": "5.37 Register — v1.0 (history)",
-              "url": "#",
-              "type": "doc"
-            },
-            {
-              "label": "Change Management Form register (CR-NNN)",
-              "url": "#",
-              "type": "ticket"
-            },
-            {
-              "label": "Policy 24 · Operating Procedures",
-              "url": "#",
-              "type": "doc"
-            },
-            {
-              "label": "Policy 24 · Operating Procedures (PDF)",
-              "url": "#",
-              "type": "doc"
-            },
-            {
-              "label": "OFI-019 · endpoint logging deployment",
-              "url": "#",
-              "type": "ticket"
+              "type": "sheet"
             }
           ]
         },
         {
-          "id": "8.2",
+          "id": "8.2a",
           "title": "Information security risk assessment",
-          "status": "ok",
-          "owner": "Alex",
-          "note": "Risk assessments at planned intervals: bulk annual review of 50+ risks completed Jan–Mar 2026 using the canonical 3×3 method (Policy 23 v1.0); results in the live Risk Register.",
+          "status": "amber",
+          "owner": "Lena Fischer",
+          "note": "Requirement 8.2a is largely met. One open corrective action (CA-2026-02) tracks the remaining work, due Q4 2026.",
           "links": [
             {
-              "label": "Risk Register — Risk Analysis Annex A (live)",
+              "label": "Procedure for Information security risk assessment",
               "url": "#",
               "type": "doc"
             },
             {
-              "label": "Risk Analyses (folder)",
+              "label": "Evidence register 8.2a",
+              "url": "#",
+              "type": "sheet"
+            }
+          ]
+        },
+        {
+          "id": "8.2b",
+          "title": "Emergency preparedness and response (ISO 14001)",
+          "status": "red",
+          "owner": "Priya Shah",
+          "note": "Demo nonconformity NC-105 is open against 8.2b. Corrective actions are planned across HQ, Harbour office and Northgate office.",
+          "links": [
+            {
+              "label": "Procedure for Emergency preparedness and response (ISO 14001)",
               "url": "#",
               "type": "doc"
             },
             {
-              "label": "Policy 23 · ISRM v1.0 (3×3 method)",
+              "label": "Evidence register 8.2b",
               "url": "#",
-              "type": "doc"
-            },
-            {
-              "label": "Policy 23 · ISRM v1.0 (PDF)",
-              "url": "#",
-              "type": "doc"
-            },
-            {
-              "label": "Statement of Applicability — Full v1.0",
-              "url": "#",
-              "type": "doc"
+              "type": "sheet"
             }
           ]
         },
         {
           "id": "8.3",
           "title": "Information security risk treatment",
-          "status": "ok",
-          "owner": "Alex",
-          "note": "Treatment plans tracked per risk in the register; treatment routed through the Change Management Form (OFI-003 complete); acceptance per Policy 23 §7.4, Very High only via Board + Exception Register.",
+          "status": "amber",
+          "owner": "Alex Morgan",
+          "note": "Requirement 8.3 is largely met. One open corrective action (CA-2026-04) tracks the remaining work, due Q4 2026.",
           "links": [
             {
-              "label": "Policy 23 · ISRM v1.0 (§7.3/§7.4)",
+              "label": "Procedure for Information security risk treatment",
               "url": "#",
               "type": "doc"
             },
             {
-              "label": "Policy 23 · ISRM v1.0 (PDF)",
+              "label": "Evidence register 8.3",
               "url": "#",
-              "type": "doc"
-            },
-            {
-              "label": "OFI-003 · risk treatment via Change Mgmt Form (closed)",
-              "url": "#",
-              "type": "ticket"
-            },
-            {
-              "label": "Exception Register (EX-001/EX-002)",
-              "url": "#",
-              "type": "ticket"
+              "type": "sheet"
             }
           ]
         }
@@ -503,68 +437,43 @@
     {
       "clause": "9",
       "title": "Performance evaluation",
-      "slot": "Day 1 · 10:30–11:30",
+      "slot": "ISO 27001 · 14001 · 9001",
       "items": [
         {
           "id": "9.1",
           "title": "Monitoring, measurement, analysis and evaluation",
           "status": "amber",
-          "owner": "Alex",
-          "note": "KPI framework live and demonstrably operating — KPI #2 (incident SLA ~33%) and KPI #3 (endpoint coverage) re-measured 19 May and raised as ISMS incidents per OFI-005. KPI #3 now ~92% (11/12 laptops, one pending) — largely remediated under OFI-019. KPI #2 still open: ISMS-2711 not yet actioned and the proposed SLA exception not yet filed. Position for auditor: monitoring is effective (it found the problems) and remediation is demonstrably progressing.",
+          "owner": "Jonas Weber",
+          "note": "Requirement 9.1 is largely met. One open corrective action (CA-2026-05) tracks the remaining work, due Q4 2026.",
           "links": [
             {
-              "label": "KPIs",
+              "label": "Procedure for Monitoring, measurement, analysis and evaluation",
               "url": "#",
               "type": "doc"
             },
             {
-              "label": "KPI #2 — Incident Management",
+              "label": "Evidence register 9.1",
               "url": "#",
-              "type": "doc"
-            },
-            {
-              "label": "KPI #3 — Endpoint & Device Security",
-              "url": "#",
-              "type": "doc"
-            },
-            {
-              "label": "ISMS-2710 · KPI-3 incident",
-              "url": "#",
-              "type": "ticket"
-            },
-            {
-              "label": "ISMS-2711 · KPI-2 incident",
-              "url": "#",
-              "type": "ticket"
+              "type": "sheet"
             }
           ]
         },
         {
           "id": "9.2",
           "title": "Internal audit",
-          "status": "ok",
-          "owner": "Alex",
-          "note": "Internal audit completed (J. Miller, external auditor; 16 OFIs — all tracked) and Management Review 2026 held. The branch office is an explicit auditable unit in the Audit Programme 2026–2027 (branch audit scheduled Q4 2026, OFI-006 closed); the serviced-office provider (branch premises) obtained ISO 27001 certification in 2026, first time.",
+          "status": "amber",
+          "owner": "Emma Clarke",
+          "note": "Requirement 9.2 is largely met. One open corrective action (CA-2026-06) tracks the remaining work, due Q4 2026.",
           "links": [
             {
-              "label": "Audit Programme & Calendar 2026–2027",
+              "label": "Procedure for Internal audit",
               "url": "#",
               "type": "doc"
             },
             {
-              "label": "Audit Reports",
+              "label": "Evidence register 9.2",
               "url": "#",
-              "type": "doc"
-            },
-            {
-              "label": "Audit Programme 2025-2026",
-              "url": "#",
-              "type": "doc"
-            },
-            {
-              "label": "OFI-006 · branch office in audit programme (closed)",
-              "url": "#",
-              "type": "ticket"
+              "type": "sheet"
             }
           ]
         },
@@ -572,18 +481,18 @@
           "id": "9.3",
           "title": "Management review",
           "status": "ok",
-          "owner": "Jordan",
-          "note": "Management Review 2026 held 12.04.2026 (facilitated by J. Miller; period 05/2024–03/2026) and now published in the Knowledge Hub. Top management concluded the ISMS remains suitable/adequate/effective but needs targeted adaptation post-headcount-reduction; MR action items tracked.",
+          "owner": "Lena Fischer",
+          "note": "Requirement 9.3 is met. Evidence is held in the Northwind Ltd document portal and was reviewed at the last internal audit.",
           "links": [
             {
-              "label": "Management Review 2026 (Knowledge Hub)",
+              "label": "Procedure for Management review",
               "url": "#",
               "type": "doc"
             },
             {
-              "label": "Audit Reports & Management Reviews",
+              "label": "Evidence register 9.3",
               "url": "#",
-              "type": "doc"
+              "type": "sheet"
             }
           ]
         }
@@ -592,43 +501,43 @@
     {
       "clause": "10",
       "title": "Improvement",
-      "slot": "Day 1 · 10:30–11:30",
+      "slot": "ISO 27001 · 14001 · 9001",
       "items": [
         {
           "id": "10.1",
           "title": "Continual improvement",
           "status": "ok",
-          "owner": "Alex",
-          "note": "Improvement cycle running via OFI/MR backlog.",
+          "owner": "Priya Shah",
+          "note": "Requirement 10.1 is met. Evidence is held in the Northwind Ltd document portal and was reviewed at the last internal audit.",
           "links": [
             {
-              "label": "Corrective Measures",
+              "label": "Procedure for Continual improvement",
               "url": "#",
               "type": "doc"
+            },
+            {
+              "label": "Evidence register 10.1",
+              "url": "#",
+              "type": "sheet"
             }
           ]
         },
         {
           "id": "10.2",
           "title": "Nonconformity and corrective action",
-          "status": "ok",
-          "owner": "Alex",
-          "note": "Incidents / Changes / Corrective Actions split into separate workflows.",
+          "status": "amber",
+          "owner": "Alex Morgan",
+          "note": "Requirement 10.2 is largely met. One open corrective action (CA-2026-09) tracks the remaining work, due Q4 2026.",
           "links": [
             {
-              "label": "Corrective Measures",
+              "label": "Procedure for Nonconformity and corrective action",
               "url": "#",
               "type": "doc"
             },
             {
-              "label": "Corrective Actions — ticketing system",
+              "label": "Evidence register 10.2",
               "url": "#",
-              "type": "ticket"
-            },
-            {
-              "label": "OFI-018 · separate Incidents/Changes/Corrective Actions",
-              "url": "#",
-              "type": "ticket"
+              "type": "sheet"
             }
           ]
         }

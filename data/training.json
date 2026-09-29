@@ -1,0 +1,605 @@
+{
+  "TRAINING_STATUS": {
+    "source": "Demo LMS (https://example.com/lms) - read-only export",
+    "syncedAt": "2026-09-20T10:00:00Z",
+    "userCount": 8,
+    "courseCount": 9,
+    "courseStatus": {
+      "103": "active",
+      "106": "active",
+      "108": "active",
+      "107": "active",
+      "109": "inactive",
+      "101": "active",
+      "104": "active",
+      "105": "active",
+      "102": "active"
+    },
+    "people": [
+      {
+        "id": 11,
+        "name": "Alex Morgan",
+        "email": "alex.morgan@example.com",
+        "type": "Learner-Type",
+        "last_login": "2026-09-11T08:30:00+02:00",
+        "courses": [
+          {
+            "id": 101,
+            "name": "Information Security Awareness",
+            "enrolled_on": "2026-02-01T09:00:00+01:00",
+            "completed_on": null,
+            "status": "not_attempted",
+            "percent": 0
+          },
+          {
+            "id": 102,
+            "name": "Acceptable Use Policy Awareness",
+            "enrolled_on": "2026-02-02T09:00:00+01:00",
+            "completed_on": "2026-04-12T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          },
+          {
+            "id": 103,
+            "name": "GDPR and Data Protection",
+            "enrolled_on": "2026-02-03T09:00:00+01:00",
+            "completed_on": "2026-05-13T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          },
+          {
+            "id": 104,
+            "name": "Social Engineering and Phishing",
+            "enrolled_on": "2026-02-04T09:00:00+01:00",
+            "completed_on": "2026-06-14T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          },
+          {
+            "id": 105,
+            "name": "Anti-Bribery Practices",
+            "enrolled_on": "2026-02-05T09:00:00+01:00",
+            "completed_on": null,
+            "status": "incomplete",
+            "percent": 40
+          },
+          {
+            "id": 106,
+            "name": "EMS & Environmental Policy Awareness",
+            "enrolled_on": "2026-02-06T09:00:00+01:00",
+            "completed_on": null,
+            "status": "not_attempted",
+            "percent": 0
+          },
+          {
+            "id": 107,
+            "name": "Physical Security",
+            "enrolled_on": "2026-02-07T09:00:00+01:00",
+            "completed_on": "2026-04-17T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          },
+          {
+            "id": 108,
+            "name": "Guide for Learners",
+            "enrolled_on": "2026-02-08T09:00:00+01:00",
+            "completed_on": "2026-05-18T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "name": "Priya Shah",
+        "email": "priya.shah@example.com",
+        "type": "Admin-Type",
+        "last_login": "2026-09-12T08:30:00+02:00",
+        "courses": [
+          {
+            "id": 101,
+            "name": "Information Security Awareness",
+            "enrolled_on": "2026-02-01T09:00:00+01:00",
+            "completed_on": "2026-06-11T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          },
+          {
+            "id": 102,
+            "name": "Acceptable Use Policy Awareness",
+            "enrolled_on": "2026-02-02T09:00:00+01:00",
+            "completed_on": null,
+            "status": "incomplete",
+            "percent": 40
+          },
+          {
+            "id": 103,
+            "name": "GDPR and Data Protection",
+            "enrolled_on": "2026-02-03T09:00:00+01:00",
+            "completed_on": null,
+            "status": "not_attempted",
+            "percent": 0
+          },
+          {
+            "id": 104,
+            "name": "Social Engineering and Phishing",
+            "enrolled_on": "2026-02-04T09:00:00+01:00",
+            "completed_on": "2026-04-14T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          },
+          {
+            "id": 105,
+            "name": "Anti-Bribery Practices",
+            "enrolled_on": "2026-02-05T09:00:00+01:00",
+            "completed_on": "2026-05-15T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          },
+          {
+            "id": 106,
+            "name": "EMS & Environmental Policy Awareness",
+            "enrolled_on": "2026-02-06T09:00:00+01:00",
+            "completed_on": "2026-06-16T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          },
+          {
+            "id": 107,
+            "name": "Physical Security",
+            "enrolled_on": "2026-02-07T09:00:00+01:00",
+            "completed_on": null,
+            "status": "incomplete",
+            "percent": 40
+          },
+          {
+            "id": 108,
+            "name": "Guide for Learners",
+            "enrolled_on": "2026-02-08T09:00:00+01:00",
+            "completed_on": null,
+            "status": "not_attempted",
+            "percent": 0
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "name": "Tom Becker",
+        "email": "tom.becker@example.com",
+        "type": "Learner-Type",
+        "last_login": "2026-09-13T08:30:00+02:00",
+        "courses": [
+          {
+            "id": 101,
+            "name": "Information Security Awareness",
+            "enrolled_on": "2026-02-01T09:00:00+01:00",
+            "completed_on": "2026-04-11T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          },
+          {
+            "id": 102,
+            "name": "Acceptable Use Policy Awareness",
+            "enrolled_on": "2026-02-02T09:00:00+01:00",
+            "completed_on": "2026-05-12T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          },
+          {
+            "id": 103,
+            "name": "GDPR and Data Protection",
+            "enrolled_on": "2026-02-03T09:00:00+01:00",
+            "completed_on": "2026-06-13T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          },
+          {
+            "id": 104,
+            "name": "Social Engineering and Phishing",
+            "enrolled_on": "2026-02-04T09:00:00+01:00",
+            "completed_on": null,
+            "status": "incomplete",
+            "percent": 40
+          },
+          {
+            "id": 105,
+            "name": "Anti-Bribery Practices",
+            "enrolled_on": "2026-02-05T09:00:00+01:00",
+            "completed_on": null,
+            "status": "not_attempted",
+            "percent": 0
+          },
+          {
+            "id": 106,
+            "name": "EMS & Environmental Policy Awareness",
+            "enrolled_on": "2026-02-06T09:00:00+01:00",
+            "completed_on": "2026-04-16T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          },
+          {
+            "id": 107,
+            "name": "Physical Security",
+            "enrolled_on": "2026-02-07T09:00:00+01:00",
+            "completed_on": "2026-05-17T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          },
+          {
+            "id": 108,
+            "name": "Guide for Learners",
+            "enrolled_on": "2026-02-08T09:00:00+01:00",
+            "completed_on": "2026-06-18T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "name": "Lena Novak",
+        "email": "lena.novak@example.com",
+        "type": "Trainer-Type",
+        "last_login": "2026-09-14T08:30:00+02:00",
+        "courses": [
+          {
+            "id": 101,
+            "name": "Information Security Awareness",
+            "enrolled_on": "2026-02-01T09:00:00+01:00",
+            "completed_on": null,
+            "status": "incomplete",
+            "percent": 40
+          },
+          {
+            "id": 102,
+            "name": "Acceptable Use Policy Awareness",
+            "enrolled_on": "2026-02-02T09:00:00+01:00",
+            "completed_on": null,
+            "status": "not_attempted",
+            "percent": 0
+          },
+          {
+            "id": 103,
+            "name": "GDPR and Data Protection",
+            "enrolled_on": "2026-02-03T09:00:00+01:00",
+            "completed_on": "2026-04-13T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          },
+          {
+            "id": 104,
+            "name": "Social Engineering and Phishing",
+            "enrolled_on": "2026-02-04T09:00:00+01:00",
+            "completed_on": "2026-05-14T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          },
+          {
+            "id": 105,
+            "name": "Anti-Bribery Practices",
+            "enrolled_on": "2026-02-05T09:00:00+01:00",
+            "completed_on": "2026-06-15T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          },
+          {
+            "id": 106,
+            "name": "EMS & Environmental Policy Awareness",
+            "enrolled_on": "2026-02-06T09:00:00+01:00",
+            "completed_on": null,
+            "status": "incomplete",
+            "percent": 40
+          },
+          {
+            "id": 107,
+            "name": "Physical Security",
+            "enrolled_on": "2026-02-07T09:00:00+01:00",
+            "completed_on": null,
+            "status": "not_attempted",
+            "percent": 0
+          },
+          {
+            "id": 108,
+            "name": "Guide for Learners",
+            "enrolled_on": "2026-02-08T09:00:00+01:00",
+            "completed_on": "2026-04-18T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "name": "Samuel Okafor",
+        "email": "samuel.okafor@example.com",
+        "type": "Learner-Type",
+        "last_login": null,
+        "courses": [
+          {
+            "id": 101,
+            "name": "Information Security Awareness",
+            "enrolled_on": "2026-02-01T09:00:00+01:00",
+            "completed_on": "2026-05-11T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          },
+          {
+            "id": 102,
+            "name": "Acceptable Use Policy Awareness",
+            "enrolled_on": "2026-02-02T09:00:00+01:00",
+            "completed_on": "2026-06-12T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          },
+          {
+            "id": 103,
+            "name": "GDPR and Data Protection",
+            "enrolled_on": "2026-02-03T09:00:00+01:00",
+            "completed_on": null,
+            "status": "incomplete",
+            "percent": 40
+          },
+          {
+            "id": 104,
+            "name": "Social Engineering and Phishing",
+            "enrolled_on": "2026-02-04T09:00:00+01:00",
+            "completed_on": null,
+            "status": "not_attempted",
+            "percent": 0
+          },
+          {
+            "id": 105,
+            "name": "Anti-Bribery Practices",
+            "enrolled_on": "2026-02-05T09:00:00+01:00",
+            "completed_on": "2026-04-15T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          },
+          {
+            "id": 106,
+            "name": "EMS & Environmental Policy Awareness",
+            "enrolled_on": "2026-02-06T09:00:00+01:00",
+            "completed_on": "2026-05-16T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          },
+          {
+            "id": 107,
+            "name": "Physical Security",
+            "enrolled_on": "2026-02-07T09:00:00+01:00",
+            "completed_on": "2026-06-17T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          },
+          {
+            "id": 108,
+            "name": "Guide for Learners",
+            "enrolled_on": "2026-02-08T09:00:00+01:00",
+            "completed_on": null,
+            "status": "incomplete",
+            "percent": 40
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "name": "Maria Jennings",
+        "email": "maria.jennings@example.com",
+        "type": "Learner-Type",
+        "last_login": "2026-09-16T08:30:00+02:00",
+        "courses": [
+          {
+            "id": 101,
+            "name": "Information Security Awareness",
+            "enrolled_on": "2026-02-01T09:00:00+01:00",
+            "completed_on": null,
+            "status": "not_attempted",
+            "percent": 0
+          },
+          {
+            "id": 102,
+            "name": "Acceptable Use Policy Awareness",
+            "enrolled_on": "2026-02-02T09:00:00+01:00",
+            "completed_on": "2026-04-12T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          },
+          {
+            "id": 103,
+            "name": "GDPR and Data Protection",
+            "enrolled_on": "2026-02-03T09:00:00+01:00",
+            "completed_on": "2026-05-13T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          },
+          {
+            "id": 104,
+            "name": "Social Engineering and Phishing",
+            "enrolled_on": "2026-02-04T09:00:00+01:00",
+            "completed_on": "2026-06-14T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          },
+          {
+            "id": 105,
+            "name": "Anti-Bribery Practices",
+            "enrolled_on": "2026-02-05T09:00:00+01:00",
+            "completed_on": null,
+            "status": "incomplete",
+            "percent": 40
+          },
+          {
+            "id": 106,
+            "name": "EMS & Environmental Policy Awareness",
+            "enrolled_on": "2026-02-06T09:00:00+01:00",
+            "completed_on": null,
+            "status": "not_attempted",
+            "percent": 0
+          },
+          {
+            "id": 107,
+            "name": "Physical Security",
+            "enrolled_on": "2026-02-07T09:00:00+01:00",
+            "completed_on": "2026-04-17T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          },
+          {
+            "id": 108,
+            "name": "Guide for Learners",
+            "enrolled_on": "2026-02-08T09:00:00+01:00",
+            "completed_on": "2026-05-18T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "name": "Chris Doyle",
+        "email": "chris.doyle@example.com",
+        "type": "SuperAdmin",
+        "last_login": "2026-09-17T08:30:00+02:00",
+        "courses": [
+          {
+            "id": 101,
+            "name": "Information Security Awareness",
+            "enrolled_on": "2026-02-01T09:00:00+01:00",
+            "completed_on": "2026-06-11T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          },
+          {
+            "id": 102,
+            "name": "Acceptable Use Policy Awareness",
+            "enrolled_on": "2026-02-02T09:00:00+01:00",
+            "completed_on": null,
+            "status": "incomplete",
+            "percent": 40
+          },
+          {
+            "id": 103,
+            "name": "GDPR and Data Protection",
+            "enrolled_on": "2026-02-03T09:00:00+01:00",
+            "completed_on": null,
+            "status": "not_attempted",
+            "percent": 0
+          },
+          {
+            "id": 104,
+            "name": "Social Engineering and Phishing",
+            "enrolled_on": "2026-02-04T09:00:00+01:00",
+            "completed_on": "2026-04-14T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          },
+          {
+            "id": 105,
+            "name": "Anti-Bribery Practices",
+            "enrolled_on": "2026-02-05T09:00:00+01:00",
+            "completed_on": "2026-05-15T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          },
+          {
+            "id": 106,
+            "name": "EMS & Environmental Policy Awareness",
+            "enrolled_on": "2026-02-06T09:00:00+01:00",
+            "completed_on": "2026-06-16T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          },
+          {
+            "id": 107,
+            "name": "Physical Security",
+            "enrolled_on": "2026-02-07T09:00:00+01:00",
+            "completed_on": null,
+            "status": "incomplete",
+            "percent": 40
+          },
+          {
+            "id": 108,
+            "name": "Guide for Learners",
+            "enrolled_on": "2026-02-08T09:00:00+01:00",
+            "completed_on": null,
+            "status": "not_attempted",
+            "percent": 0
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "name": "Nina Laurent",
+        "email": "nina.laurent@example.com",
+        "type": "Learner-Type",
+        "last_login": "2026-09-18T08:30:00+02:00",
+        "courses": [
+          {
+            "id": 101,
+            "name": "Information Security Awareness",
+            "enrolled_on": "2026-02-01T09:00:00+01:00",
+            "completed_on": "2026-04-11T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          },
+          {
+            "id": 102,
+            "name": "Acceptable Use Policy Awareness",
+            "enrolled_on": "2026-02-02T09:00:00+01:00",
+            "completed_on": "2026-05-12T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          },
+          {
+            "id": 103,
+            "name": "GDPR and Data Protection",
+            "enrolled_on": "2026-02-03T09:00:00+01:00",
+            "completed_on": "2026-06-13T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          },
+          {
+            "id": 104,
+            "name": "Social Engineering and Phishing",
+            "enrolled_on": "2026-02-04T09:00:00+01:00",
+            "completed_on": null,
+            "status": "incomplete",
+            "percent": 40
+          },
+          {
+            "id": 105,
+            "name": "Anti-Bribery Practices",
+            "enrolled_on": "2026-02-05T09:00:00+01:00",
+            "completed_on": null,
+            "status": "not_attempted",
+            "percent": 0
+          },
+          {
+            "id": 106,
+            "name": "EMS & Environmental Policy Awareness",
+            "enrolled_on": "2026-02-06T09:00:00+01:00",
+            "completed_on": "2026-04-16T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          },
+          {
+            "id": 107,
+            "name": "Physical Security",
+            "enrolled_on": "2026-02-07T09:00:00+01:00",
+            "completed_on": "2026-05-17T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          },
+          {
+            "id": 108,
+            "name": "Guide for Learners",
+            "enrolled_on": "2026-02-08T09:00:00+01:00",
+            "completed_on": "2026-06-18T10:00:00+02:00",
+            "status": "completed",
+            "percent": 100
+          }
+        ]
+      }
+    ]
+  }
+}

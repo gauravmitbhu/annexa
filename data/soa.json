@@ -1,0 +1,624 @@
+{
+  "SOA_NOTE": "Demo data. The company is certified to three standards but only ISO/IEC 27001 requires a Statement of Applicability (clause 6.1.3 d). The 9001 and 14001 tabs record what plays the same role in each system.",
+  "SOA_STANDARDS": [
+    {
+      "id": "27001", "standard": "ISO/IEC 27001:2022", "title": "Statement of Applicability", "exists": true,
+      "docId": "Statement of Applicability - Northwind Ltd v2.0", "version": "2.0", "effective": "2026-08-01",
+      "sourcePath": "Compliance library › SoA › Statement of Applicability v2.0.xlsx", "sheet": "SoA Global",
+      "author": "Alex Morgan", "approver": null,
+      "clause": "6.1.3 d) — determine all controls necessary and compare with Annex A",
+      "scope": "Group-wide. A single SoA covering HQ – Riverside, Office – Harbour and Office – Northgate.",
+      "controlCount": 93, "applicable": 93, "excluded": 0,
+      "summary": "All 93 Annex A controls are declared applicable. Per-control justification and implementation description are shown against each control.",
+      "links": [
+        { "label": "SoA register", "url": "https://example.com/isms/soa", "note": "The live Statement of Applicability. Home of record." },
+        { "label": "SoA v2.0 (PDF)", "url": "https://example.com/isms/soa-v2.0.pdf", "note": "The copy to send to customers." },
+        { "label": "SoA v1.0 (PDF) — Archived", "url": "https://example.com/isms/archive/soa-v1.0.pdf", "note": "Correctly archived. Kept for the record." },
+        { "label": "Nonconformity register", "url": "https://example.com/isms/nonconformities", "note": "Where SoA-related nonconformities and corrective actions are tracked." }
+      ],
+      "pdf": "https://example.com/isms/soa-v2.0.pdf"
+    },
+    {
+      "id": "9001", "standard": "ISO 9001:2015", "title": "Applicability statement — quality", "exists": false,
+      "clause": "4.3 — determining the scope of the quality management system",
+      "scope": "All Northwind Ltd sites and all processes within the certified management system.",
+      "summary": "ISO 9001 has no Annex A and therefore no SoA. The equivalent is the clause 4.3 scope statement, which records any non-applicable requirement with justification. All of clauses 4–10 apply.",
+      "standsIn": [
+        { "what": "Clause 4.3 scope statement", "where": "IMS Core (Cl. 4–10) → 4.3", "state": "In place" },
+        { "what": "Process map and process owners", "where": "Processes", "state": "In place" },
+        { "what": "Quality objectives", "where": "IMS Core → 6.2", "state": "In place" }
+      ],
+      "gaps": [
+        { "ref": "F-010", "note": "Clause 4.4.1: process sequence, interaction and criteria not fully documented." }
+      ],
+      "links": [ { "label": "Management system library", "url": "https://example.com/isms", "note": "Scope statement, processes and quality objectives." } ]
+    },
+    {
+      "id": "14001", "standard": "ISO 14001:2015", "title": "Applicability statement — environment", "exists": false,
+      "clause": "6.1.2 / 6.1.3 — environmental aspects and compliance obligations",
+      "scope": "All Northwind Ltd sites and all processes within the certified management system.",
+      "summary": "ISO 14001 has no Annex A. Applicability is set by the environmental aspects register and the compliance obligations register.",
+      "standsIn": [
+        { "what": "Environmental aspects register", "where": "Environment (14001)", "state": "Open NC-003" },
+        { "what": "Compliance obligations register", "where": "Environment (14001)", "state": "Open NC-002" },
+        { "what": "Environmental objectives", "where": "Environment (14001)", "state": "In place" }
+      ],
+      "gaps": [
+        { "ref": "NC-003", "note": "Aspects assessment method differs between sites." },
+        { "ref": "NC-002", "note": "Chemical labelling requirements missing from the obligations register." }
+      ],
+      "links": [ { "label": "Environment library", "url": "https://example.com/isms/environment", "note": "Aspects register, obligations and objectives." } ]
+    }
+  ],
+  "SOA_VERSIONS": [
+    { "version": "1.0", "date": "2025-09-01", "author": "Alex Morgan", "approver": "Daniel Price", "description": "First issue" },
+    { "version": "1.1", "date": "2026-01-20", "author": "Alex Morgan", "approver": "Daniel Price", "description": "Annual review" },
+    { "version": "2.0", "date": "2026-08-01", "author": "Alex Morgan", "approver": null, "description": "Added development controls", "flag": "Awaiting approval." }
+  ],
+  "SOA_ISSUES": [
+    { "sev": "high", "title": "Current SoA version not yet approved", "detail": "v2.0 has no recorded approver. Clause 7.5.2 requires documented information to be approved for suitability." },
+    { "sev": "med", "title": "Every control is applicable, which needs evidence", "detail": "All 93 controls are applicable and 92 implemented. A.8.1 is the only partial control (demo NC-004, endpoint encryption)." },
+    { "sev": "low", "title": "Archived copies should be clearly marked", "detail": "Ensure superseded versions carry a watermark so readers cannot open the wrong one." }
+  ],
+  "SOA_ROWS_NOTE": "The four SoA columns as the workbook records them: Applicable?, Implemented?, Justification and description. 93 applicable, 92 implemented, A.8.1 Partially.",
+  "SOA_ROWS": {
+  "5.1": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "The basis for ISMS and for ensuring the continued viability of ISMS. May be of interest to external parties.",
+    "description": "Information security policies are established based on business objectives and continuous improvement goals, approved by management, communicated, and reviewed regularly."
+  },
+  "5.2": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Necessary to ensure that all areas of responsibility are covered.",
+    "description": "Information security roles and responsibilities are defined, assigned, and communicated across the organization, with accountability established at management and operational levels."
+  },
+  "5.3": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Essential in high-security environments",
+    "description": "Segregation of duties is applied where appropriate to reduce the risk of unauthorized or unintentional activities related to information security."
+  },
+  "5.4": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Prevent unauthorized use and disclosure of information.\r\nRequired by customers and, in some cases, by law.",
+    "description": "Management ensures that information security requirements are integrated into organizational processes and that objectives are aligned with strategic goals and followed up through KPIs."
+  },
+  "5.5": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Monitor necessary laws, permits, and regulations for compliance.",
+    "description": "Contacts with relevant authorities are identified and maintained, and responsibilities for regulatory permits and official communications are defined."
+  },
+  "5.6": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "A market-driven company must be aware of the external factors that drive or influence business opportunities.",
+    "description": "Contacts with relevant stakeholders and interest groups are identified and maintained through structured stakeholder and external analyses."
+  },
+  "5.7": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "For a high-security operation, information about threats is important in order to be able to take proactive measures to reduce those threats.",
+    "description": "Threat intelligence is monitored through internal and external sources to support awareness of emerging risks and threats."
+  },
+  "5.8": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Prevent unnecessary exposure to risks.",
+    "description": "Information security is addressed in project planning and execution, including risk analysis conducted during initial planning and updated throughout the project lifecycle."
+  },
+  "5.9": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Prevents the use of and dependence on unmanaged assets and unnecessary exposure to risks.",
+    "description": "An inventory of information assets is maintained, including ownership and classification."
+  },
+  "5.10": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Prevents unauthorized use of assets.",
+    "description": "Acceptable use of information and information assets is defined through policies and guidelines, and employees receive training on their responsibilities."
+  },
+  "5.11": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Prevent unauthorized access to information or systems after termination of employment or contract.",
+    "description": "Processes are in place to ensure that information assets are returned, revoked, or securely handled upon termination or change of employment or assignment."
+  },
+  "5.12": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Necessary to implement appropriate control measures.",
+    "description": "Information is classified based on confidentiality, availability, accuracy, and traceability, using a defined classification scheme."
+  },
+  "5.13": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Necessary to implement appropriate control measures.",
+    "description": "Information assets are labelled and documented in accordance with the adopted information classification scheme."
+  },
+  "5.14": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Ensure the secure design and implementation of information systems and compliance with information security requirements for IT services.",
+    "description": "Rules and procedures for secure information transfer are established and communicated, including requirements for internal and external information sharing."
+  },
+  "5.15": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Basic security control to prevent unauthorized access to information and systems.",
+    "description": "Access control principles are defined and implemented to ensure that access to information and systems is restricted based on business needs."
+  },
+  "5.16": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Identify who or what has access to data or IT assets to prevent unauthorized access.",
+    "description": "Identity lifecycle management is implemented to ensure that user identities are created, modified, reviewed, and removed in a controlled manner."
+  },
+  "5.17": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Prevent unauthorized access to information and systems.",
+    "description": "Authentication information is protected through defined requirements for credentials and secure handling."
+  },
+  "5.18": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Prevent unauthorized access to information and systems.",
+    "description": "Access rights are provisioned, reviewed, and revoked based on roles and responsibilities, with periodic access reviews performed."
+  },
+  "5.19": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Prevent unauthorized use and disclosure of information.\r\nRequired by customers and, in some cases, by law.",
+    "description": "Information security requirements are addressed in supplier relationships, including risk-based evaluation and classification of suppliers."
+  },
+  "5.20": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Prevent unauthorized use and disclosure of information.\r\nRequired by customers and, in some cases, by law.",
+    "description": "Information security requirements are included in supplier agreements and followed up throughout the duration of the relationship."
+  },
+  "5.21": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Prevent unauthorised use and disclosure of information.\r\nRequired by customers and, in some cases, by law.",
+    "description": "Information security risks related to the ICT supply chain are identified and managed based on supplier criticality and service impact."
+  },
+  "5.22": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Ensure that information security requirements are met and that they are necessary for the controls to be effective.",
+    "description": "Supplier performance and compliance with information security requirements are monitored and reviewed."
+  },
+  "5.23": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "The use of cloud services is essential for creating an efficient working environment. Therefore, information security risks related to cloud services are managed through defined policies, risk assessments, and contractual controls with cloud service providers.",
+    "description": "Information security requirements for the use of cloud services are defined, and risks are assessed as part of procurement and supplier evaluation processes."
+  },
+  "5.24": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Ensures clarity in the division of responsibilities.\r\nIt is important to be able to respond quickly to incidents.",
+    "description": "Responsibilities and procedures for information security event and incident management are defined and communicated."
+  },
+  "5.25": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Limit damage from information security incidents.",
+    "description": "Information security events are reported through established channels, and employees are informed of their reporting obligations."
+  },
+  "5.26": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Limit damage from information security incidents.",
+    "description": "Information security incidents are managed in a structured manner to limit impact, including assessment, escalation, mitigation, and recovery."
+  },
+  "5.27": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Prevent information security incidents.",
+    "description": "Information security incidents are assessed and classified to support appropriate response and prioritization."
+  },
+  "5.28": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Respond to incidents in a responsible manner.",
+    "description": "In the event of an incident requiring evidence collection, the company shall retain a qualified independent third party to perform the collection and preservation of evidence."
+  },
+  "5.29": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Prevent data loss and limit loss of system functionality.",
+    "description": "Information security is maintained during disruptions through documented continuity and crisis management arrangements."
+  },
+  "5.30": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "When using ICT, it is important to have a plan for how the systems will be managed in order to reduce risks.",
+    "description": "ICT readiness for business continuity is ensured through planning, system classification, redundancy, and recovery arrangements."
+  },
+  "5.31": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Prevent unauthorized access to assets and limit risk exposure.",
+    "description": "Legal, statutory, regulatory, and contractual information security requirements are identified, maintained, and reviewed for compliance."
+  },
+  "5.32": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Prevent infringement of intellectual property rights.",
+    "description": "Intellectual property rights are protected through policies, contractual clauses, and confidentiality agreements where required."
+  },
+  "5.33": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "The business requires that information security requirements are met.",
+    "description": "Records are protected to ensure integrity, availability, and confidentiality throughout their lifecycle."
+  },
+  "5.34": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Necessary for public confidence in the company.\r\nRequired by law.",
+    "description": "Privacy and protection of personal data are ensured through policies, registers, agreements, and compliance with applicable data protection legislation."
+  },
+  "5.35": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Have an up-to-date ISMS. Prevent unnecessary risks. Improve processes.",
+    "description": "Independent reviews of information security are conducted through internal and external audits and other assurance activities."
+  },
+  "5.36": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Have an up-to-date ISMS. Prevent unnecessary risks. Improve processes.",
+    "description": "Compliance with information security policies, legal requirements, and contractual obligations is monitored and reviewed by management."
+  },
+  "5.37": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Prevents operational disruptions and dependence on individuals",
+    "description": "Operating procedures for information processing facilities are documented, maintained, and made available to relevant personnel."
+  },
+  "6.1": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Required by customers and, in some cases, by law.",
+    "description": "Background verification is conducted prior to employment in accordance with applicable laws, regulations, and business requirements."
+  },
+  "6.2": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Prevent unauthorized use and disclosure of information.\r\nRequired by customers and, in some cases, by law.",
+    "description": "Information security responsibilities and confidentiality obligations are defined in employment and contractor agreements, collective agreements, and the Code of Conduct."
+  },
+  "6.3": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Prevent unauthorized use and disclosure of information.\r\nRequired by customers and, in some cases, by law.",
+    "description": "Information security awareness, education, and training are conducted regularly. New employees and contractors receive role-based introductions covering relevant policies, procedures, and reporting obligations."
+  },
+  "6.4": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Prevent unauthorized use and disclosure of information.\r\nRequired by customers and, in some cases, by law.",
+    "description": "A formal disciplinary framework is established through the Code of Conduct, which defines expected behavior, compliance requirements, and reporting of violations."
+  },
+  "6.5": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Prevent unauthorized use and disclosure of information.\r\nRequired by customers and, in some cases, by law.",
+    "description": "Information security responsibilities and confidentiality requirements remain in force after termination or change of employment or assignment, and are reinforced through defined offboarding procedures."
+  },
+  "6.6": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Necessary to implement appropriate control measures.",
+    "description": "Confidentiality and non-disclosure agreements are established where required, based on business needs, information classification, or external party requirements."
+  },
+  "6.7": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Necessary to protect the confidentiality of information.",
+    "description": "Security requirements for remote working are defined in policies and procedures, including requirements for secure access, authentication, and management of endpoint devices."
+  },
+  "6.8": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Limit damage from information security incidents.",
+    "description": "Personnel are required and enabled to report information security events through defined reporting channels, including confidential and anonymous reporting mechanisms, supported by training and awareness activities."
+  },
+  "7.1": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Prevents unauthorized physical access to assets.",
+    "description": "Physical security perimeters are established and maintained to protect facilities and areas containing information and information processing facilities."
+  },
+  "7.2": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Prevents unauthorized physical access to assets.",
+    "description": "Physical entry controls are implemented to ensure that only authorized individuals can access secure areas, including visitor registration, identity verification, escorting, and logging of entries and exits."
+  },
+  "7.3": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Prevents unauthorized physical access to assets.",
+    "description": "Offices, rooms, and facilities are designed and protected to prevent unauthorized access, damage, or interference, with access granted based on roles and employment."
+  },
+  "7.4": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Prevents unauthorized physical access to assets.",
+    "description": "Physical security monitoring is implemented through surveillance, security personnel, and logging mechanisms to detect and respond to unauthorized access or activities."
+  },
+  "7.5": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Reduces the likelihood and impact of accidents, disasters, and attacks.",
+    "description": "Risks from physical and environmental threats are identified through site selection and risk analysis, and mitigated through preventive and protective security measures."
+  },
+  "7.6": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Basic security control to prevent unauthorized physical access to facilities, information, and systems.",
+    "description": "Working in secure areas is governed by defined procedures, including authorization, safety and security briefings, supervision, and emergency contact arrangements."
+  },
+  "7.7": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Prevents unauthorized physical access to assets.",
+    "description": "Clear desk and clear screen practices are established to prevent unauthorized access to confidential information and information processing facilities."
+  },
+  "7.8": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Reduce the likelihood and impact of accidents, disasters, and attacks.",
+    "description": "Equipment is sited and protected to reduce risks from physical and environmental threats, including placement within secured zones and controlled areas."
+  },
+  "7.9": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Prevent unauthorised access to assets.",
+    "description": "Security measures are applied to information assets and devices located outside organizational premises."
+  },
+  "7.10": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Prevent unauthorised use of assets and access to these assets.",
+    "description": "Storage media is managed throughout its lifecycle in accordance with defined procedures, including handling, transport, retention, and secure destruction."
+  },
+  "7.11": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Ensure the secure design and implementation of information systems.",
+    "description": "Supporting utilities, such as power and network connectivity, are protected and prioritized to ensure availability of information processing facilities."
+  },
+  "7.12": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Necessary for the controls to be effective.",
+    "description": "Cabling for power and communications is protected and designed with redundancy to reduce risks of disruption or interception."
+  },
+  "7.13": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Prevents obsolescence and security breaches.",
+    "description": "Equipment maintenance is planned, controlled, and performed to ensure continued availability, integrity, and security of information processing facilities."
+  },
+  "7.14": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Prevent unauthorised access to data.",
+    "description": "Information and equipment are securely disposed of or reused in accordance with defined procedures and information classification requirements."
+  },
+  "8.1": {
+    "applicable": "Yes",
+    "implemented": "Partially",
+    "justification": "Prevent unauthorised access to information and assets that provide access to internal information.",
+    "description": "User endpoint devices are managed and protected to prevent unauthorized access, loss, or compromise of information."
+  },
+  "8.2": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Prevent unauthorised access to information and systems.",
+    "description": "Privileged access rights are restricted, role-based, and granted according to defined authorization principles."
+  },
+  "8.3": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Basic security control to prevent unauthorised access to information and systems.",
+    "description": "Access to information and systems is limited based on the principle of least privilege and business need."
+  },
+  "8.4": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Avoid unintentional or malicious changes to source codes.",
+    "description": "Access to source code repositories is restricted to authorized personnel based on business and operational requirements."
+  },
+  "8.5": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Basic security control to prevent unauthorised access to information and systems.",
+    "description": "Secure authentication mechanisms are implemented, including the use of multi-factor authentication where appropriate."
+  },
+  "8.6": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Prevent loss of availability or other information security incidents.",
+    "description": "Capacity and performance of systems are monitored and managed to ensure availability and resilience."
+  },
+  "8.7": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Prevent information security incidents.",
+    "description": "Protection against malware is implemented across systems and environments to detect, prevent, and respond to malicious activity."
+  },
+  "8.8": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Prevent unnecessary exposure to risks.",
+    "description": "Technical vulnerabilities are identified, assessed, prioritized, and remediated."
+  },
+  "8.9": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Ensure the correct configuration and prevent unnecessary risks.",
+    "description": "Secure configuration standards are defined and applied to systems, networks, and applications."
+  },
+  "8.10": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Needed to ensure correct information.\r\nRequired by law.",
+    "description": "Information is securely deleted when no longer required, in accordance with defined retention and disposal procedures."
+  },
+  "8.11": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "To protect specific information.",
+    "description": "Data masking and similar techniques are applied where appropriate to protect sensitive information."
+  },
+  "8.12": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Needed to to prevent data leakage",
+    "description": "Measures are implemented to prevent unauthorized data leakage and loss across systems and platforms."
+  },
+  "8.13": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Prevent data loss and limit loss of system functionality.",
+    "description": "Backup and recovery arrangements are established and tested to ensure availability and integrity of information."
+  },
+  "8.14": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Prevents SLA breaches. Production cloud systems are crucial to ensuring delivery.",
+    "description": "Redundancy is implemented for critical systems and components to support continuity and availability requirements."
+  },
+  "8.15": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Ensure that information and systems are privacy-secure.",
+    "description": "Logging mechanisms are implemented to record security-relevant events in accordance with system classification and traceability requirements."
+  },
+  "8.16": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Ensure that information and systems are privacy-secure.",
+    "description": "Monitoring is performed to detect anomalous behavior, security events, and potential intrusions in IT and OT environments."
+  },
+  "8.17": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Ensure that the system logs are correct.",
+    "description": "Clock synchronization is implemented to ensure consistent and reliable timestamps across systems and networks."
+  },
+  "8.18": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "To ensure the use of utility programs does not harm system and application controls for information\r\nsecurity.",
+    "description": "Privileged utility programs (e.g., PowerShell, administrative consoles, network device management interfaces, virtualization management tools, and system administration utilities) are restricted to authorized personnel only. Access is granted through role-based access control, logged where technically feasible."
+  },
+  "8.19": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Prevents the use of unauthorised and potentially unsafe software and unnecessary exposure to risks.",
+    "description": "Installation of software on operational systems is restricted to authorized personnel only."
+  },
+  "8.20": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Ensure the secure design and implementation of information systems.",
+    "description": "Network security controls are implemented to protect information in networks and supporting infrastructure."
+  },
+  "8.21": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Ensure that information security requirements for IT services are met.",
+    "description": "Security mechanisms are applied to network services to ensure confidentiality, integrity, and availability of information in transit."
+  },
+  "8.22": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Ensure the secure design and implementation of information systems.",
+    "description": "Network segmentation and zoning are implemented to separate systems based on protection needs and risk levels."
+  },
+  "8.23": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Protection against dangerous websites and harmful content",
+    "description": "Web and traffic filtering mechanisms are implemented to reduce exposure to malicious or unauthorized content."
+  },
+  "8.24": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Ensure the secure design and implementation of information systems.",
+    "description": "Cryptographic controls are governed by defined policies and applied to protect information at rest and in transit."
+  },
+  "8.25": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Ensure that software is developed in a secure manner and common vulnerabilities are minimized.",
+    "description": "Security activities such as secure coding and security testing are performed to ensure that systems are developed and maintained securely."
+  },
+  "8.26": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Prevent loss of confidentiality or integrity of information.",
+    "description": "Security requirements are identified and defined for applications supporting business processes, including requirements for authentication, authorization, logging, data protection, and resilience."
+  },
+  "8.27": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Ensure information systems are securely designed, implemented and operated within the\r\ndevelopment life cycle.",
+    "description": "Security requirements are considered during the design, development, implementation, and maintenance of information systems. Security controls are incorporated into system designs based on business and risk requirements."
+  },
+  "8.28": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Ensure software is written securely",
+    "description": "Secure coding practices are established and followed during software development to reduce vulnerabilities and security weaknesses."
+  },
+  "8.29": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "to identify and remediate security weaknesses before production deployment.",
+    "description": "Security testing is performed prior to deployment to verify that systems, applications, and services meet defined security requirements."
+  },
+  "8.30": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Establish security requirements for outsourced development",
+    "description": "Outsourced development activities are governed through formal agreements that define information security requirements."
+  },
+  "8.31": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Protect production systems and ensure secure development",
+    "description": "Development, test, and production environments are separated to reduce the risk of unauthorized access, unintended changes, and operational disruption."
+  },
+  "8.32": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Prevent unnecessary exposure to risks.",
+    "description": "Changes to information processing facilities, systems, applications, and infrastructure are planned, assessed, approved, implemented, and reviewed through a formal change management process."
+  },
+  "8.33": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "Protect test data",
+    "description": "Test information is protected against unauthorized access. Production data is not used in test environments unless justified."
+  },
+  "8.34": {
+    "applicable": "Yes",
+    "implemented": "Yes",
+    "justification": "To minimize the impact of audit and other assurance activities on operational systems and business\r\nprocesses.",
+    "description": "Audit, testing, and assurance activities are planned and controlled to minimize disruption to operational systems and prevent unauthorized access, modification, or loss of information."
+  }
+}
+}

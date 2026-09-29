@@ -1,0 +1,59 @@
+{
+  "CERT_TIMELINE": {
+    "year": 2026,
+    "subtitle": "Certification cycle · surveillance audit and corrective actions",
+    "note": "Surveillance audit by Example Certification Body. Corrective actions are due 90 days after the report.",
+    "milestones": [
+      { "date": "2026-01-20", "label": "Management review", "state": "done", "side": "above" },
+      { "date": "2026-03-10", "label": "Internal audit · HQ", "state": "done", "side": "below" },
+      { "date": "2026-04-22", "label": "Internal audit · Harbour & Northgate", "state": "done", "side": "above", "row": 1 },
+      { "date": "2026-06-16", "label": "Surveillance audit", "state": "milestone", "side": "below" },
+      { "date": "2026-09-15", "label": "NC actions due", "state": "next", "side": "above" },
+      { "date": "2026-10-30", "label": "Recertification decision", "state": "certified", "side": "below" },
+      { "date": "2026-12-08", "label": "Management review", "state": "future", "side": "above" }
+    ]
+  },
+  "EVIDENCE_PACK": {
+    "intro": "Documented information an auditor will ask for, grouped by area. Owners are roles, so the list survives staff changes.",
+    "areas": [
+      { "id": "context", "name": "Context & scope", "clause": "4", "icon": "target", "items": [
+        { "doc": "IMS scope statement", "type": "doc", "owner": "Compliance Officer" },
+        { "doc": "Interested parties register", "type": "sheet", "owner": "Compliance Officer" },
+        { "doc": "Legal & contractual obligations register", "type": "sheet", "owner": "Legal Counsel" }
+      ]},
+      { "id": "leadership", "name": "Leadership & policy", "clause": "5", "icon": "users", "items": [
+        { "doc": "Information security policy", "type": "doc", "owner": "CEO" },
+        { "doc": "Roles, responsibilities & authorities (RACI)", "type": "sheet", "owner": "HR Manager" }
+      ]},
+      { "id": "planning", "name": "Risk & objectives", "clause": "6", "icon": "gauge", "items": [
+        { "doc": "Risk assessment sheet", "type": "sheet", "owner": "Compliance Officer" },
+        { "doc": "Statement of Applicability", "type": "sheet", "owner": "Compliance Officer" },
+        { "doc": "Objectives & KPI register", "type": "sheet", "owner": "Operations Director", "note": "Q3 figures pending" }
+      ]},
+      { "id": "support", "name": "Support", "clause": "7", "icon": "graduation-cap", "items": [
+        { "doc": "Awareness training completion export", "type": "sheet", "owner": "HR Manager" },
+        { "doc": "Document management procedure", "type": "doc", "owner": "Compliance Officer" }
+      ]},
+      { "id": "operation", "name": "Operation", "clause": "8", "icon": "server", "items": [
+        { "doc": "Change & incident register", "type": "ticket", "owner": "IT Manager" },
+        { "doc": "Supplier evaluations", "type": "sheet", "owner": "Procurement Lead" },
+        { "doc": "Business continuity test report", "type": "doc", "owner": "Operations Director" }
+      ]},
+      { "id": "performance", "name": "Performance evaluation", "clause": "9", "icon": "clipboard-check", "items": [
+        { "doc": "Internal audit reports", "type": "doc", "owner": "Internal Auditor" },
+        { "doc": "Management review minutes", "type": "doc", "owner": "CEO" }
+      ]},
+      { "id": "improvement", "name": "Improvement", "clause": "10", "icon": "trending-up", "items": [
+        { "doc": "Nonconformity & corrective action tracker", "type": "sheet", "owner": "Compliance Officer" },
+        { "doc": "Harbour office access-control photo evidence", "type": "image", "owner": "Office Manager" }
+      ]}
+    ]
+  },
+  "OPSPROC_REVIEW": { "owner": "Compliance Officer", "lastReviewed": "2026-03-01", "nextReview": "2027-03-01" },
+  "EXCEPTION_LINKS": [
+    { "label": "Exception request form", "url": "https://example.com/forms/exception", "type": "doc" },
+    { "label": "Exception register", "url": "https://example.com/registers/exceptions", "type": "sheet" }
+  ],
+  "SITE_SCOPE_NOTE": "All offices are inside the certified scope. Customer-managed environments are excluded; the cloud hosting provider is managed as a supplier.",
+  "SITE_IT_NOTE": "HQ runs IT in-house; the Harbour office uses a managed service provider under a supplier agreement and Northgate is supported locally."
+}

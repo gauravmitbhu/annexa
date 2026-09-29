@@ -1,0 +1,31 @@
+{
+  "ENV_META": {
+    "standard": "ISO 14001:2015",
+    "policy": "POL_Environmental_Policy (approved 2025-10-01)",
+    "owner": "Priya Sandoval — Environmental Lead",
+    "status": "Four of the twelve demo audit findings relate to ISO 14001, the least mature part of the integrated system.",
+    "history": "The environmental management system is the newest of the three standards and is still being integrated into business processes."
+  },
+  "ENV_NCS": [
+    { "id": "NC-DEMO-101", "clause": "6.1.2 Environmental aspects", "level": "Minor", "summary": "Aspect assessment method applied inconsistently between offices", "due": "2026-10-31" },
+    { "id": "NC-DEMO-102", "clause": "6.1.3 Compliance obligations", "level": "Minor", "summary": "E-waste (WEEE) and battery disposal requirements not identified in the legal register", "due": "2026-11-30" },
+    { "id": "NC-DEMO-103", "clause": "8.2 Emergency preparedness", "level": "Observation", "summary": "Damaged laptop batteries stored without a fire-safe container at the Harbour office", "due": "tbd" },
+    { "id": "NC-DEMO-104", "clause": "8.1 Operational planning and control", "level": "Minor", "summary": "Supplier criticality not linked to significant environmental aspects (cloud hosting, travel, hardware)", "due": "2026-12-15" }
+  ],
+  "ENV_REGISTERS": [
+    { "name": "Environmental aspects register — HQ – Riverside", "country": "A", "state": "Maintained", "note": "" },
+    { "name": "Environmental aspects register — Office – Harbour", "country": "B", "state": "Under correction", "note": "Business-travel emissions being recalculated on CO2e/year." },
+    { "name": "Environmental legislation register — all offices", "country": "All", "state": "Maintained", "note": "Reviewed every six months." },
+    { "name": "IT asset disposal register — per office", "country": "All", "state": "To create", "note": "Required by NC-DEMO-102." }
+  ],
+  "ENV_OBJECTIVES": [
+    { "id": "OBJ-01", "title": "Reduce office energy use and travel emissions", "owner": "Priya Sandoval", "due": "2027-12-31", "target": "Reduce office electricity per employee and business-travel CO2e by 10% by end 2027", "measure": "Office kWh per FTE; travel tCO2e per FTE", "evaluation": "Quarterly dashboard review", "actions": "Switch to a renewable tariff; smart lighting and heating controls; video-first travel policy" },
+    { "id": "OBJ-02", "title": "Resolve legal non-compliances promptly", "owner": "Daniel Okafor", "due": "", "target": "Close 100% of identified legal non-compliances within 30 days", "measure": "Percentage closed within 30 days", "evaluation": "Monthly compliance report", "actions": "Log, analyse, correct, verify and close" },
+    { "id": "OBJ-03", "title": "Environmental-awareness training for all staff", "owner": "Priya Sandoval", "due": "2026-12-31", "target": "90% of employees trained", "measure": "Percentage of headcount trained", "evaluation": "Quarterly HR training report", "actions": "Publish e-learning module; track completions" }
+  ],
+  "ENV_SITE_ISSUES": [
+    { "site": "Office – Harbour", "issue": "Damaged laptop batteries stored in an open box", "nc": "NC-DEMO-103", "state": "Fire-safe container ordered" },
+    { "site": "Office – Northgate", "issue": "Cleaning chemicals not labelled", "nc": "NC-DEMO-102", "state": "Relabel per CLP" },
+    { "site": "HQ – Riverside", "issue": "Retired laptops awaiting disposal without a certified recycler", "nc": "—", "state": "Closed — certified e-waste recycler contracted; quarterly collection added" }
+  ]
+}

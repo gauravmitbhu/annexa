@@ -1,0 +1,94 @@
+{
+  "PEOPLE_NOTE": "Demo data. Roles, responsibilities and mandate are defined per role in the Roles and Responsibilities register. Counts are the number of open corrective actions and nonconformity actions each person holds.",
+  "PEOPLE": [
+    {
+      "name": "Alex Morgan",
+      "role": "Compliance Officer",
+      "scope": "Group",
+      "caActions": 14,
+      "ncActions": 8,
+      "responsibilities": "Implements and maintains the ISMS, EMS and QMS; runs risk assessments, internal audits and corrective actions; owns incident management; liaises with the certification body and regulators.",
+      "mandate": "Authority to enforce compliance measures and to stop processes in the event of nonconformities or security risks.",
+      "note": "Took the role over in 2026 and inherited most of the open audit actions."
+    },
+    {
+      "name": "Daniel Price",
+      "role": "COO",
+      "scope": "Group",
+      "caActions": 4,
+      "ncActions": 0,
+      "responsibilities": "Operational effectiveness of client delivery and the SaaS platform; service resilience with the cloud hosting provider; approves policy and standard changes.",
+      "mandate": "Authority to halt operations in the event of critical risk; approves operational procedures and continuity measures."
+    },
+    {
+      "name": "Priya Shah",
+      "role": "Procurement Manager",
+      "scope": "Group",
+      "caActions": 3,
+      "ncActions": 1,
+      "responsibilities": "Supplier evaluation and monitoring; contracts with critical suppliers; purchase approvals.",
+      "mandate": "Authority to approve or reject suppliers and to request compliance evidence."
+    },
+    {
+      "name": "Lena Fischer",
+      "role": "Environmental Lead",
+      "scope": "Group",
+      "caActions": 3,
+      "ncActions": 1,
+      "responsibilities": "Environmental objectives for offices, business travel, energy use and e-waste; environmental legal compliance.",
+      "mandate": "Proposes environmental objectives and KPIs for executive approval."
+    },
+    {
+      "name": "Tom Becker",
+      "role": "IT Operations Lead",
+      "scope": "Group",
+      "caActions": 3,
+      "ncActions": 2,
+      "responsibilities": "Laptops, cloud accounts, patching, backups and monitoring; owner of the office productivity suite.",
+      "mandate": "Authority over IT systems and cloud accounts; approves IT operational procedures."
+    },
+    {
+      "name": "Sara Okafor",
+      "role": "Head of People",
+      "scope": "Group",
+      "caActions": 2,
+      "ncActions": 0,
+      "responsibilities": "Competence, training and awareness; screening, NDAs, onboarding and offboarding.",
+      "mandate": "Approves training programmes; enforces HR-related compliance actions."
+    },
+    {
+      "name": "Maria Lopez",
+      "role": "Office Manager, HQ",
+      "scope": "HQ – Riverside",
+      "caActions": 2,
+      "ncActions": 1,
+      "responsibilities": "Office operations; health, safety and physical security controls at HQ.",
+      "mandate": "Authority to shut down or escalate in the event of office safety or security risks."
+    },
+    {
+      "name": "Ethan Brooks",
+      "role": "Office Lead, Northgate",
+      "scope": "Office – Northgate",
+      "caActions": 1,
+      "ncActions": 0,
+      "responsibilities": "Office operations and local IT support at the Northgate office.",
+      "mandate": "Authority to shut down or escalate in the event of office safety or security risks."
+    }
+  ],
+  "PEOPLE_EXTERNAL": [
+    { "name": "Example Certification Body", "role": "Certification body", "note": "ISO/IEC 27001, ISO 14001 and ISO 9001 certification audits." },
+    { "name": "Example ISO Consulting", "role": "External ISO consultant", "note": "Audits the compliance function itself to preserve internal audit independence." },
+    { "name": "Example Managed IT", "role": "Outsourced IT provider (Harbour office)", "note": "Provides desk-side IT support at the Harbour office under IT Operations accountability." },
+    { "name": "Example Security Assessors", "role": "Independent security assessor", "note": "Annual external attack surface assessment." },
+    { "name": "Example Procurement Services", "role": "Outsourced procurement", "note": "Runs the procurement process; audited annually." }
+  ],
+  "TRAINING": [
+    { "course": "Compliance introduction", "audience": "All new hires", "cadence": "At onboarding", "system": "In person / video call", "note": "Covers the management systems and reporting obligations." },
+    { "course": "Information security awareness", "audience": "All staff", "cadence": "Annual", "system": "LMS", "note": "Mandatory." },
+    { "course": "GDPR", "audience": "All staff", "cadence": "Annual", "system": "LMS", "note": "Mandatory." },
+    { "course": "Social engineering", "audience": "All staff", "cadence": "Annual", "system": "LMS", "note": "Mandatory; reinforced by phishing simulations." },
+    { "course": "Phishing simulation", "audience": "All staff", "cadence": "Quarterly", "system": "—", "note": "Programme started in 2026 (R-03)." },
+    { "course": "Environmental awareness", "audience": "All staff", "cadence": "Annual", "system": "LMS", "note": "Objective: 90% of headcount trained." },
+    { "course": "E-waste and hazardous materials handling", "audience": "Office staff", "cadence": "To establish", "system": "—", "note": "Required by demo NC-001; due 2026-10-31." }
+  ]
+}

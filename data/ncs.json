@@ -1,0 +1,80 @@
+{
+  "NC_META": {
+    "audit": "External certification audit 2026",
+    "body": "Example Certification Body",
+    "reportDate": "2026-06-25",
+    "total": 6,
+    "minor": 4,
+    "observations": 2,
+    "major": 0,
+    "actionsTotal": 12,
+    "actionsDone": 2,
+    "note": "NC status is derived from the action statuses: all actions Completed = Closed; any action started = In Progress. \"tbd\" means the NC has open actions with no due date yet.",
+    "asOf": "2026-09-22",
+    "ownerNote": "Demo data. Open actions sit with the Compliance Manager unless stated otherwise."
+  },
+  "NCS": [
+    {
+      "id": "NC-DEMO-01", "standard": "ISO 27001", "clause": "Annex A, 8 Technological controls", "level": "Minor", "status": "Open",
+      "actions": 3, "done": 0, "nextDue": "2026-09-30",
+      "summary": "No technical endpoint controls; sampled laptops without full disk encryption",
+      "finding": "A.8.1 requires managed and protected endpoints, but nothing prevents non-compliant devices being used. Sampling found laptops without disk encryption.",
+      "rootCause": "Endpoint protection relied on policy and manual setup rather than centrally enforced controls.",
+      "owner": "Priya Anand", "sites": ["HQ – Riverside", "Office – Harbour", "Office – Northgate"], "overdue": true
+    },
+    {
+      "id": "NC-DEMO-02", "standard": "ISO 27001", "clause": "6.1.3 Information security risk treatment", "level": "Minor", "status": "In Progress",
+      "actions": 3, "done": 2, "nextDue": "2026-09-30",
+      "summary": "No demonstrable risk-owner acceptance of residual risks",
+      "finding": "Risk owner acceptance of the treatment plan and residual risks could not be demonstrated.",
+      "rootCause": "The procedure did not define what acceptance evidence to record.",
+      "owner": "Jordan Ellis", "sites": ["Group"]
+    },
+    {
+      "id": "NC-DEMO-03", "standard": "ISO 14001", "clause": "6.1.2 Environmental aspects", "level": "Minor", "status": "Open",
+      "actions": 2, "done": 0, "nextDue": "2026-10-31",
+      "summary": "Environmental aspects assessed inconsistently between sites",
+      "finding": "Significance assessments lack a factual basis and differ in method between sites.",
+      "rootCause": "",
+      "owner": "Elena Moreau", "sites": ["HQ – Riverside", "Office – Harbour"]
+    },
+    {
+      "id": "NC-DEMO-04", "standard": "ISO 9001", "clause": "9.2 Internal audit", "level": "Minor", "status": "Open",
+      "actions": 2, "done": 0, "nextDue": "2026-09-25",
+      "summary": "Audit plan for the outsourced internal audit not available",
+      "finding": "No audit plan or coverage evidence could be shown for the ISO 9001 internal audit.",
+      "rootCause": "The engagement did not specify required deliverables.",
+      "owner": "Jordan Ellis", "sites": ["Group"], "overdue": true
+    },
+    {
+      "id": "NC-DEMO-05", "standard": "ISO 14001", "clause": "8.2 Emergency preparedness and response", "level": "Observation", "status": "Open",
+      "actions": 1, "done": 0, "nextDue": "tbd",
+      "summary": "Office – Northgate: no fire extinguisher inspection record for the kitchen area",
+      "finding": "The kitchen fire extinguisher has no current inspection record.",
+      "rootCause": "",
+      "owner": "Tomas Reyes", "sites": ["Office – Northgate"]
+    },
+    {
+      "id": "NC-DEMO-06", "standard": "ISO 27001", "clause": "Annex A, 5 Organizational controls", "level": "Observation", "status": "Open",
+      "actions": 1, "done": 0, "nextDue": "tbd",
+      "summary": "Consider informing the certification body of significant events",
+      "finding": "Consider adding a step to inform the certification body of significant events that may indicate an ineffective management system.",
+      "rootCause": "",
+      "owner": "Marta Hartley", "sites": ["Group"]
+    }
+  ],
+  "NC_ACTIONS": [
+    { "nc": "NC-DEMO-01", "ref": "C", "type": "Correction", "action": "Inventory all endpoints and enable full disk encryption where missing. SoA entry for A.8.1 set to partial.", "owner": "IT Manager", "ownerName": "Priya Anand", "due": "2026-09-15", "status": "Open", "notes": "" },
+    { "nc": "NC-DEMO-01", "ref": "CA-1", "type": "Corrective action", "action": "Enrol all endpoints in device management with enforced compliance policies.", "owner": "IT Manager", "ownerName": "Priya Anand", "due": "2026-11-30", "status": "Open", "notes": "" },
+    { "nc": "NC-DEMO-01", "ref": "CA-2", "type": "Corrective action", "action": "Re-verify the A.8.1 SoA entry before restoring implemented status.", "owner": "Compliance Manager", "ownerName": "Marta Hartley", "due": "2027-01-31", "status": "Open", "notes": "" },
+    { "nc": "NC-DEMO-02", "ref": "C", "type": "Correction", "action": "Each risk owner records acceptance of treatment and residual risk in the register.", "owner": "Risk owners", "ownerName": "", "due": "2026-09-30", "status": "Open", "notes": "Request sent to all managers." },
+    { "nc": "NC-DEMO-02", "ref": "CA-1", "type": "Corrective action", "action": "Update the risk procedure with an explicit acceptance step and evidence requirements.", "owner": "Compliance Manager", "ownerName": "Marta Hartley", "due": "2026-09-30", "status": "Completed", "notes": "Procedure updated to v2.1." },
+    { "nc": "NC-DEMO-02", "ref": "CA-2", "type": "Corrective action", "action": "Add acceptance columns (accepted by, date) to the risk register template.", "owner": "Compliance Manager", "ownerName": "Marta Hartley", "due": "2026-10-30", "status": "Completed", "notes": "" },
+    { "nc": "NC-DEMO-03", "ref": "C", "type": "Correction", "action": "Re-assess all aspects using quantified data and record the basis.", "owner": "Environmental Lead", "ownerName": "Elena Moreau", "due": "2026-10-31", "status": "Open", "notes": "" },
+    { "nc": "NC-DEMO-03", "ref": "CA-1", "type": "Corrective action", "action": "Define one group-wide significance method with quantified criteria.", "owner": "Environmental Lead", "ownerName": "Elena Moreau", "due": "2026-11-30", "status": "Open", "notes": "" },
+    { "nc": "NC-DEMO-04", "ref": "C", "type": "Correction", "action": "Obtain the audit plan and evidence from the external auditor, or re-perform the audit.", "owner": "Compliance Manager", "ownerName": "Jordan Ellis", "due": "2026-08-31", "status": "Open", "notes": "" },
+    { "nc": "NC-DEMO-04", "ref": "CA-1", "type": "Corrective action", "action": "Publish an integrated internal audit programme covering all three standards.", "owner": "Compliance Manager", "ownerName": "Jordan Ellis", "due": "2026-09-30", "status": "Open", "notes": "" },
+    { "nc": "NC-DEMO-05", "ref": "C", "type": "Correction", "action": "Have the kitchen extinguisher inspected and add it to the office safety checklist.", "owner": "Office Manager", "ownerName": "Tomas Reyes", "due": "", "status": "Open", "notes": "" },
+    { "nc": "NC-DEMO-06", "ref": "C", "type": "Correction", "action": "Add certification body notification to the incident procedure.", "owner": "Compliance Manager", "ownerName": "Marta Hartley", "due": "", "status": "Open", "notes": "Tracked as change NW-CHG-26-004." }
+  ]
+}

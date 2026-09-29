@@ -5,6 +5,8 @@
       "Write(engine/**)",
       "Edit(app.py)",
       "Write(app.py)",
+      "Edit(branding.py)",
+      "Write(branding.py)",
       "Edit(index.html)",
       "Write(index.html)",
       "Edit(.claude/**)",

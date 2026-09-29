@@ -1,4 +1,5 @@
-// ISMS Core — management-system clauses 4–10 (the Day 1 morning audit focus).
+// IMS Core — the management-system clauses 4–10 shared by ISO/IEC 27001,
+// ISO 14001 and ISO 9001, with the open nonconformity per clause.
 // Grouped by clause, each sub-clause shows status, owner, note and evidence refs.
 const { useState: useCoreState } = React;
 
@@ -67,17 +68,17 @@ function CoreLinkRow({ link }) {
       style={{
         display:'flex', alignItems:'center', gap: 9,
         padding:'8px 10px', borderRadius: 7,
-        background: h ? 'rgba(107,47,160,0.06)' : '#fff',
-        border:'1px solid ' + (h ? 'rgba(107,47,160,0.25)' : '#EEF0F3'),
+        background: h ? 'color-mix(in srgb, var(--brand-accent) 6%, transparent)' : '#fff',
+        border:'1px solid ' + (h ? 'color-mix(in srgb, var(--brand-accent) 25%, transparent)' : '#EEF0F3'),
         textDecoration:'none', transition:'all 120ms',
       }}>
       <span style={{
         width: 26, height: 26, borderRadius: 6, flexShrink: 0,
-        background:'rgba(107,47,160,0.08)',
+        background:'color-mix(in srgb, var(--brand-accent) 8%, transparent)',
         display:'inline-flex', alignItems:'center', justifyContent:'center',
-      }}><Icon name={LINK_ICON[link.type] || 'file-text'} size={13} color="#6B2FA0"/></span>
-      <span style={{ flex: 1, minWidth: 0, fontSize: 12.5, color:'#111827', whiteSpace:'nowrap', overflow:'hidden', textOverflow:'ellipsis' }}>{link.label}</span>
-      <Icon name="arrow-up-right" size={14} color={h ? '#6B2FA0' : '#9CA3AF'}/>
+      }}><Icon name={LINK_ICON[link.type] || 'file-text'} size={13} color="var(--brand-accent)"/></span>
+      <span style={{ flex: 1, minWidth: 0, fontSize: 12.5, color:'var(--brand-ink)', whiteSpace:'nowrap', overflow:'hidden', textOverflow:'ellipsis' }}>{link.label}</span>
+      <Icon name="arrow-up-right" size={14} color={h ? 'var(--brand-accent)' : '#9A968C'}/>
     </a>
   );
 }
@@ -87,7 +88,7 @@ function ClauseRow({ item, showHelp }) {
   const links = item.links || [];
   const hasLinks = links.length > 0;
   return (
-    <div style={{ borderTop:'1px solid #F3F4F6' }}>
+    <div style={{ borderTop:'1px solid var(--brand-surface)' }}>
       <div
         onClick={()=> hasLinks && setOpen(o => !o)}
         style={{
@@ -95,40 +96,40 @@ function ClauseRow({ item, showHelp }) {
           alignItems:'start', gap: 14,
           padding:'12px 16px',
           cursor: hasLinks ? 'pointer' : 'default',
-          background: open ? '#FAFAFC' : 'transparent',
+          background: open ? '#F7F6F3' : 'transparent',
           transition:'background 120ms',
         }}
-        onMouseEnter={e=>{ if (hasLinks && !open) e.currentTarget.style.background='#FAFAFC'; }}
+        onMouseEnter={e=>{ if (hasLinks && !open) e.currentTarget.style.background='#F7F6F3'; }}
         onMouseLeave={e=>{ if (!open) e.currentTarget.style.background='transparent'; }}>
         <span style={{
           alignSelf:'start',
           display:'inline-block', padding:'2px 8px', borderRadius: 4,
-          background:'rgba(107,47,160,0.08)', color:'#6B2FA0',
+          background:'color-mix(in srgb, var(--brand-accent) 8%, transparent)', color:'var(--brand-accent)',
           fontSize: 11.5, fontWeight: 600, textAlign:'center',
           fontFamily:'ui-monospace, SFMono-Regular, monospace',
         }}>{item.id}</span>
 
         <div style={{ minWidth: 0 }}>
-          <div style={{ fontSize: 13, fontWeight: 500, color:'#111827' }}>{item.title}</div>
+          <div style={{ fontSize: 13, fontWeight: 500, color:'var(--brand-ink)' }}>{item.title}</div>
           {showHelp && ISO_CLAUSE_HELP[item.id] && (
             <div style={{ marginTop: 5, padding:'6px 9px', borderRadius: 6,
-              background:'rgba(107,47,160,0.05)', border:'1px solid rgba(107,47,160,0.12)',
-              fontSize: 11, color:'#4A1F70', lineHeight: 1.5 }}>
-              <Icon name="book-open" size={10} color="#6B2FA0" style={{ marginRight: 5, verticalAlign:'middle' }}/>
+              background:'color-mix(in srgb, var(--brand-accent) 5%, transparent)', border:'1px solid color-mix(in srgb, var(--brand-accent) 12%, transparent)',
+              fontSize: 11, color:'#B8410F', lineHeight: 1.5 }}>
+              <Icon name="book-open" size={10} color="var(--brand-accent)" style={{ marginRight: 5, verticalAlign:'middle' }}/>
               <strong style={{ fontWeight: 600 }}>ISO 27001 — {item.id}:</strong> {ISO_CLAUSE_HELP[item.id]}
             </div>
           )}
-          <div style={{ fontSize: 11.5, color:'#6B7280', lineHeight: 1.45, marginTop: 3 }}>{item.note}</div>
+          <div style={{ fontSize: 11.5, color:'var(--brand-muted)', lineHeight: 1.45, marginTop: 3 }}>{item.note}</div>
           {hasLinks && (
-            <div style={{ fontSize: 10.5, color:'#9CA3AF', marginTop: 5, display:'flex', alignItems:'center', gap: 4 }}>
-              <Icon name="link" size={10} color="#9CA3AF"/> {links.length} linked {links.length === 1 ? 'document' : 'documents'}
+            <div style={{ fontSize: 10.5, color:'#9A968C', marginTop: 5, display:'flex', alignItems:'center', gap: 4 }}>
+              <Icon name="link" size={10} color="#9A968C"/> {links.length} linked {links.length === 1 ? 'document' : 'documents'}
             </div>
           )}
         </div>
 
         <div style={{ display:'flex', alignItems:'center', gap: 7 }}>
           <Avatar name={item.owner} size={22}/>
-          <span style={{ fontSize: 12.5, color:'#374151' }}>{item.owner}</span>
+          <span style={{ fontSize: 12.5, color:'#343128' }}>{item.owner}</span>
         </div>
 
         <div style={{ justifySelf:'end' }}>
@@ -137,7 +138,7 @@ function ClauseRow({ item, showHelp }) {
 
         <div style={{ justifySelf:'center', alignSelf:'start', paddingTop: 2 }}>
           {hasLinks && (
-            <span style={{ display:'inline-flex', transform: open ? 'rotate(180deg)' : 'none', transition:'transform 150ms', color:'#9CA3AF' }}>
+            <span style={{ display:'inline-flex', transform: open ? 'rotate(180deg)' : 'none', transition:'transform 150ms', color:'#9A968C' }}>
               <Icon name="chevron-down" size={16}/>
             </span>
           )}
@@ -145,8 +146,8 @@ function ClauseRow({ item, showHelp }) {
       </div>
 
       {open && hasLinks && (
-        <div style={{ padding:'2px 16px 14px 86px', background:'#FAFAFC' }}>
-          <div style={{ fontSize: 10.5, color:'#9CA3AF', fontWeight: 600, textTransform:'uppercase', letterSpacing:'0.05em', margin:'4px 0 8px' }}>
+        <div style={{ padding:'2px 16px 14px 86px', background:'#F7F6F3' }}>
+          <div style={{ fontSize: 10.5, color:'#9A968C', fontWeight: 600, textTransform:'uppercase', letterSpacing:'0.05em', margin:'4px 0 8px' }}>
             Linked documents &amp; evidence
           </div>
           <div style={{ display:'flex', flexDirection:'column', gap: 6, maxWidth: 560 }}>
@@ -169,13 +170,13 @@ function ClauseCard({ group, showHelp }) {
         <div style={{ display:'flex', alignItems:'center', gap: 12 }}>
           <div style={{
             width: 34, height: 34, borderRadius: 8,
-            background:'#3B1A6B', color:'#fff',
+            background:'var(--brand-ink)', color:'#fff',
             display:'flex', alignItems:'center', justifyContent:'center',
             fontSize: 15, fontWeight: 700,
           }}>{group.clause}</div>
           <div>
-            <div style={{ fontSize: 14.5, fontWeight: 600, color:'#111827' }}>Clause {group.clause} · {group.title}</div>
-            <div style={{ fontSize: 11, color:'#9CA3AF', marginTop: 1 }}>{group.items.length} sub-clauses</div>
+            <div style={{ fontSize: 14.5, fontWeight: 600, color:'var(--brand-ink)' }}>Clause {group.clause} · {group.title}</div>
+            <div style={{ fontSize: 11, color:'#9A968C', marginTop: 1 }}>{group.items.length} sub-clauses</div>
           </div>
         </div>
         <CoreStatusPill status={worst}>{CLAUSE_STATE_LABEL[worst]}</CoreStatusPill>
@@ -190,7 +191,7 @@ function CoreSummary({ groups }) {
   const t = { ok:0, amber:0, red:0, na:0 };
   all.forEach(i => { t[i.status] = (t[i.status]||0) + 1; });
   const tiles = [
-    { label:'Clauses in scope', value: all.length, color:'#111827', icon:'list-checks' },
+    { label:'Clauses in scope', value: all.length, color:'var(--brand-ink)', icon:'list-checks' },
     { label:'Ready',            value: t.ok,       color:'#047857', icon:'check-circle-2' },
     { label:'Need attention',   value: t.amber,    color:'#B45309', icon:'alert-triangle' },
     { label:'Open gaps',        value: t.red,      color:'#B91C1C', icon:'x-circle' },
@@ -199,8 +200,8 @@ function CoreSummary({ groups }) {
     <div style={{ display:'grid', gridTemplateColumns:'repeat(4, 1fr)', gap: 14, marginBottom: 20 }}>
       {tiles.map(ti => (
         <Card key={ti.label} padding={16}>
-          <div style={{ display:'flex', alignItems:'center', gap: 7, fontSize: 11.5, color:'#6B7280', fontWeight: 500, textTransform:'uppercase', letterSpacing:'0.04em' }}>
-            <Icon name={ti.icon} size={13} color="#6B2FA0"/> {ti.label}
+          <div style={{ display:'flex', alignItems:'center', gap: 7, fontSize: 11.5, color:'var(--brand-muted)', fontWeight: 500, textTransform:'uppercase', letterSpacing:'0.04em' }}>
+            <Icon name={ti.icon} size={13} color="var(--brand-accent)"/> {ti.label}
           </div>
           <div style={{ fontSize: 28, fontWeight: 600, color: ti.color, marginTop: 8, lineHeight: 1 }}>{ti.value}</div>
         </Card>
@@ -232,9 +233,9 @@ function ISMSCorePage() {
           <button key={f.k} onClick={()=>setFilter(f.k)}
             style={{
               padding:'4px 12px', borderRadius: 6,
-              border:'1px solid ' + (filter === f.k ? 'rgba(107,47,160,0.35)' : '#E5E7EB'),
-              background: filter === f.k ? 'rgba(107,47,160,0.08)' : '#fff',
-              color: filter === f.k ? '#4A1F70' : '#6B7280',
+              border:'1px solid ' + (filter === f.k ? 'color-mix(in srgb, var(--brand-accent) 35%, transparent)' : 'var(--brand-border)'),
+              background: filter === f.k ? 'color-mix(in srgb, var(--brand-accent) 8%, transparent)' : '#fff',
+              color: filter === f.k ? '#B8410F' : 'var(--brand-muted)',
               fontSize: 11.5, fontWeight: 500, cursor:'pointer',
               fontFamily:'Poppins, sans-serif',
             }}>{f.label}</button>
@@ -243,12 +244,12 @@ function ISMSCorePage() {
         {/* ISO 27001 guidance toggle */}
         <div onClick={()=>setShowHelp(v=>!v)}
           style={{ marginLeft:'auto', display:'inline-flex', alignItems:'center', gap: 8, cursor:'pointer', userSelect:'none' }}>
-          <span style={{ fontSize: 11.5, color:'#4B5563', fontWeight: 500, display:'inline-flex', alignItems:'center', gap: 5 }}>
-            <Icon name="book-open" size={13} color="#6B2FA0"/> ISO 27001 guidance
+          <span style={{ fontSize: 11.5, color:'#4A473F', fontWeight: 500, display:'inline-flex', alignItems:'center', gap: 5 }}>
+            <Icon name="book-open" size={13} color="var(--brand-accent)"/> ISO 27001 guidance
           </span>
           <span style={{
             width: 34, height: 18, borderRadius: 9999, position:'relative', transition:'background 150ms',
-            background: showHelp ? '#6B2FA0' : '#D1D5DB',
+            background: showHelp ? 'var(--brand-accent)' : '#C6C4BB',
           }}>
             <span style={{
               position:'absolute', top: 2, left: showHelp ? 18 : 2, width: 14, height: 14,
@@ -262,7 +263,7 @@ function ISMSCorePage() {
         {groups.map(g => <ClauseCard key={g.clause} group={g} showHelp={showHelp}/>)}
         {groups.length === 0 && (
           <Card padding={40}>
-            <div style={{ textAlign:'center', color:'#9CA3AF', fontSize: 13 }}>No clauses match this filter.</div>
+            <div style={{ textAlign:'center', color:'#9A968C', fontSize: 13 }}>No clauses match this filter.</div>
           </Card>
         )}
       </div>

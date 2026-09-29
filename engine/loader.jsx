@@ -22,6 +22,14 @@
     window.SITE = await (await fetch(manifest.site + '?t=' + Date.now())).json();
   } catch (e) { return fail('site/site.json is missing or invalid JSON:\n' + e); }
 
+  // Theme (optional): site/theme.json overrides the --brand-* tokens.
+  try {
+    const r = await fetch('site/theme.json?t=' + Date.now());
+    window.THEME = r.ok ? await r.json() : null;
+  } catch (e) { window.THEME = null; }
+  window.applyTheme(window.THEME);
+  document.title = ((window.SITE.brand || {}).legalName || (window.SITE.brand || {}).name || 'annexa') + ' — IMS Dashboard';
+
   // Data: every data/*.json is { GLOBAL_NAME: value, ... } merged onto window.
   for (const path of manifest.data || []) {
     try {

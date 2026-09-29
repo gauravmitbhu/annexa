@@ -1,0 +1,19 @@
+{
+  "OMS": {
+    "source": "Supplier security rating platform (https://example.com/ratings) — 'Active Suppliers' export",
+    "exportedFile": "Active_Suppliers_demo.xlsx",
+    "exportedOn": "2026-09-20",
+    "loadedOn": "2026-09-20",
+    "live": false,
+    "note": "Demo data. Point-in-time export; it does not refresh itself. Scores shown are mostly self-declared by the supplier.",
+    "count": 6,
+    "suppliers": [
+      { "name": "Acme Hosting", "country": "United Kingdom", "industry": "IT & Telecom", "criticality": "Critical", "type": "Service Providers", "risk": "Low", "reporting": "Yearly", "status": "Submitted", "score": 3.8, "trend": "Up", "lastUpdated": "Mar 10, 2026", "validated": "Self Declared", "vulns": { "Critical": 0, "High": 1 }, "vulnHigh": 1, "publishedDocs": "Yes", "sharedDocs": "Yes", "added": "Jan 15, 2026" },
+      { "name": "Blue Line Networks", "country": "United Kingdom", "industry": "IT & Telecom", "criticality": "Critical", "type": "Network and Information system providers", "risk": "Medium", "reporting": "Half Yearly", "status": "Submitted", "score": 2.6, "trend": "No change", "lastUpdated": "May 02, 2026", "validated": "Self Declared", "vulns": { "Critical": 1, "High": 2, "Medium": 4 }, "vulnHigh": 3, "publishedDocs": "No", "sharedDocs": "Yes", "added": "Jan 15, 2026" },
+      { "name": "Globex Managed IT", "country": "Ireland", "industry": "IT & Telecom", "criticality": "Essential", "type": "Service Contractors", "risk": "High", "reporting": "Half Yearly", "status": "Submitted", "score": 1.9, "trend": "Down", "lastUpdated": "Feb 21, 2026", "validated": "Self Declared", "vulns": { "Critical": 2, "High": 3, "Low": 5 }, "vulnHigh": 5, "publishedDocs": "No", "sharedDocs": "No", "added": "Feb 01, 2026" },
+      { "name": "Initech Payroll Services", "country": "France", "industry": "Bank & Insurance / Financial services", "criticality": "Important", "type": "Service Providers", "risk": "Medium", "reporting": "Yearly", "status": "Pending relationship request", "score": 2.9, "trend": "-", "lastUpdated": "Apr 04, 2026", "validated": "-", "vulns": { "Medium": 2, "Negligible": 3 }, "vulnHigh": 0, "publishedDocs": "-", "sharedDocs": "-", "added": "Apr 01, 2026" },
+      { "name": "Wayne Cloud Office", "country": "Germany", "industry": "IT & Telecom", "criticality": "Important", "type": "Product Providers", "risk": "Low", "reporting": "Yearly", "status": "Submitted", "score": 4.2, "trend": "Up", "lastUpdated": "Jun 01, 2026", "validated": "Self Declared", "vulns": { "High": 1, "Low": 2 }, "vulnHigh": 1, "publishedDocs": "Yes", "sharedDocs": "Yes", "added": "Jan 20, 2026" },
+      { "name": "Umbrella Security Guarding", "country": "United Kingdom", "industry": "Services", "criticality": "Others", "type": "Service Contractors", "risk": "Medium", "reporting": "Yearly", "status": "Not activated", "score": 0, "trend": "-", "lastUpdated": "-", "validated": "-", "vulns": {}, "vulnHigh": 0, "publishedDocs": "-", "sharedDocs": "-", "added": "Jul 12, 2026" }
+    ]
+  }
+}

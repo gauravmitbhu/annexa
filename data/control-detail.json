@@ -1,0 +1,444 @@
+{
+  "CTRL_DETAIL_NOTE": "Demo data. Implementation descriptions and justifications are generic placeholders for the fictional Northwind Ltd SoA v1.0.",
+  "CTRL_IMPL": {
+    "5.1": [
+      "Policies for information security is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "5.2": [
+      "Information security roles and responsibilities is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "5.3": [
+      "Segregation of duties is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "5.4": [
+      "Management responsibilities is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "5.5": [
+      "Contact with authorities is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "5.6": [
+      "Contact with special interest groups is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "5.7": [
+      "Threat intelligence is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "5.8": [
+      "Information security in project management is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "5.9": [
+      "Inventory of information and other associated assets is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "5.10": [
+      "Acceptable use of information and other associated assets is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "5.11": [
+      "Return of assets is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "5.12": [
+      "Classification of information is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "5.13": [
+      "Labelling of information is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "5.14": [
+      "Information transfer is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "5.15": [
+      "Access control is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "5.16": [
+      "Identity management is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "5.17": [
+      "Authentication information is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "5.18": [
+      "Access rights is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "5.19": [
+      "Information security in supplier relationships is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "5.20": [
+      "Addressing information security in supplier agreements is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "5.21": [
+      "Managing information security in the ICT supply chain is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "5.22": [
+      "Monitoring, review and change management of supplier services is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "5.23": [
+      "Information security for cloud services is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "5.24": [
+      "Information security incident management planning and preparation is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "5.25": [
+      "Assessment and decision on information security events is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "5.26": [
+      "Response to information security incidents is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "5.27": [
+      "Learning from information security incidents is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "5.28": [
+      "Collection of evidence is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "5.29": [
+      "Information security during disruption is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "5.30": [
+      "ICT readiness for business continuity is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "5.31": [
+      "Legal, statutory, regulatory and contractual requirements is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "5.32": [
+      "Intellectual property rights is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "5.33": [
+      "Protection of records is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "5.34": [
+      "Privacy and protection of PII is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "5.35": [
+      "Independent review of information security is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "5.36": [
+      "Compliance with policies, rules and standards is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "5.37": [
+      "Documented operating procedures is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "6.1": [
+      "Screening is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "6.2": [
+      "Terms and conditions of employment is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "6.3": [
+      "Information security awareness, education and training is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "6.4": [
+      "Disciplinary process is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "6.5": [
+      "Responsibilities after termination or change of employment is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "6.6": [
+      "Confidentiality or non-disclosure agreements is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "6.7": [
+      "Remote working is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "6.8": [
+      "Information security event reporting is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "7.1": [
+      "Physical security perimeters is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "7.2": [
+      "Physical entry is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "7.3": [
+      "Securing offices, rooms and facilities is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "7.4": [
+      "Physical security monitoring is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "7.5": [
+      "Protecting against physical and environmental threats is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "7.6": [
+      "Working in secure areas is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "7.7": [
+      "Clear desk and clear screen is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "7.8": [
+      "Equipment siting and protection is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "7.9": [
+      "Security of assets off-premises is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "7.10": [
+      "Storage media is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "7.11": [
+      "Supporting utilities is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "7.12": [
+      "Cabling security is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "7.13": [
+      "Equipment maintenance is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "7.14": [
+      "Secure disposal or re-use of equipment is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "8.1": [
+      "User endpoint devices is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "8.2": [
+      "Privileged access rights is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "8.3": [
+      "Information access restriction is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "8.4": [
+      "Access to source code is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "8.5": [
+      "Secure authentication is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "8.6": [
+      "Capacity management is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "8.7": [
+      "Protection against malware is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "8.8": [
+      "Management of technical vulnerabilities is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "8.9": [
+      "Configuration management is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "8.10": [
+      "Information deletion is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "8.11": [
+      "Data masking is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "8.12": [
+      "Data leakage prevention is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "8.13": [
+      "Information backup is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "8.14": [
+      "Redundancy of information processing facilities is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "8.15": [
+      "Logging is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "8.16": [
+      "Monitoring activities is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "8.17": [
+      "Clock synchronization is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "8.18": [
+      "Use of privileged utility programs is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "8.19": [
+      "Installation of software on operational systems is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "8.20": [
+      "Networks security is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "8.21": [
+      "Security of network services is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "8.22": [
+      "Segregation of networks is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "8.23": [
+      "Web filtering is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "8.24": [
+      "Use of cryptography is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "8.25": [
+      "Secure development life cycle is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "8.26": [
+      "Application security requirements is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "8.27": [
+      "Secure system architecture and engineering principles is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "8.28": [
+      "Secure coding is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "8.29": [
+      "Security testing in development and acceptance is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "8.30": [
+      "Outsourced development is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "8.31": [
+      "Separation of development, test and production environments is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "8.32": [
+      "Change management is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "8.33": [
+      "Test information is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ],
+    "8.34": [
+      "Protection of information systems during audit testing is addressed by a documented Northwind Ltd procedure, applied at all three offices and reviewed annually by the control owner."
+    ]
+  },
+  "CTRL_JUSTIFY": {
+    "5.1": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "5.2": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "5.3": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "5.4": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "5.5": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "5.6": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "5.7": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "5.8": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "5.9": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "5.10": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "5.11": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "5.12": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "5.13": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "5.14": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "5.15": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "5.16": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "5.17": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "5.18": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "5.19": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "5.20": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "5.21": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "5.22": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "5.23": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "5.24": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "5.25": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "5.26": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "5.27": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "5.28": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "5.29": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "5.30": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "5.31": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "5.32": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "5.33": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "5.34": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "5.35": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "5.36": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "5.37": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "6.1": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "6.2": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "6.3": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "6.4": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "6.5": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "6.6": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "6.7": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "6.8": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "7.1": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "7.2": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "7.3": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "7.4": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "7.5": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "7.6": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "7.7": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "7.8": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "7.9": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "7.10": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "7.11": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "7.12": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "7.13": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "7.14": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "8.1": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "8.2": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "8.3": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "8.4": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "8.5": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "8.6": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "8.7": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "8.8": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "8.9": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "8.10": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "8.11": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "8.12": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "8.13": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "8.14": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "8.15": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "8.16": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "8.17": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "8.18": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "8.19": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "8.20": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "8.21": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "8.22": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "8.23": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "8.24": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "8.25": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "8.26": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "8.27": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "8.28": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "8.29": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "8.30": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "8.31": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "8.32": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "8.33": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers.",
+    "8.34": "Applicable. Required to manage information security risks for the software and cloud services it provides to customers."
+  },
+  "CTRL_FINDINGS": {
+    "5.9": [
+      {
+        "ref": "NC-106",
+        "kind": "Minor NC",
+        "note": "Asset inventory incomplete at Northgate office."
+      }
+    ],
+    "5.12": [
+      {
+        "ref": "NC-101",
+        "kind": "Minor NC",
+        "note": "Classification scheme differs between sites."
+      }
+    ],
+    "5.19": [
+      {
+        "ref": "NC-107",
+        "kind": "Follow-up",
+        "note": "Some suppliers not yet classified for criticality."
+      }
+    ],
+    "5.26": [
+      {
+        "ref": "NC-108",
+        "kind": "Minor NC",
+        "note": "Out-of-hours incident response not tested at Northgate office."
+      }
+    ],
+    "5.34": [
+      {
+        "ref": "NC-102",
+        "kind": "Observation",
+        "note": "Privacy notice could explain legitimate interest more clearly."
+      }
+    ],
+    "7.4": [
+      {
+        "ref": "NC-104",
+        "kind": "Minor NC",
+        "note": "CCTV coverage not risk assessed at Harbour office."
+      }
+    ],
+    "8.1": [
+      {
+        "ref": "NC-103",
+        "kind": "Minor NC",
+        "note": "Disk encryption not enforced on all laptops."
+      }
+    ],
+    "8.10": [
+      {
+        "ref": "NC-105",
+        "kind": "Minor NC",
+        "note": "CRM records kept beyond the retention period."
+      }
+    ],
+    "8.13": [
+      {
+        "ref": "CA-2026-09",
+        "kind": "Accepted risk",
+        "note": "Segregation of duties for backup administration not feasible at current size."
+      }
+    ]
+  }
+}

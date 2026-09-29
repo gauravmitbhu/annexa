@@ -18,20 +18,20 @@ function ModelSelector({ value, onChange }) {
         style={{
           display:'inline-flex', alignItems:'center', gap: 5,
           padding:'3px 8px 3px 7px', borderRadius: 6,
-          border:'1px solid rgba(107,47,160,0.25)',
-          background: open ? 'rgba(107,47,160,0.1)' : 'rgba(107,47,160,0.05)',
-          color:'#6B2FA0', fontSize: 11, fontWeight: 600,
+          border:'1px solid color-mix(in srgb, var(--brand-accent) 25%, transparent)',
+          background: open ? 'color-mix(in srgb, var(--brand-accent) 10%, transparent)' : 'color-mix(in srgb, var(--brand-accent) 5%, transparent)',
+          color:'var(--brand-accent)', fontSize: 11, fontWeight: 600,
           fontFamily:'Poppins, sans-serif', cursor:'pointer',
           transition:'all 120ms',
         }}>
-        <Icon name="cpu" size={10} color="#6B2FA0"/>
+        <Icon name="cpu" size={10} color="var(--brand-accent)"/>
         {current.label}
-        <Icon name="chevron-down" size={9} color="#6B2FA0"/>
+        <Icon name="chevron-down" size={9} color="var(--brand-accent)"/>
       </button>
       {open && (
         <div style={{
           position:'absolute', top:'calc(100% + 4px)', right: 0, zIndex: 200,
-          background:'#fff', border:'1px solid #E5E7EB', borderRadius: 8,
+          background:'#fff', border:'1px solid var(--brand-border)', borderRadius: 8,
           boxShadow:'0 4px 16px rgba(0,0,0,0.1)', minWidth: 192, overflow:'hidden',
         }}>
           {AI_MODELS.map(m => {
@@ -42,19 +42,19 @@ function ModelSelector({ value, onChange }) {
                 style={{
                   display:'flex', alignItems:'center', justifyContent:'space-between',
                   width:'100%', padding:'8px 12px', border:'none', textAlign:'left',
-                  background: active ? 'rgba(107,47,160,0.07)' : '#fff',
+                  background: active ? 'color-mix(in srgb, var(--brand-accent) 7%, transparent)' : '#fff',
                   fontFamily:'Poppins, sans-serif', cursor:'pointer',
-                  borderBottom:'1px solid #F3F4F6',
+                  borderBottom:'1px solid var(--brand-surface)',
                 }}
-                onMouseEnter={e=>e.currentTarget.style.background='#FAFAFC'}
-                onMouseLeave={e=>e.currentTarget.style.background=active?'rgba(107,47,160,0.07)':'#fff'}>
-                <span style={{ fontSize: 12.5, color: active?'#6B2FA0':'#111827', fontWeight: active?600:400 }}>
+                onMouseEnter={e=>e.currentTarget.style.background='#F7F6F3'}
+                onMouseLeave={e=>e.currentTarget.style.background=active?'color-mix(in srgb, var(--brand-accent) 7%, transparent)':'#fff'}>
+                <span style={{ fontSize: 12.5, color: active?'var(--brand-accent)':'var(--brand-ink)', fontWeight: active?600:400 }}>
                   {m.label}
                 </span>
                 <span style={{
                   fontSize: 10, padding:'1px 6px', borderRadius: 9999, fontWeight: 500,
-                  background: active ? 'rgba(107,47,160,0.12)' : '#F3F4F6',
-                  color: active ? '#6B2FA0' : '#6B7280',
+                  background: active ? 'color-mix(in srgb, var(--brand-accent) 12%, transparent)' : 'var(--brand-surface)',
+                  color: active ? 'var(--brand-accent)' : 'var(--brand-muted)',
                 }}>{m.badge}</span>
               </button>
             );
@@ -105,15 +105,15 @@ function Citation({ source, refLabel: r }) {
         display:'inline-flex', alignItems:'center', gap: 4,
         padding:'2px 7px 2px 6px', borderRadius: 9999,
         fontSize: 10.5, fontWeight: 500,
-        background: h ? 'rgba(107,47,160,0.1)' : '#F3F4F6',
-        color: h ? '#4A1F70' : '#4B5563',
-        border: `1px solid ${h ? 'rgba(107,47,160,0.25)' : '#E5E7EB'}`,
+        background: h ? 'color-mix(in srgb, var(--brand-accent) 10%, transparent)' : 'var(--brand-surface)',
+        color: h ? 'var(--brand-accent-dark)' : '#4A473F',
+        border: `1px solid ${h ? 'color-mix(in srgb, var(--brand-accent) 25%, transparent)' : 'var(--brand-border)'}`,
         cursor:'pointer', transition:'all 150ms',
         marginRight: 4, marginTop: 4,
       }}>
       <Icon name="paperclip" size={10} />
       <strong style={{ fontWeight: 600 }}>{source}</strong>
-      <span style={{ color:'#9CA3AF' }}>·</span>{r}
+      <span style={{ color:'#9A968C' }}>·</span>{r}
     </span>
   );
 }
@@ -123,7 +123,7 @@ function Citation({ source, refLabel: r }) {
 // italic, inline code and bullet/numbered lists — enough for ISMS answers.
 const MD_CODE_STYLE = {
   fontFamily:'ui-monospace, SFMono-Regular, monospace', fontSize: 11.5,
-  background:'#F3F4F6', borderRadius: 4, padding:'1px 4px', color:'#6B2FA0',
+  background:'var(--brand-surface)', borderRadius: 4, padding:'1px 4px', color:'var(--brand-accent)',
 };
 
 function mdInline(str, kp) {
@@ -132,7 +132,7 @@ function mdInline(str, kp) {
   let last = 0, m, i = 0;
   while ((m = re.exec(str)) !== null) {
     if (m.index > last) out.push(str.slice(last, m.index));
-    if (m[1] != null)      out.push(<strong key={kp+'b'+i} style={{ fontWeight: 600, color:'#111827' }}>{m[1]}</strong>);
+    if (m[1] != null)      out.push(<strong key={kp+'b'+i} style={{ fontWeight: 600, color:'var(--brand-ink)' }}>{m[1]}</strong>);
     else if (m[2] != null) out.push(<code key={kp+'c'+i} style={MD_CODE_STYLE}>{m[2]}</code>);
     else if (m[3] != null) out.push(<em key={kp+'i'+i}>{m[3]}</em>);
     else if (m[4] != null) out.push(<em key={kp+'u'+i}>{m[4]}</em>);
@@ -162,12 +162,12 @@ function Markdown({ text }) {
   flushPara(); flushList();
 
   return (
-    <div style={{ fontSize: 13, lineHeight: 1.55, color:'#1F2937' }}>
+    <div style={{ fontSize: 13, lineHeight: 1.55, color:'#231F19' }}>
       {blocks.map((blk, i) => {
         if (blk.t === 'h') {
           const size = blk.lvl <= 1 ? 15 : blk.lvl === 2 ? 13.5 : 12.5;
           return (
-            <div key={i} style={{ fontSize: size, fontWeight: 600, color:'#111827',
+            <div key={i} style={{ fontSize: size, fontWeight: 600, color:'var(--brand-ink)',
               margin: i===0 ? '0 0 6px' : '12px 0 6px' }}>
               {mdInline(blk.c, 'h'+i)}
             </div>
@@ -191,12 +191,12 @@ function UserMsg({ children }) {
   return (
     <div style={{ display:'flex', justifyContent:'flex-end', marginBottom: 14 }}>
       <div style={{
-        background: 'rgba(107,47,160,0.1)',
-        color: '#3B1A6B',
+        background: 'color-mix(in srgb, var(--brand-accent) 10%, transparent)',
+        color: 'var(--brand-ink)',
         padding: '9px 13px',
         borderRadius: '14px 14px 4px 14px',
         fontSize: 13, lineHeight: 1.5, maxWidth: '85%',
-        border: '1px solid rgba(107,47,160,0.18)',
+        border: '1px solid color-mix(in srgb, var(--brand-accent) 18%, transparent)',
       }}>{children}</div>
     </div>
   );
@@ -207,7 +207,7 @@ function ClaudeMsg({ children, citations, actions }) {
     <div style={{ display:'flex', gap: 8, marginBottom: 16, alignItems:'flex-start' }}>
       <div style={{
         width: 24, height: 24, borderRadius: 6,
-        background:'linear-gradient(135deg,#6B2FA0,#E91E63)',
+        background:'linear-gradient(135deg,var(--brand-accent),var(--brand-accent))',
         display:'flex', alignItems:'center', justifyContent:'center',
         flexShrink: 0, marginTop: 2,
       }}>
@@ -215,13 +215,13 @@ function ClaudeMsg({ children, citations, actions }) {
       </div>
       <div style={{
         flex: 1, minWidth: 0,
-        background: '#fff', border:'1px solid #E5E7EB',
+        background: '#fff', border:'1px solid var(--brand-border)',
         padding: '10px 13px', borderRadius:'14px 14px 14px 4px',
-        fontSize: 13, lineHeight: 1.55, color:'#1F2937',
+        fontSize: 13, lineHeight: 1.55, color:'#231F19',
       }}>
         {children}
         {citations && (
-          <div style={{ marginTop: 8, paddingTop: 8, borderTop: '1px dashed #E5E7EB', display:'flex', flexWrap:'wrap' }}>
+          <div style={{ marginTop: 8, paddingTop: 8, borderTop: '1px dashed var(--brand-border)', display:'flex', flexWrap:'wrap' }}>
             {citations.map((c,i) => <Citation key={i} source={c.source} refLabel={c.ref} />)}
           </div>
         )}
@@ -240,13 +240,13 @@ function StreamingDots() {
     <div style={{ display:'flex', gap: 8, marginBottom: 16, alignItems:'center' }}>
       <div style={{
         width: 24, height: 24, borderRadius: 6,
-        background:'linear-gradient(135deg,#6B2FA0,#E91E63)',
+        background:'linear-gradient(135deg,var(--brand-accent),var(--brand-accent))',
         display:'flex', alignItems:'center', justifyContent:'center',
       }}>
         <Icon name="sparkles" size={13} color="#fff" />
       </div>
       <div style={{
-        background:'#fff', border:'1px solid #E5E7EB',
+        background:'#fff', border:'1px solid var(--brand-border)',
         padding:'10px 14px', borderRadius:'14px 14px 14px 4px',
       }}>
         <span className="dot"/><span className="dot"/><span className="dot"/>
@@ -263,9 +263,9 @@ function GhostPrompt({ children, onClick }) {
       style={{
         display:'block', width:'100%', textAlign:'left',
         padding:'9px 12px', borderRadius: 8,
-        background: h ? 'rgba(107,47,160,0.08)' : '#fff',
-        border:`1px dashed ${h ? '#6B2FA0' : '#D1D5DB'}`,
-        color:'#4A1F70', fontSize: 12.5, fontWeight: 500,
+        background: h ? 'color-mix(in srgb, var(--brand-accent) 8%, transparent)' : '#fff',
+        border:`1px dashed ${h ? 'var(--brand-accent)' : '#C6C4BB'}`,
+        color:'var(--brand-accent-dark)', fontSize: 12.5, fontWeight: 500,
         fontFamily:'Poppins, sans-serif',
         cursor:'pointer', transition:'all 150ms',
         marginBottom: 6,
@@ -284,9 +284,9 @@ function SlashChip({ children, onClick }) {
       onMouseEnter={()=>setH(true)} onMouseLeave={()=>setH(false)}
       style={{
         padding:'4px 9px', borderRadius: 6,
-        background: h ? '#F3E8FF' : '#F9FAFB',
-        border:`1px solid ${h ? 'rgba(107,47,160,0.3)' : '#E5E7EB'}`,
-        fontSize: 11, color:'#6B2FA0', fontWeight: 500,
+        background: h ? '#F3E8FF' : '#F7F6F3',
+        border:`1px solid ${h ? 'color-mix(in srgb, var(--brand-accent) 30%, transparent)' : 'var(--brand-border)'}`,
+        fontSize: 11, color:'var(--brand-accent)', fontWeight: 500,
         whiteSpace:'nowrap', cursor:'pointer',
         fontFamily:'ui-monospace, SFMono-Regular, monospace',
         transition:'all 120ms', flexShrink: 0,
@@ -311,14 +311,14 @@ function EmptyThread({ onPick }) {
       }}>
         <div style={{
           width: 44, height: 44, borderRadius: 12,
-          background:'linear-gradient(135deg,#6B2FA0,#E91E63)',
+          background:'linear-gradient(135deg,var(--brand-accent),var(--brand-accent))',
           display:'inline-flex', alignItems:'center', justifyContent:'center',
           marginBottom: 10,
         }} className="sparkle-pulse">
           <Icon name="sparkles" size={22} color="#fff" />
         </div>
-        <div style={{ fontSize: 15, fontWeight: 600, color:'#111827' }}>How can I help?</div>
-        <div style={{ fontSize: 12, color:'#6B7280', marginTop: 4 }}>
+        <div style={{ fontSize: 15, fontWeight: 600, color:'var(--brand-ink)' }}>How can I help?</div>
+        <div style={{ fontSize: 12, color:'var(--brand-muted)', marginTop: 4 }}>
           Read-only across ticketing, documents, GitLab, Elastic, MDM, LMS.
         </div>
       </div>
@@ -327,16 +327,16 @@ function EmptyThread({ onPick }) {
           <button key={i} onClick={()=>onPick && onPick(t.text)}
             style={{
               padding: 11, borderRadius: 8,
-              background:'#fff', border:'1px solid #E5E7EB',
+              background:'#fff', border:'1px solid var(--brand-border)',
               fontFamily:'Poppins, sans-serif',
-              fontSize: 11.5, fontWeight: 500, color:'#374151',
+              fontSize: 11.5, fontWeight: 500, color:'#343128',
               textAlign:'left', cursor:'pointer',
               transition:'all 150ms',
               display:'flex', flexDirection:'column', gap: 6, alignItems:'flex-start',
             }}
-            onMouseEnter={(e)=>{ e.currentTarget.style.borderColor='rgba(107,47,160,0.3)'; e.currentTarget.style.background='#FAFAFC'; }}
-            onMouseLeave={(e)=>{ e.currentTarget.style.borderColor='#E5E7EB'; e.currentTarget.style.background='#fff'; }}>
-            <Icon name={t.icon} size={14} color="#6B2FA0" />
+            onMouseEnter={(e)=>{ e.currentTarget.style.borderColor='color-mix(in srgb, var(--brand-accent) 30%, transparent)'; e.currentTarget.style.background='#F7F6F3'; }}
+            onMouseLeave={(e)=>{ e.currentTarget.style.borderColor='var(--brand-border)'; e.currentTarget.style.background='#fff'; }}>
+            <Icon name={t.icon} size={14} color="var(--brand-accent)" />
             <span style={{ lineHeight: 1.35 }}>{t.text}</span>
           </button>
         ))}
@@ -348,7 +348,7 @@ function EmptyThread({ onPick }) {
 function CollapsedAI({ onOpen }) {
   return (
     <div style={{
-      width: 48, background:'#fff', borderLeft:'1px solid #E5E7EB',
+      width: 48, background:'#fff', borderLeft:'1px solid var(--brand-border)',
       display:'flex', flexDirection:'column', alignItems:'center',
       padding:'14px 0', flexShrink: 0,
     }}>
@@ -356,7 +356,7 @@ function CollapsedAI({ onOpen }) {
         title="Ask Claude"
         style={{
           width: 36, height: 36, borderRadius: 8,
-          background:'linear-gradient(135deg,#6B2FA0,#E91E63)',
+          background:'linear-gradient(135deg,var(--brand-accent),var(--brand-accent))',
           border:'none', cursor:'pointer',
           display:'flex', alignItems:'center', justifyContent:'center',
           position:'relative',
@@ -370,7 +370,7 @@ function CollapsedAI({ onOpen }) {
       </button>
       <div style={{
         writingMode:'vertical-rl', transform:'rotate(180deg)',
-        marginTop: 16, fontSize: 11, color:'#6B7280', fontWeight: 500,
+        marginTop: 16, fontSize: 11, color:'var(--brand-muted)', fontWeight: 500,
         letterSpacing:'0.05em',
       }}>indexed · ready</div>
     </div>
@@ -493,36 +493,36 @@ function AIPanel({ context, contextDetail, mode, onCollapse, drawerOpen, control
 
   return (
     <aside style={{
-      width: 380, background:'#FAFAFC',
-      borderLeft:'1px solid #E5E7EB',
+      width: 380, background:'#F7F6F3',
+      borderLeft:'1px solid var(--brand-border)',
       display:'flex', flexDirection:'column',
       flexShrink: 0,
     }}>
       {/* Header w/ subtle gradient */}
       <div style={{
         padding:'14px 16px 12px',
-        borderBottom:'1px solid #E5E7EB',
-        background:'linear-gradient(180deg, rgba(107,47,160,0.06), transparent)',
+        borderBottom:'1px solid var(--brand-border)',
+        background:'linear-gradient(180deg, color-mix(in srgb, var(--brand-accent) 6%, transparent), transparent)',
         position:'relative',
       }}>
         <div style={{
           position:'absolute', top:0, left:0, right:0, height: 2,
-          background:'linear-gradient(90deg,#6B2FA0,#E91E63)',
+          background:'linear-gradient(90deg,var(--brand-accent),var(--brand-accent))',
         }}/>
         <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between' }}>
           <div style={{ display:'flex', alignItems:'center', gap: 8 }}>
             <div style={{
               width: 26, height: 26, borderRadius: 7,
-              background:'linear-gradient(135deg,#6B2FA0,#E91E63)',
+              background:'linear-gradient(135deg,var(--brand-accent),var(--brand-accent))',
               display:'flex', alignItems:'center', justifyContent:'center',
             }}>
               <Icon name="sparkles" size={14} color="#fff" />
             </div>
             <div>
-              <div style={{ fontSize: 14, fontWeight: 600, color:'#111827', lineHeight: 1.2 }}>
+              <div style={{ fontSize: 14, fontWeight: 600, color:'var(--brand-ink)', lineHeight: 1.2 }}>
                 {panelMode === 'evolve' ? 'Evolve' : 'Ask Claude'}
               </div>
-              <div style={{ fontSize: 10.5, color: panelMode === 'evolve' ? '#E91E63' : '#6B2FA0', fontWeight: 500 }}>
+              <div style={{ fontSize: 10.5, color: panelMode === 'evolve' ? 'var(--brand-accent)' : 'var(--brand-accent)', fontWeight: 500 }}>
                 {panelMode === 'evolve' ? 'Self-modifying site' : 'ISMS Co-pilot'}
               </div>
             </div>
@@ -531,23 +531,23 @@ function AIPanel({ context, contextDetail, mode, onCollapse, drawerOpen, control
             <ModelSelector value={model} onChange={m => { setModel(m); newThread(); }}/>
             {panelMode === 'evolve' && (
               <button title="Change history" style={iconBtn} onClick={()=>setShowHistory(h=>!h)}>
-                <Icon name="history" size={14} color={showHistory ? '#E91E63' : '#6B7280'}/>
+                <Icon name="history" size={14} color={showHistory ? 'var(--brand-accent)' : 'var(--brand-muted)'}/>
               </button>
             )}
-            <button title="New thread" style={iconBtn} onClick={newThread}><Icon name="plus" size={14} color="#6B7280"/></button>
-            <button title="Collapse" style={iconBtn} onClick={onCollapse}><Icon name="panel-right-close" size={14} color="#6B7280"/></button>
+            <button title="New thread" style={iconBtn} onClick={newThread}><Icon name="plus" size={14} color="var(--brand-muted)"/></button>
+            <button title="Collapse" style={iconBtn} onClick={onCollapse}><Icon name="panel-right-close" size={14} color="var(--brand-muted)"/></button>
           </div>
         </div>
         {/* Ask / Evolve segmented toggle */}
-        <div style={{ marginTop: 10, display:'inline-flex', background:'#F3F4F6', borderRadius: 7, padding: 2 }}>
+        <div style={{ marginTop: 10, display:'inline-flex', background:'var(--brand-surface)', borderRadius: 7, padding: 2 }}>
           {['ask','evolve'].map(m => (
             <button key={m}
               onClick={()=>{ if (m !== panelMode) { setPanelMode(m); setShowHistory(false); newThread(); } }}
               style={{
                 fontFamily:'Poppins, sans-serif', fontSize: 11, fontWeight: 600,
                 padding:'4px 12px', borderRadius: 6, border:'none', cursor:'pointer',
-                background: panelMode === m ? (m === 'evolve' ? 'linear-gradient(135deg,#6B2FA0,#E91E63)' : '#fff') : 'transparent',
-                color: panelMode === m ? (m === 'evolve' ? '#fff' : '#111827') : '#6B7280',
+                background: panelMode === m ? (m === 'evolve' ? 'linear-gradient(135deg,var(--brand-accent),var(--brand-accent))' : '#fff') : 'transparent',
+                color: panelMode === m ? (m === 'evolve' ? '#fff' : 'var(--brand-ink)') : 'var(--brand-muted)',
                 boxShadow: panelMode === m && m === 'ask' ? '0 1px 2px rgba(0,0,0,0.08)' : 'none',
                 transition:'all 150ms',
               }}>
@@ -556,12 +556,12 @@ function AIPanel({ context, contextDetail, mode, onCollapse, drawerOpen, control
           ))}
         </div>
         <div style={{
-          marginTop: 10, fontSize: 11.5, color:'#4B5563',
-          background:'rgba(107,47,160,0.06)', padding:'5px 10px', borderRadius: 6,
+          marginTop: 10, fontSize: 11.5, color:'#4A473F',
+          background:'color-mix(in srgb, var(--brand-accent) 6%, transparent)', padding:'5px 10px', borderRadius: 6,
           display:'inline-flex', alignItems:'center', gap: 6,
         }}>
-          <Icon name="locate-fixed" size={11} color="#6B2FA0"/>
-          <span>Context: <strong style={{ color:'#4A1F70', fontWeight: 600 }}>{context}</strong> · {contextDetail}</span>
+          <Icon name="locate-fixed" size={11} color="var(--brand-accent)"/>
+          <span>Context: <strong style={{ color:'var(--brand-accent-dark)', fontWeight: 600 }}>{context}</strong> · {contextDetail}</span>
         </div>
       </div>
 
@@ -592,22 +592,22 @@ function AIPanel({ context, contextDetail, mode, onCollapse, drawerOpen, control
       {/* Trust strip */}
       <div style={{
         padding:'8px 16px', display:'flex', alignItems:'center', justifyContent:'space-between',
-        gap: 8, fontSize: 10.5, color:'#6B7280',
-        borderTop:'1px solid #F3F4F6',
+        gap: 8, fontSize: 10.5, color:'var(--brand-muted)',
+        borderTop:'1px solid var(--brand-surface)',
       }}>
         <div style={{ display:'flex', alignItems:'center', gap: 6 }}>
-          <Icon name={panelMode === 'evolve' ? 'git-commit-horizontal' : 'shield'} size={11} color={panelMode === 'evolve' ? '#E91E63' : '#10B981'}/>
+          <Icon name={panelMode === 'evolve' ? 'git-commit-horizontal' : 'shield'} size={11} color={panelMode === 'evolve' ? 'var(--brand-accent)' : '#10B981'}/>
           <span>{panelMode === 'evolve'
             ? 'Writes to site/, widgets/, data/ · auto-committed · 1-click revert'
             : 'Read-only · write actions need confirmation'}</span>
         </div>
-        <span style={{ color:'#9CA3AF' }}>{panelMode === 'evolve' ? 'engine protected' : 'indexed 4 min ago'}</span>
+        <span style={{ color:'#9A968C' }}>{panelMode === 'evolve' ? 'engine protected' : 'indexed 4 min ago'}</span>
       </div>
 
       {/* Slash chips */}
       <div className="chips-row" style={{
         padding:'6px 14px 4px', display:'flex', gap: 6, overflowX:'auto',
-        borderTop:'1px solid #F3F4F6', scrollbarWidth:'none',
+        borderTop:'1px solid var(--brand-surface)', scrollbarWidth:'none',
       }}>
         {['/summarize-control','/draft-exception','/evidence-pack','/risk-assess','/policy-diff','/audit-prep','/who-owns'].map(s =>
           <SlashChip key={s} onClick={()=>setText(prev => (prev ? prev + ' ' : '') + s + ' ')}>{s}</SlashChip>
@@ -617,13 +617,13 @@ function AIPanel({ context, contextDetail, mode, onCollapse, drawerOpen, control
       {/* Pinned item (clicked from elsewhere in the dashboard) */}
       {pinnedItem && (
         <div style={{ padding:'8px 14px 0' }}>
-          <div style={{ background:'#fff', border:'1px solid rgba(107,47,160,0.3)', borderRadius: 10, padding:'8px 10px' }}>
+          <div style={{ background:'#fff', border:'1px solid color-mix(in srgb, var(--brand-accent) 30%, transparent)', borderRadius: 10, padding:'8px 10px' }}>
             <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', gap: 8 }}>
               <div style={{ display:'flex', alignItems:'center', gap: 6, minWidth: 0 }}>
-                <Icon name="sparkles" size={12} color="#6B2FA0"/>
-                <span style={{ fontSize: 12, fontWeight: 600, color:'#111827', whiteSpace:'nowrap', overflow:'hidden', textOverflow:'ellipsis' }}>{pinnedItem.label}</span>
+                <Icon name="sparkles" size={12} color="var(--brand-accent)"/>
+                <span style={{ fontSize: 12, fontWeight: 600, color:'var(--brand-ink)', whiteSpace:'nowrap', overflow:'hidden', textOverflow:'ellipsis' }}>{pinnedItem.label}</span>
               </div>
-              <button title="Dismiss" style={iconBtn} onClick={()=>setPinnedItem(null)}><Icon name="x" size={12} color="#9CA3AF"/></button>
+              <button title="Dismiss" style={iconBtn} onClick={()=>setPinnedItem(null)}><Icon name="x" size={12} color="#9A968C"/></button>
             </div>
             <div style={{ display:'flex', flexWrap:'wrap', gap: 5, marginTop: 8 }}>
               {(pinnedItem.actions || []).map((a, i) => (
@@ -640,9 +640,9 @@ function AIPanel({ context, contextDetail, mode, onCollapse, drawerOpen, control
       )}
 
       {/* Composer */}
-      <div style={{ padding:'8px 14px 14px', borderTop:'1px solid #F3F4F6' }}>
+      <div style={{ padding:'8px 14px 14px', borderTop:'1px solid var(--brand-surface)' }}>
         <div style={{
-          background:'#fff', border:'1px solid #E5E7EB', borderRadius: 10,
+          background:'#fff', border:'1px solid var(--brand-border)', borderRadius: 10,
           padding: 8,
         }}>
           <textarea
@@ -659,21 +659,21 @@ function AIPanel({ context, contextDetail, mode, onCollapse, drawerOpen, control
             rows={2}
             style={{
               width:'100%', resize:'none', border:'none', outline:'none',
-              fontFamily:'Poppins, sans-serif', fontSize: 13, color:'#111827',
+              fontFamily:'Poppins, sans-serif', fontSize: 13, color:'var(--brand-ink)',
               background:'transparent', lineHeight: 1.5,
             }}
           />
           <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', marginTop: 4 }}>
             <div style={{ display:'flex', gap: 4 }}>
-              <button style={iconBtn}><Icon name="paperclip" size={14} color="#6B7280"/></button>
-              <button style={iconBtn}><Icon name="at-sign" size={14} color="#6B7280"/></button>
+              <button style={iconBtn}><Icon name="paperclip" size={14} color="var(--brand-muted)"/></button>
+              <button style={iconBtn}><Icon name="at-sign" size={14} color="var(--brand-muted)"/></button>
             </div>
             {streaming ? (
               <button
                 onClick={stopStreaming}
                 style={{
-                  background:'#fff', color:'#6B2FA0',
-                  border:'1px solid #D1D5DB', borderRadius: 7, padding:'6px 12px',
+                  background:'#fff', color:'var(--brand-accent)',
+                  border:'1px solid #C6C4BB', borderRadius: 7, padding:'6px 12px',
                   fontFamily:'Poppins, sans-serif', fontSize: 12, fontWeight: 500,
                   cursor:'pointer', display:'inline-flex', alignItems:'center', gap: 6,
                 }}>
@@ -684,8 +684,8 @@ function AIPanel({ context, contextDetail, mode, onCollapse, drawerOpen, control
                 onClick={()=>send()}
                 disabled={!text.trim()}
                 style={{
-                  background: text.trim() ? 'linear-gradient(135deg,#6B2FA0,#E91E63)' : '#E5E7EB',
-                  color: text.trim() ? '#fff' : '#9CA3AF',
+                  background: text.trim() ? 'linear-gradient(135deg,var(--brand-accent),var(--brand-accent))' : 'var(--brand-border)',
+                  color: text.trim() ? '#fff' : '#9A968C',
                   border:'none', borderRadius: 7, padding:'6px 12px',
                   fontFamily:'Poppins, sans-serif', fontSize: 12, fontWeight: 500,
                   cursor: text.trim() ? 'pointer' : 'not-allowed',
@@ -709,8 +709,8 @@ const iconBtn = {
 
 const pinChipStyle = {
   fontFamily:'Poppins, sans-serif', fontSize: 11, fontWeight: 500,
-  color:'#4A1F70', background:'rgba(107,47,160,0.08)',
-  border:'1px solid rgba(107,47,160,0.2)', borderRadius: 7,
+  color:'var(--brand-accent-dark)', background:'color-mix(in srgb, var(--brand-accent) 8%, transparent)',
+  border:'1px solid color-mix(in srgb, var(--brand-accent) 20%, transparent)', borderRadius: 7,
   padding:'4px 9px', cursor:'pointer',
 };
 
@@ -734,7 +734,7 @@ function ExampleThread() {
           <li><strong>EX-002</strong> four-eyes relaxation — Board approval not yet recorded on the task.</li>
           <li><strong>Quick-win OFIs 004/007/009</strong> — still open, owner Sam, due before the audit.</li>
         </ol>
-        <div style={{ marginTop: 8, color:'#4B5563', fontSize: 12.5 }}>
+        <div style={{ marginTop: 8, color:'#4A473F', fontSize: 12.5 }}>
           Want me to draft a remediation plan with owners and target dates?
         </div>
       </ClaudeMsg>
@@ -752,8 +752,8 @@ function ExampleThread() {
           </>
         }
       >
-        <strong style={{ color:'#111827' }}>A.8.10 — Information deletion · remediation plan</strong>
-        <div style={{ fontSize: 12, color:'#6B7280', margin:'4px 0 6px' }}>Owner: Sam (CTO) · flagged HIGH risk Feb 2026</div>
+        <strong style={{ color:'var(--brand-ink)' }}>A.8.10 — Information deletion · remediation plan</strong>
+        <div style={{ fontSize: 12, color:'var(--brand-muted)', margin:'4px 0 6px' }}>Owner: Sam (CTO) · flagged HIGH risk Feb 2026</div>
         <ol style={{ margin:'0 0 0 18px', padding: 0, lineHeight: 1.6 }}>
           <li>Inventory data stores in scope (Postgres, S3 backups, Elastic indices).</li>
           <li>Define retention rules per class — anchor to <em>Policy 26</em>.</li>
@@ -774,12 +774,12 @@ function LiveThread({ messages, streaming }) {
         const empty = !m.text;
         if (empty && isLast && streaming) return <StreamingDots key={i} />;
         const tools = m.tools && m.tools.length > 0 ? (
-          <div style={{ marginTop: 8, paddingTop: 8, borderTop:'1px dashed #E5E7EB', display:'flex', flexWrap:'wrap', gap: 6 }}>
+          <div style={{ marginTop: 8, paddingTop: 8, borderTop:'1px dashed var(--brand-border)', display:'flex', flexWrap:'wrap', gap: 6 }}>
             {m.tools.map((t, j) => (
               <span key={j} style={{
                 fontSize: 10.5, fontWeight: 500,
                 padding:'2px 8px', borderRadius: 9999,
-                background:'#F3F4F6', color:'#4B5563', border:'1px solid #E5E7EB',
+                background:'var(--brand-surface)', color:'#4A473F', border:'1px solid var(--brand-border)',
                 fontFamily:'ui-monospace, SFMono-Regular, monospace',
               }}>
                 <Icon name="wrench" size={9} style={{ marginRight: 4, verticalAlign:'middle' }}/>
@@ -835,16 +835,16 @@ function CommitCard({ commit }) {
   return (
     <div style={{
       margin:'0 0 16px 32px', borderRadius: 10, overflow:'hidden',
-      border:'1px solid rgba(107,47,160,0.25)', background:'#fff',
+      border:'1px solid color-mix(in srgb, var(--brand-accent) 25%, transparent)', background:'#fff',
     }}>
       <div style={{ padding:'8px 12px', display:'flex', alignItems:'center', gap: 8,
-        background:'linear-gradient(90deg, rgba(107,47,160,0.06), rgba(233,30,99,0.05))' }}>
-        <Icon name="git-commit-horizontal" size={13} color="#6B2FA0"/>
+        background:'linear-gradient(90deg, color-mix(in srgb, var(--brand-accent) 6%, transparent), color-mix(in srgb, var(--brand-accent-2) 5%, transparent))' }}>
+        <Icon name="git-commit-horizontal" size={13} color="var(--brand-accent)"/>
         <div style={{ flex: 1, minWidth: 0 }}>
-          <div style={{ fontSize: 12, fontWeight: 600, color:'#111827', whiteSpace:'nowrap', overflow:'hidden', textOverflow:'ellipsis' }}>
+          <div style={{ fontSize: 12, fontWeight: 600, color:'var(--brand-ink)', whiteSpace:'nowrap', overflow:'hidden', textOverflow:'ellipsis' }}>
             {commit.subject}
           </div>
-          <div style={{ fontSize: 10, color:'#6B7280', fontFamily:'ui-monospace, monospace' }}>
+          <div style={{ fontSize: 10, color:'var(--brand-muted)', fontFamily:'ui-monospace, monospace' }}>
             {commit.sha.slice(0,8)} · {commit.files.length} file{commit.files.length===1?'':'s'}
           </div>
         </div>
@@ -856,19 +856,19 @@ function CommitCard({ commit }) {
       <div style={{ padding:'6px 12px', display:'flex', flexWrap:'wrap', gap: 4 }}>
         {commit.files.map(f => (
           <span key={f} style={{ fontSize: 10, fontFamily:'ui-monospace, monospace',
-            background:'#F3F4F6', borderRadius: 4, padding:'1px 6px', color:'#4B5563' }}>{f}</span>
+            background:'var(--brand-surface)', borderRadius: 4, padding:'1px 6px', color:'#4A473F' }}>{f}</span>
         ))}
       </div>
       {err && <div style={{ padding:'4px 12px 8px', fontSize: 11, color:'#B91C1C' }}>{err}</div>}
       {typeof diff === 'string' && diff !== 'loading' && (
         <pre className="scroll-y" style={{ margin: 0, padding: 12, maxHeight: 260, overflow:'auto',
-          fontSize: 10.5, lineHeight: 1.5, background:'#1F2937', color:'#E5E7EB' }}>
+          fontSize: 10.5, lineHeight: 1.5, background:'#231F19', color:'var(--brand-border)' }}>
           {diff.split('\n').map((l, i) => (
-            <div key={i} style={{ color: l.startsWith('+') ? '#6EE7B7' : l.startsWith('-') ? '#FCA5A5' : l.startsWith('@@') ? '#93C5FD' : '#D1D5DB' }}>{l}</div>
+            <div key={i} style={{ color: l.startsWith('+') ? '#6EE7B7' : l.startsWith('-') ? '#FCA5A5' : l.startsWith('@@') ? '#93C5FD' : '#C6C4BB' }}>{l}</div>
           ))}
         </pre>
       )}
-      {diff === 'loading' && <div style={{ padding: 12, fontSize: 11, color:'#6B7280' }}>loading diff…</div>}
+      {diff === 'loading' && <div style={{ padding: 12, fontSize: 11, color:'var(--brand-muted)' }}>loading diff…</div>}
     </div>
   );
 }
@@ -888,14 +888,14 @@ function EvolveEmpty({ onPick }) {
       <div style={{ textAlign:'center', margin:'14px 0 18px' }}>
         <div style={{
           width: 44, height: 44, borderRadius: 12,
-          background:'linear-gradient(135deg,#6B2FA0,#E91E63)',
+          background:'linear-gradient(135deg,var(--brand-accent),var(--brand-accent))',
           display:'inline-flex', alignItems:'center', justifyContent:'center',
           marginBottom: 10,
         }} className="sparkle-pulse">
           <Icon name="wand-2" size={22} color="#fff" />
         </div>
-        <div style={{ fontSize: 15, fontWeight: 600, color:'#111827' }}>Evolve the site</div>
-        <div style={{ fontSize: 12, color:'#6B7280', marginTop: 4, lineHeight: 1.5 }}>
+        <div style={{ fontSize: 15, fontWeight: 600, color:'var(--brand-ink)' }}>Evolve the site</div>
+        <div style={{ fontSize: 12, color:'var(--brand-muted)', marginTop: 4, lineHeight: 1.5 }}>
           Describe any change — structure, pages, widgets, data, or styling.<br/>
           Changes apply live and every step can be reverted.
         </div>
@@ -927,22 +927,22 @@ function HistoryPanel() {
   const fmt = (ts) => new Date(ts * 1000).toLocaleString(undefined, { month:'short', day:'numeric', hour:'2-digit', minute:'2-digit' });
   return (
     <div>
-      <div style={{ fontSize: 11, color:'#6B7280', marginBottom: 10, textTransform:'uppercase', letterSpacing:'0.06em', fontWeight: 600 }}>
+      <div style={{ fontSize: 11, color:'var(--brand-muted)', marginBottom: 10, textTransform:'uppercase', letterSpacing:'0.06em', fontWeight: 600 }}>
         Change history
       </div>
       {err && <div style={{ fontSize: 11.5, color:'#B91C1C', marginBottom: 8 }}>{err}</div>}
-      {!commits ? <div style={{ fontSize: 12, color:'#6B7280' }}>loading…</div> :
+      {!commits ? <div style={{ fontSize: 12, color:'var(--brand-muted)' }}>loading…</div> :
         commits.map(c => (
           <div key={c.sha} style={{
             display:'flex', alignItems:'center', gap: 8, padding:'8px 10px',
-            borderRadius: 8, border:'1px solid #E5E7EB', background:'#fff', marginBottom: 6,
+            borderRadius: 8, border:'1px solid var(--brand-border)', background:'#fff', marginBottom: 6,
           }}>
-            <Icon name={c.evolve ? 'wand-2' : 'git-commit-horizontal'} size={12} color={c.evolve ? '#E91E63' : '#9CA3AF'}/>
+            <Icon name={c.evolve ? 'wand-2' : 'git-commit-horizontal'} size={12} color={c.evolve ? 'var(--brand-accent)' : '#9A968C'}/>
             <div style={{ flex: 1, minWidth: 0 }}>
-              <div style={{ fontSize: 11.5, fontWeight: 500, color:'#111827', whiteSpace:'nowrap', overflow:'hidden', textOverflow:'ellipsis' }}>
+              <div style={{ fontSize: 11.5, fontWeight: 500, color:'var(--brand-ink)', whiteSpace:'nowrap', overflow:'hidden', textOverflow:'ellipsis' }}>
                 {c.subject}
               </div>
-              <div style={{ fontSize: 9.5, color:'#9CA3AF' }}>{fmt(c.ts)} · {c.files.length} file{c.files.length===1?'':'s'}</div>
+              <div style={{ fontSize: 9.5, color:'#9A968C' }}>{fmt(c.ts)} · {c.files.length} file{c.files.length===1?'':'s'}</div>
             </div>
             <button onClick={()=>revert(c.sha)} style={{ ...pinChipStyle, fontSize: 10, padding:'3px 8px' }}>Revert</button>
           </div>
@@ -954,7 +954,7 @@ function HistoryPanel() {
 function DrawerSuggestions({ controlId, onPick }) {
   return (
     <div style={{ paddingTop: 4 }}>
-      <div style={{ fontSize: 11, color:'#6B7280', marginBottom: 10, textTransform:'uppercase', letterSpacing:'0.06em', fontWeight: 600 }}>
+      <div style={{ fontSize: 11, color:'var(--brand-muted)', marginBottom: 10, textTransform:'uppercase', letterSpacing:'0.06em', fontWeight: 600 }}>
         Suggested for {controlId}
       </div>
       <GhostPrompt onClick={()=>onPick && onPick(`Summarise current state of ${controlId}`)}>Summarise current state of {controlId}</GhostPrompt>

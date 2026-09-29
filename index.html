@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Acme ISMS Dashboard</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%233B1A6B'/%3E%3Ctext x='16' y='23' font-family='sans-serif' font-size='19' font-weight='800' fill='%23E91E63' text-anchor='middle'%3Ea%3C/text%3E%3C/svg%3E" />
+<title>annexa — IMS Dashboard</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23111827'/%3E%3Ctext x='16' y='23' font-family='sans-serif' font-size='19' font-weight='800' fill='%234F46E5' text-anchor='middle'%3Ea%3C/text%3E%3C/svg%3E" />
 <link rel="stylesheet" href="colors_and_type.css" />
 <style>
   * { box-sizing: border-box; }
@@ -12,27 +12,28 @@
   body {
     background: var(--gray-50);
     color: var(--gray-900);
-    font-family: 'Poppins', system-ui, sans-serif;
+    /* Theme font — --font-body is set by colors_and_type.css and overridden by site/theme.json. */
+    font-family: var(--font-body, 'Inter', 'Poppins', system-ui, sans-serif);
     overflow: hidden;
   }
   #root { height: 100vh; }
   /* utility */
   .scroll-y { overflow-y: auto; }
   .scroll-y::-webkit-scrollbar { width: 8px; height: 8px; }
-  .scroll-y::-webkit-scrollbar-thumb { background: rgba(107,47,160,0.18); border-radius: 4px; }
+  .scroll-y::-webkit-scrollbar-thumb { background: color-mix(in srgb, var(--brand-accent) 18%, transparent); border-radius: 4px; }
   .scroll-y::-webkit-scrollbar-track { background: transparent; }
 
   /* shimmer */
   @keyframes shimmer { 0% { background-position: -400px 0; } 100% { background-position: 400px 0; } }
   .skeleton {
-    background: linear-gradient(90deg, #F3F4F6 0%, #E5E7EB 40%, #F3F4F6 80%);
+    background: linear-gradient(90deg, var(--brand-surface) 0%, var(--brand-border) 40%, var(--brand-surface) 80%);
     background-size: 800px 100%;
     animation: shimmer 1.6s infinite linear;
     border-radius: 6px;
   }
   /* dot pulse */
   @keyframes dot-pulse { 0%,80%,100% { opacity: 0.2; transform: scale(0.8); } 40% { opacity: 1; transform: scale(1); } }
-  .dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #6B2FA0; margin: 0 2px; animation: dot-pulse 1.2s infinite; }
+  .dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--brand-accent); margin: 0 2px; animation: dot-pulse 1.2s infinite; }
   .dot:nth-child(2) { animation-delay: 0.15s; }
   .dot:nth-child(3) { animation-delay: 0.3s; }
 
@@ -47,7 +48,7 @@
   .chips-row::-webkit-scrollbar { display: none; }
 
   /* chat input focus ring */
-  textarea.composer:focus { outline: none; box-shadow: 0 0 0 3px rgba(107,47,160,0.18); border-color: #6B2FA0 !important; }
+  textarea.composer:focus { outline: none; box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand-accent) 18%, transparent); border-color: var(--brand-accent) !important; }
 
   /* tooltip */
   .tt { position: relative; }
@@ -55,7 +56,7 @@
   .tt-body {
     position: absolute; left: 50%; bottom: 100%;
     transform: translate(-50%, 0px);
-    background: #111827; color: #fff; font-size: 11px;
+    background: var(--brand-ink); color: #fff; font-size: 11px;
     padding: 8px 10px; border-radius: 6px; white-space: nowrap;
     opacity: 0; pointer-events: none; transition: all 120ms;
     z-index: 50;
@@ -64,7 +65,7 @@
   .tt-body::after {
     content: ''; position: absolute; left: 50%; top: 100%;
     transform: translateX(-50%);
-    border: 4px solid transparent; border-top-color: #111827;
+    border: 4px solid transparent; border-top-color: var(--brand-ink);
   }
 </style>
 </head>
@@ -82,6 +83,7 @@
 <script type="text/babel" src="engine/primitives.jsx"></script>
 <script type="text/babel" src="engine/ai-panel.jsx"></script>
 <script type="text/babel" src="engine/renderer.jsx"></script>
+<script type="text/babel" src="engine/theme.jsx"></script>
 <script type="text/babel" src="engine/loader.jsx"></script>
 
 <script>

@@ -1,142 +1,383 @@
 {
   "brand": {
-    "name": "acme",
-    "legalName": "Acme S.A.",
-    "tagline": "ISMS · ISO 27001",
-    "section": "ISMS"
+    "name": "northwind",
+    "legalName": "Northwind Ltd (demo)",
+    "tagline": "IMS · 27001 · 14001 · 9001",
+    "section": "IMS"
   },
-  "user": { "name": "Alex", "role": "CISO · Acme" },
-  "countdownDays": 56,
+  "user": {
+    "name": "Alex Morgan",
+    "role": "Compliance Officer"
+  },
+  "milestone": {
+    "label": "Next NC action due",
+    "date": "2026-12-15",
+    "detail": "NC-004 · Harbour office signage · 2 more overdue behind it"
+  },
+  "countdownDays": 2,
   "defaultRoute": "overview",
   "nav": [
-    { "id": "overview",   "label": "Overview",             "icon": "layout-dashboard" },
-    { "id": "core",       "label": "ISMS Core (Cl. 4–10)", "icon": "list-checks" },
-    { "id": "controls",   "label": "Controls (Annex A)",   "icon": "shield-check" },
-    { "id": "incidents",  "label": "Incidents",            "icon": "siren" },
-    { "id": "risks",      "label": "Risks",                "icon": "alert-triangle" },
-    { "id": "policies",   "label": "Policies",             "icon": "file-text" },
-    { "id": "vendors",    "label": "Vendors / Suppliers",  "icon": "building-2" },
-    { "id": "people",     "label": "People & Training",    "icon": "users" },
-    { "id": "evidence",   "label": "Evidence Library",     "icon": "folder-archive" },
-    { "id": "opsproc",    "label": "Operating Procedures", "icon": "list-ordered" },
-    { "id": "audits",     "label": "Audits & Findings",    "icon": "clipboard-check" },
-    { "id": "roadmap",    "label": "Post-Audit Plan",      "icon": "route" },
-    { "id": "exceptions", "label": "Exceptions",           "icon": "file-warning" },
-    { "id": "settings",   "label": "Settings",             "icon": "settings" }
+    {
+      "id": "overview",
+      "label": "Overview",
+      "icon": "layout-dashboard"
+    },
+    {
+      "id": "core",
+      "label": "IMS Core (Cl. 4–10)",
+      "icon": "list-checks"
+    },
+    {
+      "id": "controls",
+      "label": "Controls (Annex A)",
+      "icon": "shield-check"
+    },
+    {
+      "id": "soa",
+      "label": "Statement of Applicability",
+      "icon": "file-check"
+    },
+    {
+      "id": "ncs",
+      "label": "Nonconformities",
+      "icon": "file-warning"
+    },
+    {
+      "id": "risks",
+      "label": "Risk Register",
+      "icon": "alert-triangle"
+    },
+    {
+      "id": "sites",
+      "label": "Sites & Offices",
+      "icon": "building-2"
+    },
+    {
+      "id": "environment",
+      "label": "Environment (14001)",
+      "icon": "leaf"
+    },
+    {
+      "id": "esg",
+      "label": "ESG",
+      "icon": "globe-2"
+    },
+    {
+      "id": "incidents",
+      "label": "Incidents & Changes",
+      "icon": "siren"
+    },
+    {
+      "id": "policies",
+      "label": "Policies & Standards",
+      "icon": "file-text"
+    },
+    {
+      "id": "vendors",
+      "label": "Suppliers",
+      "icon": "truck"
+    },
+    {
+      "id": "people",
+      "label": "People & Training",
+      "icon": "users"
+    },
+    {
+      "id": "opsproc",
+      "label": "Processes",
+      "icon": "list-ordered"
+    },
+    {
+      "id": "audits",
+      "label": "Audit Programme",
+      "icon": "clipboard-check"
+    },
+    {
+      "id": "evidence",
+      "label": "Evidence Library",
+      "icon": "folder-archive"
+    },
+    {
+      "id": "exceptions",
+      "label": "Exceptions",
+      "icon": "file-x"
+    },
+    {
+      "id": "settings",
+      "label": "Settings",
+      "icon": "settings"
+    }
   ],
   "pages": {
     "overview": {
       "title": "Overview",
-      "subtitle": "Posture, gaps, exceptions, and audit timeline.",
+      "subtitle": "Three standards · {SITES.length} offices. Posture, nonconformities, risk and the audit calendar.",
       "aiContext": "Overview",
-      "aiContextDetail": "{CONTROLS.length} controls in scope",
+      "aiContextDetail": "{CONTROLS.length} Annex A controls · {NCS.length} open NCs",
       "sections": [
-        { "widget": "overview-kpis" },
-        { "widget": "overview-heatmap" },
-        { "widget": "overview-findings" },
-        { "widget": "overview-risk" },
-        { "widget": "overview-timeline" },
-        { "widget": "overview-systems" }
+        {
+          "widget": "overview-kpis"
+        },
+        {
+          "widget": "overview-heatmap"
+        },
+        {
+          "widget": "overview-findings"
+        },
+        {
+          "widget": "overview-risk"
+        },
+        {
+          "widget": "overview-programme"
+        },
+        {
+          "widget": "overview-timeline"
+        },
+        {
+          "widget": "overview-systems"
+        }
       ]
     },
     "core": {
-      "title": "ISMS Core (Clauses 4–10)",
-      "subtitle": "Management-system requirements — the Day 1 morning audit focus.",
-      "aiContext": "ISMS Core",
+      "title": "IMS Core (Clauses 4–10)",
+      "subtitle": "Management-system requirements shared by ISO/IEC 27001, ISO 14001 and ISO 9001.",
+      "aiContext": "IMS Core",
       "aiContextDetail": "{ISMS_CLAUSES.reduce((n,g)=>n+g.items.length,0)} clauses · 4–10",
-      "sections": [ { "widget": "page-core" } ]
+      "sections": [
+        {
+          "widget": "page-core"
+        }
+      ]
     },
     "controls": {
       "title": "Controls (Annex A)",
-      "subtitle": "All 93 ISO/IEC 27001:2022 controls.",
+      "subtitle": "All 93 ISO/IEC 27001:2022 controls · Statement of Applicability.",
       "aiContext": "Controls",
       "aiContextDetail": "{CONTROLS.length} controls",
       "drawerType": "control",
-      "sections": [ { "widget": "page-controls" } ]
+      "sections": [
+        {
+          "widget": "page-controls"
+        }
+      ]
     },
-    "incidents": {
-      "title": "Incidents",
-      "subtitle": "{INCIDENTS.length} recent incidents across canonical and ISMS lists.",
-      "aiContext": "Incidents",
-      "aiContextDetail": "{INCIDENTS.length} active",
-      "drawerType": "incident",
-      "sections": [ { "widget": "page-incidents" } ]
+    "soa": {
+      "title": "Statement of Applicability",
+      "subtitle": "One tab per certified standard. ISO/IEC 27001 is the only true SoA — 9001 and 14001 have no Annex A and record applicability differently.",
+      "aiContext": "Statement of Applicability",
+      "aiContextDetail": "93 Annex A controls",
+      "sections": [
+        {
+          "widget": "page-soa"
+        }
+      ],
+      "tabs": [
+        {
+          "id": "soa27001",
+          "label": "ISO/IEC 27001",
+          "icon": "shield-check",
+          "widget": "page-soa-27001"
+        },
+        {
+          "id": "soa9001",
+          "label": "ISO 9001",
+          "icon": "badge-check",
+          "widget": "page-soa-9001"
+        },
+        {
+          "id": "soa14001",
+          "label": "ISO 14001",
+          "icon": "leaf",
+          "widget": "page-soa-14001"
+        }
+      ]
+    },
+    "ncs": {
+      "title": "Nonconformities",
+      "subtitle": "{NCS.length} findings from the latest certification audit · {NC_ACTIONS.length} corrective actions.",
+      "aiContext": "Nonconformities",
+      "aiContextDetail": "{NCS.length} NCs · external audit 2026",
+      "sections": [
+        {
+          "widget": "page-ncs"
+        }
+      ]
     },
     "risks": {
-      "title": "Risks",
-      "subtitle": "3×3 canonical matrix (Policy 23 v1.0) · 50 risks · live risk register.",
+      "title": "Risk Register",
+      "subtitle": "5×5 matrix · {KEY_RISKS.length} tracked risks · risk-owner acceptance recorded per risk.",
       "aiContext": "Risks",
-      "aiContextDetail": "whole ISMS",
-      "sections": [ { "widget": "page-risks" } ]
+      "aiContextDetail": "{KEY_RISKS.length} risks",
+      "sections": [
+        {
+          "widget": "page-risks"
+        }
+      ]
+    },
+    "sites": {
+      "title": "Sites & Offices",
+      "subtitle": "{SITES.length} offices — all inside the certified scope.",
+      "aiContext": "Sites",
+      "aiContextDetail": "{SITES.length} offices",
+      "sections": [
+        {
+          "widget": "page-sites"
+        }
+      ]
+    },
+    "environment": {
+      "title": "Environment (ISO 14001)",
+      "subtitle": "Aspects registers, compliance obligations and the environmental objectives.",
+      "aiContext": "Environment",
+      "aiContextDetail": "ISO 14001 · {ENV_OBJECTIVES.length} objectives",
+      "sections": [
+        {
+          "widget": "page-environment"
+        }
+      ]
+    },
+    "esg": {
+      "title": "ESG",
+      "subtitle": "Sustainability rating and the emissions-target track.",
+      "aiContext": "ESG",
+      "aiContextDetail": "ESG rating {GRESB.rating}",
+      "sections": [
+        {
+          "widget": "page-esg"
+        }
+      ]
+    },
+    "incidents": {
+      "title": "Incidents & Changes",
+      "subtitle": "{INCIDENTS.length} incidents · {CHANGES.length} changes · P1–P4 priority matrix · regulatory reporting flags.",
+      "aiContext": "Incidents",
+      "aiContextDetail": "{INCIDENTS.length} incidents",
+      "drawerType": "incident",
+      "sections": [
+        {
+          "widget": "page-incidents"
+        }
+      ]
     },
     "policies": {
-      "title": "Policies",
-      "subtitle": "{POLICY_REGISTER.length} policies · all released v1.0+ and approved.",
+      "title": "Policies & Standards",
+      "subtitle": "{POLICY_REGISTER.length} documents · approved, under review and archived.",
       "aiContext": "Policies",
-      "aiContextDetail": "{POLICY_REGISTER.length} policies",
-      "sections": [ { "widget": "page-policies" } ]
+      "aiContextDetail": "{POLICY_REGISTER.length} documents",
+      "sections": [
+        {
+          "widget": "page-policies"
+        }
+      ]
     },
     "vendors": {
-      "title": "Vendors / Suppliers",
-      "subtitle": "{VENDORS.length} suppliers · review cadence per Policy 22.",
-      "aiContext": "Vendors",
+      "title": "Suppliers",
+      "subtitle": "{VENDORS.length} critical and important suppliers · classification and evaluation per the supplier management process.",
+      "aiContext": "Suppliers",
       "aiContextDetail": "{VENDORS.length} suppliers",
-      "sections": [ { "widget": "page-vendors" } ]
+      "sections": [
+        {
+          "widget": "page-vendors"
+        }
+      ],
+      "tabs": [
+        {
+          "id": "posture",
+          "label": "Security posture",
+          "icon": "shield-alert",
+          "widget": "page-suppliers-posture"
+        },
+        {
+          "id": "process",
+          "label": "Process",
+          "icon": "git-branch",
+          "widget": "page-suppliers-process"
+        }
+      ]
     },
     "people": {
       "title": "People & Training",
-      "subtitle": "Security awareness programme · live from Moodle when connected.",
+      "subtitle": "Roles, responsibilities and the awareness programme across the group.",
       "aiContext": "People",
       "aiContextDetail": "training & awareness",
-      "sections": [ { "widget": "page-people" } ]
+      "sections": [
+        {
+          "widget": "page-people"
+        }
+      ],
+      "tabs": [
+        {
+          "id": "training",
+          "label": "Training status",
+          "icon": "graduation-cap",
+          "widget": "page-training"
+        }
+      ]
+    },
+    "opsproc": {
+      "title": "Processes",
+      "subtitle": "",
+      "aiContext": "Processes",
+      "aiContextDetail": "{OPSPROC_PROCEDURES.length} processes",
+      "sections": [
+        {
+          "widget": "page-opsproc"
+        }
+      ]
+    },
+    "audits": {
+      "title": "Audit Programme",
+      "subtitle": "Internal audit programme and the external certification audits.",
+      "aiContext": "Audits",
+      "aiContextDetail": "{AUDIT_REPORTS.length} audits",
+      "sections": [
+        {
+          "widget": "page-audits"
+        }
+      ]
     },
     "evidence": {
       "title": "Evidence Library",
-      "subtitle": "Consolidated evidence register across the whole ISMS (clause 7.5).",
+      "subtitle": "Documented information register (clause 7.5) — the compliance document library.",
       "aiContext": "Evidence",
       "aiContextDetail": "clause 7.5 register",
-      "sections": [ { "widget": "page-evidence" } ]
-    },
-    "opsproc": {
-      "title": "Operating Procedures",
-      "subtitle": "",
-      "aiContext": "Operating Procedures",
-      "aiContextDetail": "{OPSPROC_PROCEDURES.length} procedures",
-      "sections": [ { "widget": "page-opsproc" } ]
-    },
-    "audits": {
-      "title": "Audits & Findings",
-      "subtitle": "{AUDIT_REPORTS.length} audit report(s) · {OFIS.length}-item OFI register.",
-      "aiContext": "Audits & Findings",
-      "aiContextDetail": "{AUDIT_REPORTS.length} reports · {OFIS.length} OFIs",
-      "sections": [ { "widget": "page-audits" } ]
-    },
-    "roadmap": {
-      "title": "Post-Audit Plan",
-      "subtitle": "",
-      "aiContext": "Post-Audit Plan",
-      "aiContextDetail": "whole ISMS",
-      "sections": [ { "widget": "page-roadmap" } ]
+      "sections": [
+        {
+          "widget": "page-evidence"
+        }
+      ]
     },
     "exceptions": {
       "title": "Exceptions",
-      "subtitle": "{EXCEPTIONS.length} exceptions · Exception Request Form · 12-month review cycle.",
+      "subtitle": "{EXCEPTIONS.length} accepted deviations · reviewed at each management review.",
       "aiContext": "Exceptions",
       "aiContextDetail": "{EXCEPTIONS.length} exceptions",
-      "sections": [ { "widget": "page-exceptions" } ]
+      "sections": [
+        {
+          "widget": "page-exceptions"
+        }
+      ]
     },
     "settings": {
       "title": "Settings",
-      "subtitle": "",
+      "subtitle": "Whitelabel the dashboard from a company website, or edit the theme by hand.",
       "aiContext": "Settings",
       "aiContextDetail": "site configuration",
-      "sections": []
+      "sections": [
+        {
+          "widget": "page-branding"
+        }
+      ]
     }
   },
   "drawers": {
-    "control":  { "widget": "drawer-control",  "prop": "ctrl" },
-    "incident": { "widget": "drawer-incident", "prop": "incident" },
-    "ofi":      { "widget": "drawer-ofi",      "prop": "ofi" },
-    "audit":    { "widget": "drawer-audit",    "prop": "audit" }
+    "control": {
+      "widget": "drawer-control",
+      "prop": "ctrl"
+    },
+    "incident": {
+      "widget": "drawer-incident",
+      "prop": "incident"
+    }
   }
 }

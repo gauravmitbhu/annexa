@@ -23,7 +23,7 @@ function Card({ children, padding = 20, style, hover }) {
       onMouseLeave={() => hover && setH(false)}
       style={{
         background: '#fff',
-        border: `1px solid ${h ? 'rgba(107,47,160,0.3)' : '#E5E7EB'}`,
+        border: `1px solid ${h ? 'color-mix(in srgb, var(--brand-accent) 30%, transparent)' : 'var(--brand-border)'}`,
         borderRadius: 8,
         padding,
         boxShadow: h ? '0 4px 12px rgba(0,0,0,0.06)' : 'none',
@@ -36,7 +36,7 @@ function Card({ children, padding = 20, style, hover }) {
   );
 }
 
-function Pill({ children, color = '#6B7280', bg = '#F3F4F6', size = 'sm', style }) {
+function Pill({ children, color = 'var(--brand-muted)', bg = 'var(--brand-surface)', size = 'sm', style }) {
   return (
     <span style={{
       display: 'inline-flex', alignItems: 'center', gap: 4,
@@ -61,7 +61,7 @@ function StatusDot({ status, size = 8 }) {
 function Avatar({ name, size = 24, bg }) {
   const initials = name.split(' ').map(s => s[0]).slice(0,2).join('').toUpperCase();
   // hash name → hue for diversity, anchored on the brand palette
-  const palette = ['#6B2FA0','#E91E63','#7c09b3','#8B5FBF','#FF5C8D','#4A1F70'];
+  const palette = ['var(--brand-accent)','var(--brand-accent)','var(--brand-accent-dark)','var(--brand-accent-2)','var(--brand-accent-2)','var(--brand-accent-dark)'];
   const idx = name.split('').reduce((a,c) => a + c.charCodeAt(0), 0) % palette.length;
   return (
     <div style={{
@@ -82,7 +82,7 @@ function SectionTitle({ children, right, style }) {
       marginBottom: 12, ...style,
     }}>
       <h2 style={{
-        margin: 0, fontSize: 13, fontWeight: 600, color: '#374151',
+        margin: 0, fontSize: 13, fontWeight: 600, color: '#343128',
         letterSpacing: '0.02em', textTransform: 'uppercase',
       }}>{children}</h2>
       {right}
@@ -102,11 +102,11 @@ function Button({ variant='primary', size='md', children, onClick, icon, iconRig
     lineHeight: 1.4,
   };
   const variants = {
-    primary: { background: h?'#5A2589':'#6B2FA0', color:'#fff', borderColor:'#6B2FA0' },
-    accent:  { background: h?'#D11657':'#E91E63', color:'#fff', borderColor:'#E91E63' },
-    outline: { background: h?'#F9FAFB':'#fff', color:'#374151', borderColor:'#E5E7EB' },
-    ghost:   { background: h?'#F3F4F6':'transparent', color:'#4B5563', borderColor:'transparent' },
-    dashed:  { background:'#fff', color:'#6B2FA0', border:'1px dashed #6B2FA0' },
+    primary: { background: h?'var(--brand-accent-dark)':'var(--brand-accent)', color:'var(--brand-on-accent)', borderColor:'var(--brand-accent)' },
+    accent:  { background: h?'var(--brand-accent-dark)':'var(--brand-accent)', color:'var(--brand-on-accent)', borderColor:'var(--brand-accent)' },
+    outline: { background: h?'#F7F6F3':'#fff', color:'#343128', borderColor:'var(--brand-border)' },
+    ghost:   { background: h?'var(--brand-surface)':'transparent', color:'#4A473F', borderColor:'transparent' },
+    dashed:  { background:'#fff', color:'var(--brand-accent)', border:'1px dashed var(--brand-accent)' },
   };
   return (
     <button onClick={onClick}
@@ -119,19 +119,27 @@ function Button({ variant='primary', size='md', children, onClick, icon, iconRig
   );
 }
 
+// Next-milestone chip. Reads SITE.milestone ({label, date, detail}) so the
+// header follows the site spec rather than a date baked into the engine.
 function CountdownChip() {
-  // Audit Day 1: 16 June 2026 (re-certification, CertCo)
-  const days = Math.max(0, Math.ceil((new Date('2026-06-16') - new Date()) / 86400000));
+  const m = (window.SITE && window.SITE.milestone) || {};
+  if (!m.date) return null;
+  const days = Math.max(0, Math.ceil((new Date(m.date) - new Date()) / 86400000));
   return (
     <div style={{
       display:'inline-flex', alignItems:'center', gap: 8,
-      background: 'linear-gradient(90deg, rgba(107,47,160,0.08), rgba(233,30,99,0.08))',
-      border: '1px solid rgba(107,47,160,0.2)',
+      background: 'linear-gradient(90deg, color-mix(in srgb, var(--brand-accent) 8%, transparent), color-mix(in srgb, var(--brand-accent-2) 8%, transparent))',
+      border: '1px solid color-mix(in srgb, var(--brand-accent) 20%, transparent)',
       padding: '5px 11px', borderRadius: 9999,
-      fontSize: 12, color:'#4A1F70', fontWeight: 500,
+      fontSize: 12, color:'var(--brand-accent-dark)', fontWeight: 500,
+      // Long milestone detail must ellipsise, or the chip wraps and covers the title.
+      whiteSpace:'nowrap', maxWidth: 560, minWidth: 0, flexShrink: 1, overflow:'hidden',
     }}>
-      <Icon name="calendar-clock" size={13} color="#6B2FA0" />
-      <span><strong style={{ fontWeight: 600 }}>Re-certification Audit · 16–17 June 2026</strong> · T-minus {days} {days === 1 ? 'day' : 'days'}</span>
+      <Icon name="calendar-clock" size={13} color="var(--brand-accent)" style={{ flexShrink: 0 }} />
+      <span style={{ overflow:'hidden', textOverflow:'ellipsis' }}>
+        <strong style={{ fontWeight: 600 }}>{m.label || 'Next milestone'} · {m.date}</strong>
+        {m.detail ? ` · ${m.detail}` : ''} · T-minus {days} {days === 1 ? 'day' : 'days'}
+      </span>
     </div>
   );
 }

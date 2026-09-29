@@ -1,0 +1,898 @@
+{
+  "SUPPLIER_PROCESS": {
+    "note": "Demo data. Transcribed from the Northwind Ltd Supplier Management Process v2.0 and its two BPMN diagrams (Supplier Engagement, Supplier Evaluation). Anything not stated in the document is marked inferred.",
+    "doc": {
+      "title": "Suppliers' classification & evaluation process",
+      "reference": "Supplier_Evaluation_Process",
+      "file": "Supplier_Management_Process_v2.0.docx",
+      "version": "2.0",
+      "date": "2026-06-11",
+      "status": "Approved",
+      "author": "Priya Shah",
+      "owner": "Priya Shah",
+      "approvedBy": "Jordan Blake",
+      "location": "Processes › Approved (ISMS library)",
+      "purpose": "Defines the steps for initiating, reviewing, approving, contracting and evaluating suppliers, to ensure appropriate business, financial and security oversight before and during engagement.",
+      "scope": "All suppliers whose products or services impact information security or data protection; environmental performance or sustainability; health, safety or human rights; or business continuity and operational resilience.",
+      "granularity": "Followed in full for new contracts and renewals. For existing suppliers, evaluation and monitoring are implemented and the additional requirements are proposed to the supplier on a voluntary basis.",
+      "criticalDefinition": "Critical suppliers are those whose compromised delivery of service or goods would directly affect Northwind's ability to deliver services under customer contracts — i.e. would breach an SLA.",
+      "references": [
+        "ISO 27001 — A.5.19 to A.5.23 (supplier relationship management)",
+        "ISO 14001 — 8.1 (operational control)",
+        "ISO 9001 — 7.1, 8.4, 8.5, 9.1.3",
+        "Supplier Code of Conduct (CoC)",
+        "rating platform platform guidance",
+        "Risk Assessment and Statement of Applicability"
+      ],
+      "versions": [
+        {
+          "version": "0.1",
+          "date": "2025-10-15",
+          "author": "Priya Shah",
+          "change": "Creation"
+        },
+        {
+          "version": "0.2",
+          "date": "2025-11-05",
+          "author": "Alex Morgan",
+          "change": "Review"
+        },
+        {
+          "version": "0.3",
+          "date": "2026-01-18",
+          "author": "Priya Shah",
+          "change": "Modified per the management meeting of 16/01/2026"
+        },
+        {
+          "version": "1.0",
+          "date": "2026-01-19",
+          "author": "Jordan Blake",
+          "change": "Approval"
+        },
+        {
+          "version": "1.1",
+          "date": "2026-06-11",
+          "author": "Priya Shah",
+          "change": "Aligned process steps with the supplier management process flowchart"
+        },
+        {
+          "version": "2.0",
+          "date": "2026-06-11",
+          "author": "Jordan Blake",
+          "change": "Approval"
+        }
+      ]
+    },
+    "roles": [
+      {
+        "role": "Procurement (Procurement partner)",
+        "responsibilities": [
+          "Handles contracting activities following final approval",
+          "Ensures suppliers sign or align with the CoC",
+          "Maintains the Approved Supplier List (ASL)",
+          "Initiates evaluations in rating platform"
+        ]
+      },
+      {
+        "role": "CEO",
+        "responsibilities": [
+          "Evaluates escalated risks and findings (management escalation)"
+        ]
+      },
+      {
+        "role": "Compliance & IT Security Manager",
+        "responsibilities": [
+          "Oversees implementation of the process",
+          "Assesses security, compliance and data-access risks, and initiates supplier evaluation if required"
+        ]
+      },
+      {
+        "role": "Supplier Owner (Managers)",
+        "responsibilities": [
+          "Classifies the supplier",
+          "Performs the supplier risk assessment",
+          "Initial and annual evaluation of the supplier"
+        ]
+      },
+      {
+        "role": "Supplier engagement requester (Manager)",
+        "responsibilities": [
+          "Initiates the supplier engagement request and provides the required information"
+        ]
+      }
+    ],
+    "flows": [
+      {
+        "id": "engagement",
+        "title": "Supplier engagement",
+        "subtitle": "From a manager's request to an onboarded supplier — or a rejection.",
+        "lanes": [
+          {
+            "id": "manager",
+            "label": "Manager"
+          },
+          {
+            "id": "seccomp",
+            "label": "Security & Compliance"
+          },
+          {
+            "id": "procure",
+            "label": "Procurement partner"
+          }
+        ],
+        "nodes": [
+          {
+            "id": "e_start",
+            "lane": "manager",
+            "col": 0,
+            "type": "start",
+            "label": ""
+          },
+          {
+            "id": "e_req",
+            "lane": "manager",
+            "col": 1,
+            "type": "task",
+            "label": "Fill in Supplier engagement request",
+            "tool": "",
+            "detail": "Supplier details, scope of services, business justification, expected data access and criticality."
+          },
+          {
+            "id": "e_gcrit",
+            "lane": "seccomp",
+            "col": 2,
+            "type": "gate",
+            "label": "Critical supplier?"
+          },
+          {
+            "id": "e_ra",
+            "lane": "seccomp",
+            "col": 3,
+            "type": "task",
+            "label": "Ensure risk assessment is done"
+          },
+          {
+            "id": "e_gdata",
+            "lane": "seccomp",
+            "col": 4,
+            "type": "gate",
+            "label": "Access to restricted data?"
+          },
+          {
+            "id": "e_gmanual",
+            "lane": "seccomp",
+            "col": 5,
+            "type": "gate",
+            "label": "Manual assessment (e.g. cloud)?"
+          },
+          {
+            "id": "e_cloud",
+            "lane": "seccomp",
+            "col": 6,
+            "type": "task",
+            "label": "Manual Cloud Assessment",
+            "tool": "Cloud Supplier Assessment form"
+          },
+          {
+            "id": "e_oms",
+            "lane": "procure",
+            "col": 6,
+            "type": "task",
+            "label": "Add the supplier to Rating platform",
+            "tool": "Rating platform"
+          },
+          {
+            "id": "e_gok1",
+            "lane": "seccomp",
+            "col": 7,
+            "type": "gate",
+            "label": "Assessment OK?"
+          },
+          {
+            "id": "e_ra2",
+            "lane": "seccomp",
+            "col": 8,
+            "type": "task",
+            "label": "Risk assessment"
+          },
+          {
+            "id": "e_gok2",
+            "lane": "seccomp",
+            "col": 9,
+            "type": "gate",
+            "label": "Assessment OK?"
+          },
+          {
+            "id": "e_reject",
+            "lane": "seccomp",
+            "col": 10,
+            "type": "end",
+            "label": "Inform requester — rejected",
+            "tone": "bad"
+          },
+          {
+            "id": "e_folder",
+            "lane": "procure",
+            "col": 7,
+            "type": "task",
+            "label": "Create a supplier folder"
+          },
+          {
+            "id": "e_Procurement system",
+            "lane": "procure",
+            "col": 8,
+            "type": "task",
+            "label": "Add the supplier to Procurement system",
+            "tool": "Procurement system"
+          },
+          {
+            "id": "e_dpa",
+            "lane": "procure",
+            "col": 9,
+            "type": "task",
+            "label": "Establish DPA if applicable",
+            "tool": "DPA"
+          },
+          {
+            "id": "e_coc",
+            "lane": "procure",
+            "col": 10,
+            "type": "task",
+            "label": "Sign Code of Conduct, if applicable",
+            "tool": "Code of Conduct",
+            "detail": "Signed where the engagement carries environmental legal obligations."
+          },
+          {
+            "id": "e_done",
+            "lane": "procure",
+            "col": 11,
+            "type": "end",
+            "label": "Inform requester",
+            "tone": "good"
+          }
+        ],
+        "edges": [
+          {
+            "from": "e_start",
+            "to": "e_req"
+          },
+          {
+            "from": "e_req",
+            "to": "e_gcrit"
+          },
+          {
+            "from": "e_gcrit",
+            "to": "e_ra",
+            "label": "Yes"
+          },
+          {
+            "from": "e_gcrit",
+            "to": "e_gdata",
+            "label": "No"
+          },
+          {
+            "from": "e_ra",
+            "to": "e_gdata"
+          },
+          {
+            "from": "e_gdata",
+            "to": "e_folder",
+            "label": "No"
+          },
+          {
+            "from": "e_gdata",
+            "to": "e_gmanual",
+            "label": "Yes"
+          },
+          {
+            "from": "e_gmanual",
+            "to": "e_cloud",
+            "label": "Yes"
+          },
+          {
+            "from": "e_gmanual",
+            "to": "e_oms",
+            "label": "No"
+          },
+          {
+            "from": "e_cloud",
+            "to": "e_gok1"
+          },
+          {
+            "from": "e_oms",
+            "to": "e_gok1"
+          },
+          {
+            "from": "e_gok1",
+            "to": "e_folder",
+            "label": "Yes"
+          },
+          {
+            "from": "e_gok1",
+            "to": "e_ra2",
+            "label": "No"
+          },
+          {
+            "from": "e_ra2",
+            "to": "e_gok2"
+          },
+          {
+            "from": "e_gok2",
+            "to": "e_folder",
+            "label": "Yes"
+          },
+          {
+            "from": "e_gok2",
+            "to": "e_reject",
+            "label": "No"
+          },
+          {
+            "from": "e_folder",
+            "to": "e_Procurement system"
+          },
+          {
+            "from": "e_Procurement system",
+            "to": "e_dpa"
+          },
+          {
+            "from": "e_dpa",
+            "to": "e_coc"
+          },
+          {
+            "from": "e_coc",
+            "to": "e_done"
+          }
+        ]
+      },
+      {
+        "id": "evaluation",
+        "title": "Supplier evaluation",
+        "subtitle": "Triggered by the annual evaluation task or by onboarding.",
+        "lanes": [
+          {
+            "id": "owner",
+            "label": "Supplier owner"
+          },
+          {
+            "id": "compliance",
+            "label": "Compliance"
+          }
+        ],
+        "nodes": [
+          {
+            "id": "v_start",
+            "lane": "owner",
+            "col": 0,
+            "type": "start",
+            "label": ""
+          },
+          {
+            "id": "v_gcrit",
+            "lane": "owner",
+            "col": 1,
+            "type": "gate",
+            "label": "Critical supplier?"
+          },
+          {
+            "id": "v_ra",
+            "lane": "owner",
+            "col": 2,
+            "type": "task",
+            "label": "Risk assessment",
+            "detail": "Operational, legal and compliance risks."
+          },
+          {
+            "id": "v_glegal",
+            "lane": "owner",
+            "col": 3,
+            "type": "gate",
+            "label": "Legal / environmental requirements?"
+          },
+          {
+            "id": "v_env",
+            "lane": "owner",
+            "col": 4,
+            "type": "task",
+            "label": "Include env. requirements in contract"
+          },
+          {
+            "id": "v_coc",
+            "lane": "owner",
+            "col": 5,
+            "type": "task",
+            "label": "Supplier Code of Conduct",
+            "tool": "Code of Conduct"
+          },
+          {
+            "id": "v_gsigned",
+            "lane": "owner",
+            "col": 6,
+            "type": "gate",
+            "label": "CoC signed?"
+          },
+          {
+            "id": "v_cocman",
+            "lane": "owner",
+            "col": 7,
+            "type": "task",
+            "label": "CoC manual alignment"
+          },
+          {
+            "id": "v_galigned",
+            "lane": "owner",
+            "col": 8,
+            "type": "gate",
+            "label": "CoC aligned?"
+          },
+          {
+            "id": "v_secra",
+            "lane": "owner",
+            "col": 9,
+            "type": "task",
+            "label": "Risk assessment (security)"
+          },
+          {
+            "id": "v_genforce",
+            "lane": "owner",
+            "col": 10,
+            "type": "gate",
+            "label": "Should security requirements be enforced?"
+          },
+          {
+            "id": "v_secproc",
+            "lane": "owner",
+            "col": 11,
+            "type": "task",
+            "label": "Provide security procedure"
+          },
+          {
+            "id": "v_gdata",
+            "lane": "owner",
+            "col": 12,
+            "type": "gate",
+            "label": "Access to restricted data?"
+          },
+          {
+            "id": "v_end1",
+            "lane": "owner",
+            "col": 13,
+            "type": "end",
+            "label": "Evaluation concludes",
+            "tone": "good"
+          },
+          {
+            "id": "v_gdata2",
+            "lane": "compliance",
+            "col": 2,
+            "type": "gate",
+            "label": "Access to restricted data?"
+          },
+          {
+            "id": "v_it",
+            "lane": "compliance",
+            "col": 3,
+            "type": "task",
+            "label": "IT evaluation — rating platform / manual",
+            "tool": "Rating platform"
+          },
+          {
+            "id": "v_gscore",
+            "lane": "compliance",
+            "col": 4,
+            "type": "gate",
+            "label": "Score < 3?"
+          },
+          {
+            "id": "v_cra",
+            "lane": "compliance",
+            "col": 5,
+            "type": "task",
+            "label": "Risk assessment"
+          },
+          {
+            "id": "v_ggdpr",
+            "lane": "compliance",
+            "col": 6,
+            "type": "gate",
+            "label": "GDPR processor?"
+          },
+          {
+            "id": "v_dpa",
+            "lane": "compliance",
+            "col": 7,
+            "type": "task",
+            "label": "DPA & compliance doc",
+            "tool": "DPA"
+          },
+          {
+            "id": "v_gfind",
+            "lane": "compliance",
+            "col": 8,
+            "type": "gate",
+            "label": "Findings?"
+          },
+          {
+            "id": "v_esc",
+            "lane": "compliance",
+            "col": 9,
+            "type": "task",
+            "label": "Escalation to management"
+          },
+          {
+            "id": "v_gappr",
+            "lane": "compliance",
+            "col": 10,
+            "type": "gate",
+            "label": "Approve with actions?"
+          },
+          {
+            "id": "v_plan",
+            "lane": "compliance",
+            "col": 11,
+            "type": "task",
+            "label": "Action plan"
+          },
+          {
+            "id": "v_reject",
+            "lane": "compliance",
+            "col": 12,
+            "type": "end",
+            "label": "Reject",
+            "tone": "bad"
+          },
+          {
+            "id": "v_approve",
+            "lane": "compliance",
+            "col": 13,
+            "type": "end",
+            "label": "Approve",
+            "tone": "good"
+          }
+        ],
+        "edges": [
+          {
+            "from": "v_start",
+            "to": "v_gcrit"
+          },
+          {
+            "from": "v_gcrit",
+            "to": "v_ra",
+            "label": "Yes"
+          },
+          {
+            "from": "v_gcrit",
+            "to": "v_glegal",
+            "label": "No"
+          },
+          {
+            "from": "v_ra",
+            "to": "v_glegal"
+          },
+          {
+            "from": "v_glegal",
+            "to": "v_env",
+            "label": "Yes"
+          },
+          {
+            "from": "v_glegal",
+            "to": "v_coc",
+            "label": "No"
+          },
+          {
+            "from": "v_env",
+            "to": "v_coc"
+          },
+          {
+            "from": "v_coc",
+            "to": "v_gsigned"
+          },
+          {
+            "from": "v_gsigned",
+            "to": "v_cocman",
+            "label": "No"
+          },
+          {
+            "from": "v_gsigned",
+            "to": "v_galigned",
+            "label": "Yes"
+          },
+          {
+            "from": "v_cocman",
+            "to": "v_galigned"
+          },
+          {
+            "from": "v_galigned",
+            "to": "v_secra",
+            "label": "Yes"
+          },
+          {
+            "from": "v_galigned",
+            "to": "v_secra",
+            "label": "No — risk evaluation"
+          },
+          {
+            "from": "v_secra",
+            "to": "v_genforce"
+          },
+          {
+            "from": "v_genforce",
+            "to": "v_secproc",
+            "label": "Yes"
+          },
+          {
+            "from": "v_genforce",
+            "to": "v_gdata",
+            "label": "No"
+          },
+          {
+            "from": "v_secproc",
+            "to": "v_gdata"
+          },
+          {
+            "from": "v_gdata",
+            "to": "v_end1",
+            "label": "No"
+          },
+          {
+            "from": "v_gdata",
+            "to": "v_gdata2",
+            "label": "Yes"
+          },
+          {
+            "from": "v_gdata2",
+            "to": "v_it",
+            "label": "Yes"
+          },
+          {
+            "from": "v_gdata2",
+            "to": "v_approve",
+            "label": "No"
+          },
+          {
+            "from": "v_it",
+            "to": "v_gscore"
+          },
+          {
+            "from": "v_gscore",
+            "to": "v_cra",
+            "label": "Yes"
+          },
+          {
+            "from": "v_gscore",
+            "to": "v_approve",
+            "label": "No — compliant"
+          },
+          {
+            "from": "v_cra",
+            "to": "v_ggdpr"
+          },
+          {
+            "from": "v_ggdpr",
+            "to": "v_dpa",
+            "label": "Yes"
+          },
+          {
+            "from": "v_ggdpr",
+            "to": "v_gfind",
+            "label": "No"
+          },
+          {
+            "from": "v_dpa",
+            "to": "v_gfind"
+          },
+          {
+            "from": "v_gfind",
+            "to": "v_approve",
+            "label": "No"
+          },
+          {
+            "from": "v_gfind",
+            "to": "v_esc",
+            "label": "Yes"
+          },
+          {
+            "from": "v_esc",
+            "to": "v_gappr"
+          },
+          {
+            "from": "v_gappr",
+            "to": "v_plan",
+            "label": "Yes"
+          },
+          {
+            "from": "v_gappr",
+            "to": "v_reject",
+            "label": "No"
+          },
+          {
+            "from": "v_plan",
+            "to": "v_approve"
+          }
+        ]
+      }
+    ],
+    "contracting": {
+      "title": "Contracting",
+      "owner": "Supplier Owner",
+      "note": "Section VII of the process, with its own diagram (Supplier Contracting.png). Rendered as a checklist rather than a swimlane because every step is a yes/no inclusion decision by a single role.",
+      "steps": [
+        {
+          "gate": "Legal or environmental requirements?",
+          "then": "The environmental and legal requirements are included in the contract."
+        },
+        {
+          "gate": "Confidentiality required?",
+          "then": "Confidentiality is included in the contract or an NDA is signed, and Procurement system is updated.",
+          "tool": "Procurement system"
+        },
+        {
+          "gate": "Security requirements?",
+          "then": "The security requirements are included in the contract."
+        },
+        {
+          "gate": "Security procedure required?",
+          "then": "The security procedure is provided to the supplier."
+        },
+        {
+          "gate": "",
+          "then": "The contract is stored on the document library."
+        }
+      ]
+    },
+    "monitoring": [
+      {
+        "activity": "Information security review",
+        "frequency": "Annually or upon major change",
+        "description": "Updated insight and risk score."
+      },
+      {
+        "activity": "Quality review",
+        "frequency": "Annually",
+        "description": "Evaluate service quality, incident handling and responsiveness."
+      },
+      {
+        "activity": "Environmental review",
+        "frequency": "Annually or when regulations change",
+        "description": "Verify continued alignment with environmental requirements."
+      }
+    ],
+    "forms": [
+      {
+        "name": "Appendix A — Simplified Cloud Supplier Assessment Form",
+        "scope": "Cloud and SaaS providers holding valid, independently verified certifications (ISO 27001, SOC 2 Type II) with sufficient public assurance.",
+        "questions": 4,
+        "areas": [
+          "Data location",
+          "Compliance certification",
+          "Sub-processors",
+          "Contracts & DPAs"
+        ]
+      },
+      {
+        "name": "Appendix B — Comprehensive Cloud Supplier Assessment Form",
+        "scope": "Everything else.",
+        "questions": null,
+        "areas": [
+          "Technical security measures",
+          "Availability & continuity",
+          "Development & operations",
+          "Data protection & privacy",
+          "Organizational security",
+          "Physical security"
+        ]
+      },
+      {
+        "name": "Appendix C — Supplier Evaluation Sheet",
+        "scope": "Risk assessment, per-aspect scoring by quarter, and Code of Conduct alignment scoring.",
+        "questions": null,
+        "areas": [
+          "Quality",
+          "Economy",
+          "Delivery reliability",
+          "Competence",
+          "Information security",
+          "Environmental",
+          "Supplier code of conduct"
+        ]
+      }
+    ],
+    "evaluations": [
+      {
+        "supplier": "Wayne Cloud Office",
+        "service": "SaaS productivity suite",
+        "dataType": "Internal documents and mail",
+        "dataLocation": "EU",
+        "criticality": "Critical",
+        "assessmentType": "Simplified Cloud Supplier Assessment",
+        "date": "2026-02-10",
+        "assessor": "Priya Shah",
+        "certification": "SOC 2 Type II",
+        "dpa": "Yes — DPA done",
+        "subProcessors": "Disclosed and bound",
+        "cocScore": "0 — Q4",
+        "scores": {
+          "Information security": "5 — Q4",
+          "Environmental": "5 — Q4",
+          "Economy": "5 — Q4",
+          "Delivery reliability": "5 — Q4",
+          "Competence": "5 — Q4",
+          "Supplier code of conduct": "0 — Q4"
+        },
+        "risks": [
+          {
+            "id": "01",
+            "description": "Environment violation due to the lack of an environmental policy",
+            "likelihood": 1,
+            "impact": 1,
+            "level": 1,
+            "treatment": "Accept",
+            "status": "Vendor publishes a sustainability report"
+          },
+          {
+            "id": "02",
+            "description": "Risk of misalignment with the Northwind Code of Conduct",
+            "likelihood": 2,
+            "impact": 1,
+            "level": 2,
+            "treatment": "Accept",
+            "status": ""
+          }
+        ],
+        "source": "Supplier evaluation - Wayne Cloud Office.docx"
+      },
+      {
+        "supplier": "Initech Payroll Services",
+        "service": "Payroll processing",
+        "dataType": "Employee PII",
+        "dataLocation": "EU",
+        "criticality": "Critical",
+        "assessmentType": "Simplified Cloud Supplier Assessment",
+        "date": "2026-03-05",
+        "assessor": "Priya Shah",
+        "certification": "CAIQ provided",
+        "dpa": "Yes — part of the master agreement",
+        "subProcessors": "Disclosed and bound",
+        "cocScore": "0 — Q4",
+        "scores": {
+          "Information security": "5 — Q4",
+          "Environmental": "5 — Q4",
+          "Supplier code of conduct": "0 — Q4"
+        },
+        "risks": [],
+        "source": "Supplier evaluation - Initech.docx"
+      }
+    ],
+    "gaps": [
+      {
+        "sev": "high",
+        "title": "The process owner role is vacant",
+        "detail": "The document owner listed on v2.0 has moved role and no successor is recorded.",
+        "source": "Supplier Management Process v2.0, document control table"
+      },
+      {
+        "sev": "high",
+        "title": "Assessment forms do not ask about a supplier's use of AI",
+        "detail": "Neither Appendix A nor B asks whether the supplier processes Northwind data with AI or uses AI sub-processors.",
+        "source": "Appendices A and B, v2.0"
+      },
+      {
+        "sev": "med",
+        "title": "Only two per-supplier evaluations exist",
+        "detail": "Section IX requires annual reviews, but only two of the ten Critical and Important suppliers have a completed evaluation.",
+        "source": "Section IX of v2.0"
+      },
+      {
+        "sev": "med",
+        "title": "Rating platform scores are self-declared",
+        "detail": "The 'Score < 3?' gate branches on a number the supplier asserted rather than one that was validated.",
+        "source": "Rating platform export, demo"
+      },
+      {
+        "sev": "low",
+        "title": "No shared supplier ID across registers",
+        "detail": "The ISMS register, rating platform and procurement system match suppliers by name only.",
+        "source": "Register reconciliation, demo"
+      }
+    ]
+  }
+}

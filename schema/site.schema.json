@@ -18,6 +18,11 @@
       "type": "object",
       "properties": { "name": { "type": "string" }, "role": { "type": "string" } }
     },
+    "milestone": {
+      "type": "object",
+      "properties": { "label": { "type": "string" }, "date": { "type": "string" }, "detail": { "type": "string" } }
+    },
+    "aiContext": { "type": ["string", "array"], "items": { "type": "string" } },
     "countdownDays": { "type": ["number", "null"] },
     "defaultRoute": { "type": "string" },
     "nav": {
@@ -42,6 +47,17 @@
           "aiContext": { "type": "string" },
           "aiContextDetail": { "type": "string" },
           "drawerType": { "type": "string" },
+          "tabs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "label", "widget"],
+              "properties": {
+                "id": { "type": "string" }, "label": { "type": "string" },
+                "icon": { "type": "string" }, "widget": { "type": "string" }
+              }
+            }
+          },
           "sections": {
             "type": "array",
             "items": {

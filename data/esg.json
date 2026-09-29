@@ -1,0 +1,58 @@
+{
+  "ESG_META": {
+    "owner": "Daniel Okafor",
+    "sponsor": "Helen Marsh",
+    "investor": "Example Stakeholder",
+    "investorContact": "Lena Fischer",
+    "asOf": "2026-09-22",
+    "note": "ESG reporting follows an annual cycle; the sustainability rating sets the deadlines, with emissions-target work sequenced behind it."
+  },
+
+  "GRESB": {
+    "rating": "3 / 5",
+    "ratingDate": "2025-10-01",
+    "ratingNote": "Demo rating for illustration only.",
+    "nextAssessment": "2027",
+    "nextAssessmentNote": "The next assessment scores the end-of-year position.",
+    "metrics": [
+      { "id": "renewable", "label": "Renewable electricity (offices)", "value": "60%", "prior": "45%", "direction": "up", "note": "Improving year on year." },
+      { "id": "scope12", "label": "Scope 1–2 emissions", "value": "85 tCO₂e", "prior": "140 tCO₂e", "direction": "down", "note": "Down 40% after the HQ tariff switch." },
+      { "id": "scope123", "label": "Scope 1–3 emissions", "value": "1,150 tCO₂e", "prior": "1,020 tCO₂e", "direction": "up", "note": "Scope 3 (travel, cloud hosting, hardware) is the weak spot." }
+    ],
+    "matrix": {
+      "name": "ESG Risk Analysis 2026",
+      "version": "v2 (live)",
+      "state": "Sent to stakeholder contact for review",
+      "source": "ESG team site — work on the live file",
+      "relevanceSource": "Materiality questionnaire; high and medium relevance topics feed the analysis.",
+      "open": "Reviewer asked for actions on every medium/high relevance row.",
+      "warning": "Always open the live file, not a mailed copy."
+    },
+    "deadlines": [
+      { "what": "ESG risk matrix to reviewer", "when": "2026-09-18", "state": "met" },
+      { "what": "Incorporate review comments", "when": "2026-10-05", "state": "open" },
+      { "what": "Rating review call", "when": "", "state": "blocked", "note": "Awaiting a slot that suits the sponsor." }
+    ]
+  },
+
+  "SBTI": {
+    "status": "Not started — sequenced behind the ESG matrix",
+    "sequence": "Sponsor decision: schedule target-setting after the ESG matrix is complete.",
+    "questionnaire": {
+      "name": "Northwind Ltd — Emissions Target Questionnaire 2026",
+      "state": "Shared with edit access",
+      "where": "Document library — see the link register"
+    },
+    "openQuestions": [
+      "Who owns the target-setting submission?",
+      "Target setting and board approval have no date yet.",
+      "Near-term target basis depends on the Scope 3 position."
+    ],
+    "boardDeck": {
+      "what": "Slide deck for the board",
+      "when": "2026-10-15",
+      "owners": "Daniel Okafor + Helen Marsh",
+      "note": "The main external deadline this quarter."
+    }
+  }
+}

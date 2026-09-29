@@ -1,0 +1,156 @@
+{
+  "SECTION_LINKS": {
+    "_shared": [
+      {
+        "label": "ISMS document library",
+        "url": "https://example.com/isms",
+        "note": "Nonconformities, risk register, SoA and other registers."
+      },
+      {
+        "label": "Compliance task board",
+        "url": "https://example.com/board",
+        "note": "Deadlines and current actions."
+      },
+      {
+        "label": "Company intranet",
+        "url": "https://example.com/intranet",
+        "note": "Governance, people, procurement and operations pages."
+      }
+    ],
+    "overview": [
+      {
+        "label": "HR system",
+        "url": "https://example.com/hr",
+        "note": "Holds employee data."
+      },
+      {
+        "label": "Learning platform",
+        "url": "https://example.com/lms",
+        "note": "Annual security awareness training is delivered here."
+      }
+    ],
+    "controls": [
+      {
+        "label": "Statement of Applicability v2.0",
+        "url": "https://example.com/isms/soa",
+        "note": "Implementation text and justification per control."
+      }
+    ],
+    "ncs": [
+      {
+        "label": "External audit nonconformity register",
+        "url": "https://example.com/isms/ncs",
+        "note": "Demo certification audit NCs."
+      }
+    ],
+    "risks": [
+      {
+        "label": "Risk register (working version)",
+        "url": "https://example.com/isms/risks",
+        "note": "Owned by the COO."
+      }
+    ],
+    "esg": [
+      {
+        "label": "ESG risk analysis 2026 — live file",
+        "url": "https://example.com/esg/matrix",
+        "note": "Work here, not on a mailed copy."
+      },
+      {
+        "label": "Emissions target questionnaire 2026",
+        "url": "https://example.com/esg/targets",
+        "note": "Shared with edit access."
+      }
+    ],
+    "vendors": [
+      {
+        "label": "Procurement library",
+        "url": "https://example.com/procurement",
+        "note": "Supplier process documents and NDA templates."
+      }
+    ],
+    "evidence": [
+      {
+        "label": "Compliance templates",
+        "url": "https://example.com/templates",
+        "note": "House style for documents issued to customers or auditors."
+      }
+    ],
+    "incidents": [
+      {
+        "label": "Service desk",
+        "url": "https://example.com/servicedesk",
+        "note": "Where tickets are raised."
+      },
+      {
+        "label": "Whistleblowing channel",
+        "url": "https://example.com/whistleblowing",
+        "note": "External reporting channel."
+      }
+    ],
+    "policies": [
+      {
+        "label": "Published policies",
+        "url": "https://example.com/intranet/policies",
+        "note": "Approved policies and standards."
+      }
+    ],
+    "core": [
+      {
+        "label": "Roles & Responsibilities",
+        "url": "https://example.com/intranet/roles",
+        "note": "Relevant to clause 5.3."
+      }
+    ],
+    "audits": [
+      {
+        "label": "Audit programme",
+        "url": "https://example.com/isms/audits",
+        "note": "Internal audit plan and reports."
+      }
+    ],
+    "opsproc": [
+      {
+        "label": "Published process set",
+        "url": "https://example.com/intranet/processes",
+        "note": "Change, risk, incident and exit processes."
+      }
+    ],
+    "people": [
+      {
+        "label": "Learning platform — awareness training",
+        "url": "https://example.com/lms",
+        "note": "Completion records evidence the awareness control."
+      },
+      {
+        "label": "Onboarding page",
+        "url": "https://example.com/intranet/onboarding",
+        "note": "Compliance introduction for new hires."
+      }
+    ],
+    "sites": [
+      {
+        "label": "Site pages",
+        "url": "https://example.com/intranet/sites",
+        "note": "Per-office operational information."
+      }
+    ],
+    "soa": [
+      {
+        "label": "Statement of Applicability — list",
+        "url": "https://example.com/isms/soa",
+        "note": "Home of record."
+      },
+      {
+        "label": "SoA v2.0 (PDF)",
+        "url": "https://example.com/isms/soa.pdf",
+        "note": "The copy to send."
+      },
+      {
+        "label": "Controls (Annex A) in this dashboard",
+        "url": "",
+        "note": "Same 93 controls with heatmap and per-control detail."
+      }
+    ]
+  }
+}

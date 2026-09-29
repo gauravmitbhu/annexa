@@ -1,0 +1,82 @@
+{
+  "SECTION_NOTES": {
+    "overview": {
+      "title": "Start here",
+      "body": "Demo data for Northwind Ltd, a fictional software and professional-services company with three offices (HQ – Riverside, Office – Harbour, Office – Northgate).\n\nCertified to ISO/IEC 27001:2022, ISO 9001:2015 and ISO 14001:2015 by Example Certification Body.\n\nEach section carries its own short note."
+    },
+    "controls": {
+      "title": "Statement of Applicability",
+      "body": "93 Annex A controls, all applicable. Partial implementations are recorded as exceptions rather than hidden."
+    },
+    "ncs": {
+      "title": "Nonconformities",
+      "body": "Findings from the demo certification audit. All minor or observation; no majors."
+    },
+    "risks": {
+      "title": "Risk register",
+      "body": "5x5 method, risk level = likelihood x consequence. Reviewed by top management every six months."
+    },
+    "esg": {
+      "title": "ESG",
+      "body": "ESG follows an annual reporting cycle. Scope 3 emissions (travel, cloud hosting, hardware) are the weak spot."
+    },
+    "vendors": {
+      "title": "Suppliers",
+      "body": "Suppliers are classified Critical, Important or Non-Critical and evaluated annually."
+    },
+    "people": {
+      "title": "People and training",
+      "body": "Roles, competence and mandate are defined per role. Awareness training completion is tracked in the learning platform."
+    },
+    "sites": {
+      "title": "Sites and offices",
+      "body": "Three offices under one certificate. Production runs with a cloud hosting provider, so an office outage does not affect customers."
+    },
+    "environment": {
+      "title": "Environment (ISO 14001)",
+      "body": "Aspect assessment is being harmonised across offices; IT asset disposal registers are still to be created."
+    },
+    "policies": {
+      "title": "Policies and standards",
+      "body": "Policies are approved by the COO; changes are recorded in the change register."
+    },
+    "incidents": {
+      "title": "Incidents and changes",
+      "body": "One register holds incidents, changes and regulatory notification deadlines."
+    },
+    "audits": {
+      "title": "Audit programme",
+      "body": "The internal audit programme covers all three standards; an external consultant audits the compliance function for independence."
+    },
+    "exceptions": {
+      "title": "Exceptions",
+      "body": "Evidence that the SoA is honest: nothing is marked compliant when it is not."
+    },
+    "evidence": {
+      "title": "Evidence library",
+      "body": "Always open the live file listed in the link register, not a mailed copy."
+    },
+    "opsproc": {
+      "title": "Processes",
+      "body": "Documented processes supporting Annex A 5.37 and ISO 9001 clause 4.4."
+    },
+    "core": {
+      "title": "IMS Core (clauses 4–10)",
+      "body": "Management-system requirements shared by all three standards."
+    },
+    "soa": [
+      {
+        "title": "Only ISO 27001 has a Statement of Applicability",
+        "body": "The SoA is required by ISO/IEC 27001 clause 6.1.3 d). ISO 9001 and ISO 14001 use other registers for the equivalent role."
+      },
+      {
+        "title": "Approve every version",
+        "body": "Clause 7.5.2 requires documented information to be approved. Record the approver for each version."
+      },
+      {
+        "title": "Client view is a display filter, not a control",
+        "body": "Client view hides internal fields on screen only. Use Export for anything that leaves the organisation."
+      }
+    ]
+  }
+}

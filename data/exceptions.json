@@ -1,25 +1,59 @@
 {
+  "EXCEPTION_NOTE": "Northwind Ltd does not exclude any Annex A control; all 93 are marked applicable in the demo SoA. The deviations below are risks formally accepted in the risk register, plus one control whose status is held at partial pending technical enforcement.",
   "EXCEPTIONS": [
     {
-      "id": "EX-001",
-      "title": "Streamlined policy approval (CISO drafts, single Board/CTO approver)",
-      "ctrls": [
-        "Cl. 5.2",
-        "A.5.1"
-      ],
-      "approval": "approved",
-      "validity": "05.05.2026 – 05.05.2027",
+      "id": "EX-A81",
+      "title": "A.8.1 status held at \"partially implemented\" pending endpoint enforcement",
+      "ctrls": ["A.8.1"],
+      "approval": "recorded",
+      "validity": "until corrective action verification, target 2027-01-31",
+      "rationale": "The demo external audit found no technical block on non-compliant devices. Status set to partial while device management and conditional access are rolled out.",
+      "owner": "Priya Anand",
+      "source": "NC-DEMO-01",
       "link": "#"
     },
     {
-      "id": "EX-002",
-      "title": "Four-eyes relaxation for code changes (AI/automation as second reviewer)",
-      "ctrls": [
-        "A.8.25",
-        "A.8.32"
-      ],
-      "approval": "pending",
-      "validity": "05.05.2026 – 05.05.2027",
+      "id": "EX-SOD",
+      "title": "Segregation of duties for backup administration not implemented",
+      "ctrls": ["Cl. 7.1", "A.8.13"],
+      "approval": "accepted",
+      "validity": "reviewed at each management review",
+      "rationale": "The team is too small to separate backup administration from restore approval. Accepted as a risk with compensating log review.",
+      "owner": "Jordan Ellis",
+      "source": "NC-DEMO-02",
+      "link": "#"
+    },
+    {
+      "id": "EX-UTIL",
+      "title": "Residual risk from privileged utility programs accepted",
+      "ctrls": ["A.8.18"],
+      "approval": "accepted",
+      "validity": "annual review, next Q4 2026",
+      "rationale": "R-DEMO-12: L1 x C2 = 2. Admin tooling is covered by access control and monitoring already in place.",
+      "owner": "Jordan Ellis",
+      "source": "R-DEMO-12",
+      "link": "#"
+    },
+    {
+      "id": "EX-AUDIT",
+      "title": "Residual risk from audit and assessment activity accepted",
+      "ctrls": ["A.8.34"],
+      "approval": "accepted",
+      "validity": "annual review, next Q4 2026",
+      "rationale": "R-DEMO-13: L1 x C2 = 2. External auditors sign confidentiality agreements and are evaluated as suppliers.",
+      "owner": "Jordan Ellis",
+      "source": "R-DEMO-13",
+      "link": "#"
+    },
+    {
+      "id": "EX-SHARE",
+      "title": "Two document library sites left outside restricted search",
+      "ctrls": ["A.5.12", "A.8.12"],
+      "approval": "recorded",
+      "validity": "review with the next permission clean-up",
+      "rationale": "R-DEMO-14: restricting search on these sites would break legitimate access patterns. Residual risk 2 x 2 = 4, accepted 2026-02-25.",
+      "owner": "Marta Hartley",
+      "source": "R-DEMO-14",
       "link": "#"
     }
   ]

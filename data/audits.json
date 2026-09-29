@@ -1,173 +1,35 @@
 {
-  "OFIS": [
-    {
-      "id": "OFI-001",
-      "title": "Policy 23 Very High clarification + 3×3 alignment",
-      "status": "In progress",
-      "source": "Audit /01 /02",
-      "due": "2026-06-02",
-      "link": "#"
-    },
-    {
-      "id": "OFI-002",
-      "title": "Document High/Very High risk acceptance in MR",
-      "status": "In progress",
-      "source": "Audit /01 /02",
-      "due": "2026-06-02",
-      "link": "#"
-    },
-    {
-      "id": "OFI-003",
-      "title": "Track risk treatment via Change Management Form",
-      "status": "Complete",
-      "source": "Audit /01 /02",
-      "due": "2026-06-16",
-      "link": "#"
-    },
-    {
-      "id": "OFI-004",
-      "title": "Verifiable evidence for documented info updates",
-      "status": "Complete",
-      "source": "Audit /01 /02",
-      "due": "2026-06-16",
-      "link": "#"
-    },
-    {
-      "id": "OFI-005",
-      "title": "KPI breaches tracked as security incidents",
-      "status": "Complete",
-      "source": "Audit /01 /02",
-      "due": "2026-06-16",
-      "link": "#"
-    },
-    {
-      "id": "OFI-006",
-      "title": "Branch offices in audit program",
-      "status": "Complete",
-      "source": "Audit /01 /02",
-      "due": "2026-06-16",
-      "link": "#"
-    },
-    {
-      "id": "OFI-007",
-      "title": "Add implementation location to SoA",
-      "status": "Complete",
-      "source": "Audit /01 /02",
-      "due": "2026-06-16",
-      "link": "#"
-    },
-    {
-      "id": "OFI-008",
-      "title": "Document Threat Intelligence activities + workshops",
-      "status": "Open",
-      "source": "Audit /01 /02",
-      "due": "2026-06-16",
-      "link": "#"
-    },
-    {
-      "id": "OFI-009",
-      "title": "Review external services inventory",
-      "status": "In progress",
-      "source": "Audit /01 /02",
-      "due": "2026-06-16",
-      "link": "#"
-    },
-    {
-      "id": "OFI-010",
-      "title": "Detail access-rights recertification; ticket system",
-      "status": "In progress",
-      "source": "Audit /01 /02",
-      "due": "2026-06-02",
-      "link": "#"
-    },
-    {
-      "id": "OFI-011",
-      "title": "HR templates under document control",
-      "status": "In progress",
-      "source": "Audit /01 /02",
-      "due": "2026-06-16",
-      "link": "#"
-    },
-    {
-      "id": "OFI-012",
-      "title": "Formalize awareness/training tracking",
-      "status": "Complete",
-      "source": "Audit /01 /02",
-      "due": "2026-06-16",
-      "link": "#"
-    },
-    {
-      "id": "OFI-013",
-      "title": "Treat AI models like source code",
-      "status": "Open",
-      "source": "Audit /01 /02",
-      "due": "2026-06-02",
-      "link": "#"
-    },
-    {
-      "id": "OFI-014",
-      "title": "Malware top-down threat / attack-tree analysis",
-      "status": "Open",
-      "source": "Audit /01 /02",
-      "due": "2026-06-16",
-      "link": "#"
-    },
-    {
-      "id": "OFI-015",
-      "title": "Formalize info-deletion procedures",
-      "status": "In progress",
-      "source": "Audit /01 /02",
-      "due": "2026-06-02",
-      "link": "#"
-    },
-    {
-      "id": "OFI-016",
-      "title": "Review air-gap backups and retention",
-      "status": "Open",
-      "source": "Audit /01 /02",
-      "due": "2026-06-02",
-      "link": "#"
-    },
-    {
-      "id": "OFI-017",
-      "title": "ISMS docs for org restructuring; obsolete role refs",
-      "status": "Complete",
-      "source": "MR-2026",
-      "due": "2026-06-02",
-      "link": "#"
-    },
-    {
-      "id": "OFI-018",
-      "title": "Separate Incidents / Changes / Corrective Actions workflows",
-      "status": "Complete",
-      "source": "MR-2026",
-      "due": "2026-06-02",
-      "link": "#"
-    },
-    {
-      "id": "OFI-019",
-      "title": "Complete endpoint agent deployment (coverage / RBAC / review schedule)",
-      "status": "In progress",
-      "source": "MR-2026",
-      "due": "2026-06-02",
-      "link": "#"
-    },
-    {
-      "id": "OFI-020",
-      "title": "ISMS operations automation roadmap",
-      "status": "In progress",
-      "source": "MR-2026",
-      "due": "2026-08-11",
-      "link": "#"
-    },
-    {
-      "id": "OFI-021",
-      "title": "Policy 28 — GDPR section for client data via AI",
-      "status": "Complete",
-      "source": "MR-2026",
-      "due": "2026-06-02",
-      "link": "#"
-    }
+  "AUDIT_PROGRAMME": {
+    "docId": "NWC-IMS-IAP-001",
+    "version": "1.0",
+    "date": "2026-01-15",
+    "scope": "All Northwind Ltd sites (HQ – Riverside, Office – Harbour, Office – Northgate) and all processes within the certified management system.",
+    "frequency": "Each organisational unit is audited once per calendar year. Every clause of ISO 9001, ISO 14001 and ISO/IEC 27001 is covered each year.",
+    "responsibilities": "The Compliance Manager owns the programme and audits the other departments. The compliance function itself is audited by an external consultant.",
+    "impartiality": "No auditor audits their own work. Office audits include a representative from another office.",
+    "retention": "The programme, audit plans and reports are retained for three years."
+  },
+  "AUDIT_REPORTS": [
+    { "id": "IA-26-01", "year": 2026, "kind": "Internal", "unit": "Management system (Group)", "criteria": "ISO 9001 4–10 · ISO 14001 4–10 · ISO/IEC 27001 4–10", "auditor": "External consultant", "auditee": "Compliance Manager; CEO", "planned": "2026-02-10", "actual": "2026-02-12", "status": "Completed", "report": "internal-audit-mgmt-2026.xlsx" },
+    { "id": "IA-26-02", "year": 2026, "kind": "Internal", "unit": "HQ – Riverside", "criteria": "ISO 9001 8.1 · ISO 14001 8.1 · 27001 A.7", "auditor": "Compliance Manager + office rep", "auditee": "Office Manager HQ", "planned": "2026-03-10", "actual": "2026-03-11", "status": "Completed", "report": "internal-audit-hq-2026.xlsx" },
+    { "id": "IA-26-03", "year": 2026, "kind": "Internal", "unit": "Office – Harbour", "criteria": "ISO 9001 8.1 · ISO 14001 8.1 · 27001 A.7", "auditor": "Compliance Manager + office rep", "auditee": "Office Manager Harbour", "planned": "2026-04-14", "actual": "", "status": "Not yet recorded", "report": "" },
+    { "id": "IA-26-04", "year": 2026, "kind": "Internal", "unit": "Office – Northgate", "criteria": "ISO 9001 8.1 · ISO 14001 8.1 · 27001 A.7", "auditor": "Compliance Manager + office rep", "auditee": "Office Manager Northgate", "planned": "2026-05-12", "actual": "", "status": "Not yet recorded", "report": "" },
+    { "id": "IA-26-05", "year": 2026, "kind": "Internal", "unit": "IT Operations", "criteria": "ISO 9001 8.5 · 27001 A.5, A.8", "auditor": "Compliance Manager", "auditee": "IT Operations Lead", "planned": "2026-06-09", "actual": "2026-06-10", "status": "Completed", "report": "internal-audit-it-2026.xlsx" },
+    { "id": "IA-26-06", "year": 2026, "kind": "Internal", "unit": "HR and Finance", "criteria": "ISO 9001 7.2 · 27001 A.6", "auditor": "Compliance Manager", "auditee": "HR Lead; Finance Lead", "planned": "2026-10-13", "actual": "", "status": "Planned", "report": "" },
+    { "id": "IA-27-01", "year": 2027, "kind": "Internal", "unit": "Management system (Group)", "criteria": "All clauses, three standards", "auditor": "External consultant", "auditee": "Compliance Manager; CEO", "planned": "2027-02-09", "actual": "", "status": "Planned", "report": "" },
+    { "id": "IA-27-02", "year": 2027, "kind": "Internal", "unit": "All offices", "criteria": "9001 · 14001 · 27001 (operational)", "auditor": "Compliance Manager + office rep", "auditee": "Office Managers", "planned": "2027-03-16", "actual": "", "status": "Planned", "report": "" }
   ],
-  "AUDIT_REPORTS": []
+  "EXTERNAL_AUDITS": [
+    { "id": "EXT-25-S1", "date": "2025", "body": "Example Certification Body", "scope": "Group — Stage 1 readiness review", "standards": "ISO 27001", "outcome": "Stage 1 report issued; proceeded to Stage 2", "ncs": "" },
+    { "id": "EXT-25-S2", "date": "2025-10-20", "body": "Example Certification Body", "scope": "Group — Stage 2 certification audit", "standards": "ISO 27001 · 14001 · 9001", "outcome": "Minor nonconformities raised and tracked to closure", "ncs": "NC-001 to NC-006" },
+    { "id": "EXT-26-SURV", "date": "2026-06-18", "body": "Example Certification Body", "scope": "Group — surveillance audit", "standards": "ISO 27001 · 14001 · 9001", "outcome": "8 findings: 5 minor nonconformities and 3 observations, no majors.", "ncs": "NC-101 to NC-108" },
+    { "id": "EXT-26-CUST", "date": "2026", "body": "Customer (demo)", "scope": "Customer supplier audit of Harbour office", "standards": "Customer ISMS requirements", "outcome": "Completed; questionnaire on file", "ncs": "" }
+  ],
+  "ASSURANCE": [
+    { "id": "PT-2025", "date": "2025", "kind": "Penetration test", "what": "External penetration test of the customer portal", "result": "Findings triaged and remediated" },
+    { "id": "EASM-2025", "date": "2025-11-01", "kind": "Vulnerability assessment", "what": "External attack surface assessment", "result": "Report received; findings tracked as corrective actions" },
+    { "id": "NIS2-GAP", "date": "2025-12", "kind": "Gap analysis", "what": "Regulatory (NIS2 / GDPR) readiness review by an external consultant", "result": "Feeds the regulatory compliance programme" },
+    { "id": "MR-Q2-2026", "date": "2026", "kind": "Management review", "what": "Management Review Q2 2026", "result": "Reviewed ISMS performance, audit results and the NC position" }
+  ],
+  "OFIS": []
 }

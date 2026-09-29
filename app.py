@@ -27,7 +27,7 @@ from typing import Iterable
 from flask import Flask, Response, jsonify, request, send_from_directory
 
 # ---- paths -----------------------------------------------------------------
-DASHBOARD_DIR = Path(__file__).resolve().parent          # .../isms-dashboard
+DASHBOARD_DIR = Path(__file__).resolve().parent          # .../annexa
 PROJECT_ROOT  = DASHBOARD_DIR.parent                     # .../isms
 
 CLAUDE_BIN = shutil.which("claude") or "claude"
@@ -38,34 +38,42 @@ _seen_threads: set[str] = set()
 _seen_lock = threading.Lock()
 
 # ---- system prompt ---------------------------------------------------------
-APPEND_SYSTEM_PROMPT = """
-You are the AI co-pilot for Acme's internal ISMS (Information Security
-Management System) dashboard. Acme is a fictional B2B SaaS analytics
-company; the user is Alex (CISO). All data in this demo is fictional.
+def _site_context() -> str:
+    """Organisation context for the AI prompts, taken from site/site.json so the
+    same code serves any company. Optional site.json key `aiContext` (string or
+    list of strings) adds free-text facts: standards, scope, certifier, etc."""
+    try:
+        site = json.loads((DASHBOARD_DIR / "site" / "site.json").read_text(encoding="utf-8"))
+    except Exception:                                         # noqa: BLE001
+        site = {}
+    brand, user = site.get("brand") or {}, site.get("user") or {}
+    org = brand.get("legalName") or brand.get("name") or "the organisation"
+    extra = site.get("aiContext") or []
+    if isinstance(extra, str):
+        extra = [extra]
+    lines = [f"Organisation: {org}."]
+    if user.get("name"):
+        lines.append(f"The user is {user['name']}{', ' + user['role'] if user.get('role') else ''}.")
+    lines += [f"- {x}" for x in extra]
+    return "\n".join(lines)
 
-Context:
-- Standard: ISO/IEC 27001:2022. 93 Annex A controls. 1 N/A (8.17 Clock Sync).
-- External certification body: CertCo. Next surveillance audit: June 2026.
-- Workforce: ~12. Active roles: Alex (CISO), Sam (CTO), Jordan (COO),
-  Casey (Co-founder), Morgan (Data Scientist), Riley (Head of Product).
-  External DPO: Dana.
-- Highest open gaps: 8.10 Information deletion (HIGH, owner Sam),
-  5.30 BC Planner (MED, owner Jordan), several unapproved draft policies,
-  and pending exception requests (EXC-01..EXC-10).
-- Connected sources (demo integrations): ticketing, document store, GitLab,
-  Elastic, MDM, LMS.
 
-You have read-only access to the local ISMS working tree (the project root
-this server runs from). Use Read/Grep/Glob to consult any demo artifacts
-present there, e.g.:
-  - a statement of applicability spreadsheet (SoA)
-  - draft policy documents
-  - an exception-request register (EXC-01..EXC-10)
-  - README.md (project context)
+def _chat_prompt() -> str:
+    return f"""
+You are the AI co-pilot for this integrated management system (IMS) dashboard.
+{_site_context()}
+
+The registers in data/*.json are the organisation's compliance position. Do not
+invent figures, people or findings, and do not soften what the registers say.
+If a register does not answer the question, say so rather than filling the gap.
+
+You have read-only access to the local working tree (the project root this
+server runs from). Use Read/Grep/Glob to consult artifacts present there, e.g.
+the Statement of Applicability, policy documents, registers and README.md.
 
 Style:
-- Be a colleague to a senior CISO: direct, concise, no hedging.
-- Cite sources when you reference files (e.g. "SoA v1.2, row 47").
+- Be a colleague to a senior compliance lead: direct, concise, no hedging.
+- Cite sources when you reference files (e.g. "SoA, row 47").
 - For audit prep, drafting, or risk questions, lead with the actionable answer.
 - Never invent control IDs, ticket numbers, or ownership — read the file.
 - This is a read-only context. Do not propose Edit/Write actions.
@@ -83,8 +91,9 @@ ALLOWED_TOOLS = "Read Grep Glob"
 # the settings file is enforcement.
 EVOLVE_ALLOWED_TOOLS = "Read Grep Glob Edit Write"
 
-EVOLVE_SYSTEM_PROMPT = """
-You are the EVOLVE agent for the Acme ISMS dashboard — a self-modifying web
+def _evolve_prompt() -> str:
+    return ("""
+You are the EVOLVE agent for this IMS dashboard — a self-modifying web
 app. The user asks for changes in plain language; you implement them by
 editing files in this directory. The browser hot-reloads ~2s after any file
 changes, and the server auto-commits your changes to git after each turn
@@ -104,24 +113,30 @@ confirmation.
   `function Foo() {...}` and MUST end with `registerWidget('<name>', Foo);`.
   Conventions: no imports/exports (globals only); shared UI primitives are
   global (Icon, Card, Button, Pill, Avatar, PageHeader…); data is global
-  (CONTROLS, INCIDENTS, OFIS, VENDORS, …); inline styles, Poppins font,
-  purple/pink palette (#6B2FA0, #E91E63). Widgets that open detail drawers
+  (CONTROLS, INCIDENTS, OFIS, VENDORS, …); inline styles, and ALWAYS the theme tokens rather than hex literals for brand
+  colours: var(--brand-accent), var(--brand-accent-2), var(--brand-accent-dark),
+  var(--brand-ink), var(--brand-muted), var(--brand-surface), var(--brand-border),
+  var(--brand-on-accent); tints via color-mix(in srgb, var(--brand-accent) 10%, transparent).
+  The theme is set from site/theme.json (Settings page) — never hard-code a company palette. Widgets that open detail drawers
   receive an `onOpenDrawer(item)` prop.
 - `data/*.json` — each file is { GLOBAL_NAME: value, ... }; every key becomes
   a window global at boot. Edit or add records here; add new files freely.
 - PROTECTED (never edit, tool calls will be denied): engine/, app.py,
-  index.html. If a request truly requires engine changes, explain why and
+  branding.py, index.html. If a request truly requires engine changes, explain why and
   stop. colors_and_type.css MAY be edited for theme/token changes.
 
 ## Rules
-- ALL content must stay fictional (company "Acme", people Alex/Sam/Jordan/
-  Riley/Morgan/Casey/Dana). Never introduce real names, companies, or URLs.
+- The data/ registers are the organisation's compliance records. Never invent
+  records, figures, people or findings to fill a gap — if a register does not
+  say it, say so. Treat the content as confidential.
 - Keep edits minimal and consistent with neighbouring style.
 - A broken widget shows an error card (not a crash); if the user reports one,
   Read the file, fix the error.
 - After structural edits to site/site.json, mentally validate: every
   sections[].widget must exist in widgets/ (or be registered by one).
-""".strip()
+"""
+        + "\n\n" + _site_context())
+
 
 # ---- Flask app -------------------------------------------------------------
 app = Flask(__name__, static_folder=str(DASHBOARD_DIR), static_url_path="")
@@ -263,6 +278,55 @@ def moodle_overview():
     return jsonify(data)
 
 
+# ---- Whitelabel / branding --------------------------------------------------
+# The Settings page scans a company website for its colours, fonts and logo
+# (branding.scan), lets the user adjust the proposal, then applies it: the
+# theme goes to site/theme.json and the name to site.json brand{}.
+import branding
+
+
+@app.post("/api/brand/scan")
+def brand_scan():
+    url = ((request.get_json(silent=True) or {}).get("url") or "").strip()
+    if not url:
+        return jsonify(ok=False, reason="missing url"), 400
+    try:
+        return jsonify(ok=True, proposal=branding.scan(url))
+    except branding.ScanError as e:
+        return jsonify(ok=False, reason=str(e)), 400
+    except Exception as e:                                    # noqa: BLE001
+        return jsonify(ok=False, reason=f"{type(e).__name__}: {e}"[:300]), 502
+
+
+@app.post("/api/brand/apply")
+def brand_apply():
+    body = request.get_json(silent=True) or {}
+    theme = body.get("theme") or {}
+    if body.get("reset"):
+        branding.THEME_PATH.unlink(missing_ok=True)
+        return jsonify(ok=True, theme=None)
+    # Logos and favicons are embedded as data: URIs so the dashboard never
+    # hot-links (or leaks views to) the company's website after applying.
+    for k in ("logo", "favicon"):
+        v = theme.get(k) or ""
+        if v and not v.startswith("data:"):
+            try:
+                theme[k] = branding.embed_image(v)
+            except Exception:                                 # noqa: BLE001
+                theme[k] = ""
+    clean = branding.write_theme(theme)
+
+    brand = body.get("brand") or {}
+    site_path = DASHBOARD_DIR / "site" / "site.json"
+    site = json.loads(site_path.read_text(encoding="utf-8"))
+    for k in ("name", "legalName", "tagline"):
+        v = brand.get(k)
+        if isinstance(v, str) and v.strip():
+            site.setdefault("brand", {})[k] = v.strip()[:80]
+    site_path.write_text(json.dumps(site, ensure_ascii=False, indent=2), encoding="utf-8")
+    return jsonify(ok=True, theme=clean, brand=site.get("brand"))
+
+
 # ---- Claude bridge ---------------------------------------------------------
 VALID_MODELS = {
     "claude-fable-5",
@@ -285,7 +349,7 @@ def _build_args(user_msg: str, thread_id: str, model: str | None = None,
         "--include-partial-messages",
         "--verbose",                       # required for stream-json output
         "--allowedTools", EVOLVE_ALLOWED_TOOLS if evolve else ALLOWED_TOOLS,
-        "--append-system-prompt", EVOLVE_SYSTEM_PROMPT if evolve else APPEND_SYSTEM_PROMPT,
+        "--append-system-prompt", _evolve_prompt() if evolve else _chat_prompt(),
     ]
     if not evolve:
         args += ["--add-dir", str(PROJECT_ROOT)]
@@ -534,7 +598,7 @@ def validate():
 # ---- entrypoint ------------------------------------------------------------
 def main() -> None:
     port = int(os.environ.get("PORT", "8765"))
-    print(f"Acme ISMS Dashboard → http://127.0.0.1:{port}")
+    print(f"annexa IMS dashboard → http://127.0.0.1:{port}")
     print(f"  static : {DASHBOARD_DIR}")
     print(f"  cwd    : {PROJECT_ROOT}")
     print(f"  claude : {CLAUDE_BIN}")

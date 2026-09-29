@@ -1,59 +1,65 @@
 {
+  "INCIDENT_META": {
+    "register": "Demo Change and Incident Register v1.0: one workbook holding a Change Register, an Incident Register and lookup lists",
+    "process": "Incident Management Process v1.0; reporting form in the service desk tool",
+    "categories": "Cat 1 Critical · Cat 2 High · Cat 3 Medium · Cat 4 Low",
+    "reporting": "Regulatory reportability (e.g. GDPR, and NIS2 where applicable) is recorded per incident, with the 24-hour early warning, 72-hour notification and one-month final report tracked separately.",
+    "dataNote": "The incident rows below are fictional demo records.",
+    "openGap": "Demo corrective action NC-DEMO-04: the incident process lacks a documented escalation procedure."
+  },
   "INCIDENTS": [
     {
-      "id": "INCIDENT-335",
-      "list": "Canonical Incidents",
-      "title": "Payment-platform admin role still assigned to a former employee",
-      "severity": "Urgent",
-      "status": "New",
-      "filed": "2026-05-19",
-      "subtasks": 8,
-      "link": "#"
+      "id": "NW-OFF-26-001", "list": "Incident Register", "site": "HQ – Riverside", "domain": "Office",
+      "title": "Office power cut for 3 h, staff moved to remote working, no customer impact",
+      "severity": "Urgent", "category": "Cat 1 – Critical", "status": "Closed", "filed": "2026-04-20", "closed": "2026-05-19",
+      "reporter": "Office manager",
+      "detail": "Mains power to the office dropped at 09:45. Staff switched to remote working on laptops; all production services run with the cloud provider and were unaffected.",
+      "rootCause": "Fault in the building landlord's electrical supply.",
+      "corrective": "Agree an outage notification SLA with the landlord; add a remote-working switchover to the business continuity test.",
+      "nis2": false, "gdpr": false, "authority": "",
+      "warn24": "", "notify72": "", "final": "", "review": "2026-05-04", "link": "#"
     },
     {
-      "id": "ISMS-2710",
-      "list": "ISMS Incidents",
-      "title": "INCIDENT-KPI-3 — Endpoint coverage ~92% (11/12); one laptop pending",
-      "severity": "Medium",
-      "status": "In progress",
-      "filed": "2026-05-19",
-      "link": "#"
+      "id": "NW-ENV-26-002", "list": "Incident Register", "site": "Office – Harbour", "domain": "Environmental",
+      "title": "Retired laptops stored in an unlocked cupboard awaiting e-waste collection",
+      "severity": "High", "category": "Cat 2 – High", "status": "Closed", "filed": "2026-05-08", "closed": "2026-05-22",
+      "reporter": "Office coordinator (walk-round)",
+      "detail": "Found on a routine walk-round. Devices were wiped but not yet collected; they were moved to locked storage and collected by a certified e-waste contractor.",
+      "rootCause": "No defined holding area or collection schedule for retired equipment.",
+      "corrective": "Define a locked e-waste holding area; schedule quarterly collections; update the asset disposal procedure.",
+      "nis2": false, "gdpr": false, "authority": "",
+      "warn24": "", "notify72": "", "final": "", "review": "2026-05-21", "link": "#"
     },
     {
-      "id": "ISMS-2711",
-      "list": "ISMS Incidents",
-      "title": "INCIDENT-KPI-2 — Incident Management SLA at ~33% + SLA relaxation proposal",
-      "severity": "High",
-      "status": "Open",
-      "filed": "2026-05-19",
-      "link": "#"
-    },
-    {
-      "id": "ISMS-2712",
-      "list": "ISMS Incidents",
-      "title": "Contractor laptop provisioning — RESOLVED (laptop received, MDM + endpoint agent enrolled)",
-      "severity": "High",
-      "status": "Resolved",
-      "filed": "2026-05-19",
-      "link": "#"
-    },
-    {
-      "id": "ISMS-2708",
-      "list": "OFI-list sub-task",
-      "title": "INCIDENT-KPI-2 (OFI-list sibling of ISMS-2711)",
-      "severity": "High",
-      "status": "Open",
-      "filed": "2026-05-19",
-      "link": "#"
-    },
-    {
-      "id": "ISMS-2709",
-      "list": "OFI-list sub-task",
-      "title": "INCIDENT-KPI-4b — Risk-to-control coverage at ~91%",
-      "severity": "Medium",
-      "status": "Open",
-      "filed": "2026-05-19",
-      "link": "#"
+      "id": "NW-SEC-26-003", "list": "Incident Register", "site": "Office – Northgate", "domain": "Information Security",
+      "title": "DDoS against the SaaS web front end, degraded latency only",
+      "severity": "Urgent", "category": "Cat 1 – Critical", "status": "Open", "filed": "2026-08-15", "closed": "",
+      "reporter": "Platform engineer (alert escalation)",
+      "detail": "HTTP flood over about two hours. The cloud provider's DDoS protection engaged automatically; some customers saw brief latency increases.",
+      "rootCause": "External botnet; rate-limiting rules on the web application firewall were too permissive.",
+      "corrective": "Tighten WAF rate limits; run an annual DDoS tabletop with the cloud provider; update the customer status-page playbook.",
+      "nis2": false, "gdpr": false, "authority": "National CSIRT (voluntary)",
+      "warn24": "2026-08-16", "notify72": "2026-08-18", "final": "", "review": "2026-08-28", "link": "#"
     }
+  ],
+  "CHANGES": [
+    { "id": "NW-CHG-26-001", "raised": "2026-05-27", "requester": "M. Hartley", "dept": "Compliance", "what": "Physical security standard: define minimum access log retention (6 months)", "why": "Retention was not defined", "risk": "Green", "type": "Standard", "approver": "Daniel Okafor", "approved": "2026-05-29", "implemented": "2026-06-01", "notes": "Verified no impact post-change" },
+    { "id": "NW-CHG-26-002", "raised": "2026-05-27", "requester": "M. Hartley", "dept": "Compliance", "what": "Privacy notice: set access log retention to a maximum of 2 years", "why": "Customer assurance reports need a full year of logs", "risk": "Green", "type": "Standard", "approver": "Daniel Okafor", "approved": "2026-05-29", "implemented": "", "notes": "" },
+    { "id": "NW-CHG-26-003", "raised": "2026-06-09", "requester": "M. Hartley", "dept": "Compliance", "what": "AI policy: add a meeting transcription tool to the approved list", "why": "Onboarding a new vendor", "risk": "Green", "type": "Standard", "approver": "", "approved": "", "implemented": "", "notes": "" },
+    { "id": "NW-CHG-26-004", "raised": "2026-06-18", "requester": "M. Hartley", "dept": "Compliance", "what": "Incident procedure: notify the certification body of major incidents", "why": "Audit observation NC-DEMO-06", "risk": "Green", "type": "Standard", "approver": "", "approved": "", "implemented": "", "notes": "Raised from the demo audit" },
+    { "id": "NW-CHG-26-005", "raised": "2026-07-02", "requester": "P. Anand", "dept": "IT", "what": "Firewall rule review cadence changed to quarterly", "why": "Align with network security standard", "risk": "Amber", "type": "Normal", "approver": "Daniel Okafor", "approved": "2026-07-05", "implemented": "2026-07-10", "notes": "" }
+  ],
+  "INC_PRIORITY": [
+    { "prio": "P1", "level": "Critical", "office": "15 min", "always": "60 min", "resolve": "1 h",  "alarm": "A-alarm", "desc": "Critical incident with serious economic impact and/or affecting a significant part of, or all, users and customers." },
+    { "prio": "P2", "level": "High",     "office": "15 min", "always": "60 min", "resolve": "4 h",  "alarm": "A-alarm", "desc": "Serious fault affecting a minor part of users and customers, or a separate area." },
+    { "prio": "P3", "level": "Medium",   "office": "15 min", "always": "60 min", "resolve": "8 h",  "alarm": "B-alarm", "desc": "Impact on individual customers and users; not critical for the business." },
+    { "prio": "P4", "level": "Low",      "office": "15 min", "always": "60 min", "resolve": "45 h", "alarm": "B-alarm", "desc": "Small or no impact; a workaround is in place." }
+  ],
+  "INC_PERSPECTIVES": [
+    { "view": "Organisation / business",     "critical": "Extensive impact at the main site or multiple locations", "high": "Impact at a single site, more than 50% of the site", "medium": "Less than 50% of a single site, or a single department", "low": "Less than a single department, or a single customer" },
+    { "view": "Customer",                    "critical": "Multiple customers affected", "high": "Significant impact on a single customer", "medium": "Limited effect on a single customer", "low": "No customers affected" },
+    { "view": "Operational / production IT", "critical": "Multiple applications or systems unavailable", "high": "A system unavailable with business impact; no redundancy", "medium": "Reduced redundancy", "low": "Limited functionality" },
+    { "view": "Monitoring & tooling",        "critical": "No monitoring works, no overview", "high": "Some monitoring works, no overview", "medium": "All monitoring works, partial overview", "low": "All tooling functional" },
+    { "view": "Employee / user",             "critical": "All users affected", "high": "More than 50% affected", "medium": "Few users affected", "low": "Single user affected" }
   ]
 }

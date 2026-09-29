@@ -1,184 +1,63 @@
 {
   "STATUS_COLOR": {
-    "ok": {
-      "bg": "#10B981",
-      "soft": "#ECFDF5",
-      "fg": "#047857",
-      "label": "Compliant"
-    },
-    "amber": {
-      "bg": "#F59E0B",
-      "soft": "#FFFBEB",
-      "fg": "#B45309",
-      "label": "At risk"
-    },
-    "red": {
-      "bg": "#EF4444",
-      "soft": "#FEF2F2",
-      "fg": "#B91C1C",
-      "label": "Gap"
-    },
-    "na": {
-      "bg": "#9CA3AF",
-      "soft": "#F3F4F6",
-      "fg": "#4B5563",
-      "label": "N/A"
-    }
+    "ok": { "bg": "#10B981", "soft": "#ECFDF5", "fg": "#047857", "label": "Implemented" },
+    "amber": { "bg": "#F59E0B", "soft": "#FFFBEB", "fg": "#B45309", "label": "Partial / open item" },
+    "red": { "bg": "#EF4444", "soft": "#FEF2F2", "fg": "#B91C1C", "label": "Gap" },
+    "na": { "bg": "#9CA3AF", "soft": "#F3F4F6", "fg": "#4B5563", "label": "N/A" }
   },
   "SEVERITY_COLOR": {
-    "Urgent": {
-      "bg": "#FEF2F2",
-      "fg": "#B91C1C",
-      "dot": "#EF4444"
-    },
-    "High": {
-      "bg": "#FFFBEB",
-      "fg": "#B45309",
-      "dot": "#F59E0B"
-    },
-    "Medium": {
-      "bg": "#EFF6FF",
-      "fg": "#1D4ED8",
-      "dot": "#3B82F6"
-    },
-    "Low": {
-      "bg": "#ECFDF5",
-      "fg": "#047857",
-      "dot": "#10B981"
-    }
+    "Urgent": { "bg": "#FEF2F2", "fg": "#B91C1C", "dot": "#EF4444" },
+    "High": { "bg": "#FFFBEB", "fg": "#B45309", "dot": "#F59E0B" },
+    "Medium": { "bg": "#EFF6FF", "fg": "#1D4ED8", "dot": "#3B82F6" },
+    "Low": { "bg": "#ECFDF5", "fg": "#047857", "dot": "#10B981" }
   },
   "OFI_STATUS_COLOR": {
-    "Open": {
-      "bg": "#FEF2F2",
-      "fg": "#B91C1C",
-      "dot": "#EF4444"
-    },
-    "In progress": {
-      "bg": "#FFFBEB",
-      "fg": "#B45309",
-      "dot": "#F59E0B"
-    },
-    "Complete": {
-      "bg": "#ECFDF5",
-      "fg": "#047857",
-      "dot": "#10B981"
-    }
+    "Open": { "bg": "#FEF2F2", "fg": "#B91C1C", "dot": "#EF4444" },
+    "In Progress": { "bg": "#FFFBEB", "fg": "#B45309", "dot": "#F59E0B" },
+    "Completed": { "bg": "#ECFDF5", "fg": "#047857", "dot": "#10B981" },
+    "Closed": { "bg": "#ECFDF5", "fg": "#047857", "dot": "#10B981" }
   },
   "RISK_SCORE_LEVEL": {
-    "1": "Very Low",
-    "2": "Low",
-    "3": "Medium",
-    "4": "Medium",
-    "6": "High",
-    "9": "Very High"
+    "1": "Very Low", "2": "Very Low", "3": "Low", "4": "Low", "5": "Low",
+    "6": "Medium", "8": "Medium", "9": "Medium",
+    "10": "High", "12": "High", "15": "High",
+    "16": "Very High", "20": "Very High", "25": "Very High"
   },
+  "STANDARDS": [
+    { "id": "27001", "label": "ISO/IEC 27001:2022", "scope": "Information security", "certBody": "Example Certification Body", "ncs": 4, "certified": true, "certIssued": "2025-12-01" },
+    { "id": "14001", "label": "ISO 14001:2015", "scope": "Environment", "certBody": "Example Certification Body", "ncs": 3, "certified": true, "certIssued": "2025-12-01" },
+    { "id": "9001", "label": "ISO 9001:2015", "scope": "Quality", "certBody": "Example Certification Body", "ncs": 1, "certified": true, "certIssued": "2025-12-01", "certNumber": "DEMO-0001" }
+  ],
   "SYSTEMS": [
-    {
-      "id": "taskhub",
-      "name": "Tracker",
-      "sync": "4 min ago",
-      "color": "#7B68EE",
-      "glyph": "TR",
-      "connected": true
-    },
-    {
-      "id": "moodle",
-      "name": "Moodle",
-      "sync": "1 hr ago",
-      "color": "#F98012",
-      "glyph": "MD",
-      "connected": true
-    },
-    {
-      "id": "dochub",
-      "name": "DocStore",
-      "sync": null,
-      "color": "#0078D4",
-      "glyph": "DS",
-      "connected": false
-    },
-    {
-      "id": "gitlab",
-      "name": "GitLab",
-      "sync": null,
-      "color": "#FC6D26",
-      "glyph": "GL",
-      "connected": false
-    },
-    {
-      "id": "elastic",
-      "name": "Elastic",
-      "sync": null,
-      "color": "#005571",
-      "glyph": "EL",
-      "connected": false
-    },
-    {
-      "id": "jamf",
-      "name": "Jamf MDM",
-      "sync": null,
-      "color": "#37474F",
-      "glyph": "JF",
-      "connected": false
-    }
+    { "id": "docs", "name": "Document portal", "sync": "manual export", "color": "#0078D4", "glyph": "DP", "connected": false, "note": "ISMS document library and registers. || Registers exported by hand; no live connection." },
+    { "id": "tasks", "name": "Task planner", "sync": "manual export", "color": "#31752F", "glyph": "TP", "connected": false, "note": "Each corrective action is backed by a task. || Nothing syncs here." },
+    { "id": "idp", "name": "Identity provider", "sync": "not connected", "color": "#D83B01", "glyph": "ID", "connected": false, "note": "Directory, mail and file storage. || No API app registration yet." },
+    { "id": "msp", "name": "Managed IT provider", "sync": "not a system", "color": "#37474F", "glyph": "MS", "connected": false, "note": "Outsourced IT support for the Harbour office. || A supplier, not a system. Belongs in the supplier register." },
+    { "id": "helpdesk", "name": "Helpdesk", "sync": "not connected", "color": "#25C16F", "glyph": "HD", "connected": false, "note": "Incident reporting form and ticket flow. || API key available but not wired up." },
+    { "id": "crm", "name": "CRM", "sync": "not connected", "color": "#FF7A59", "glyph": "CR", "connected": false, "note": "Sales CRM. || Would need an API token." },
+    { "id": "hris", "name": "HR system", "sync": "not connected", "color": "#8BC53F", "glyph": "HR", "connected": false, "note": "HR records and published policies. || Would need an HR-admin API key." },
+    { "id": "lms", "name": "Learning platform", "sync": "live API", "color": "#F98012", "glyph": "LM", "connected": true, "note": "Awareness and competence training records. || Read-only API. The only live integration." },
+    { "id": "mdm", "name": "MDM", "sync": "partial", "color": "#0F6CBD", "glyph": "MD", "connected": false, "note": "Only HQ laptops are enrolled. || Group-wide enrolment is corrective action NC-103 CA-1." },
+    { "id": "tprm", "name": "Supplier assessment tool", "sync": "manual export", "color": "#6B2FA0", "glyph": "SA", "connected": false, "note": "Supplier security posture assessment. || Snapshot export, not a feed." }
   ],
   "OWNER_LOAD": [
-    {
-      "name": "Alex",
-      "role": "CISO",
-      "count": 18
-    },
-    {
-      "name": "Sam",
-      "role": "CTO",
-      "count": 11
-    },
-    {
-      "name": "Jordan",
-      "role": "COO",
-      "count": 6
-    },
-    {
-      "name": "Riley",
-      "role": "PM",
-      "count": 4
-    },
-    {
-      "name": "Morgan",
-      "role": "Eng",
-      "count": 3
-    },
-    {
-      "name": "Casey",
-      "role": "Eng",
-      "count": 2
-    },
-    {
-      "name": "Dana (Ext. DPO)",
-      "role": "DPO",
-      "count": 2
-    }
+    { "name": "Alex Morgan", "role": "Compliance Manager", "count": 18 },
+    { "name": "Priya Shah", "role": "IT Operations Lead", "count": 7 },
+    { "name": "Jonas Weber", "role": "COO", "count": 5 },
+    { "name": "Emma Clarke", "role": "Sustainability Lead", "count": 4 },
+    { "name": "Tom Becker", "role": "Site Manager A", "count": 3 },
+    { "name": "Lena Fischer", "role": "HR Lead", "count": 2 },
+    { "name": "Omar Haddad", "role": "Procurement Lead", "count": 2 }
   ],
   "FINDINGS": [
-    {
-      "ctrl": "8.10",
-      "issue": "Data deletion not automated",
-      "owner": "Sam",
-      "sev": "HIGH",
-      "target": "Q3 2026",
-      "source": "Task tracker",
-      "ref": "OFI-015",
-      "link": "#"
-    },
-    {
-      "ctrl": "5.32",
-      "issue": "Trademark registration renewal pending",
-      "owner": "Jordan",
-      "sev": "LOW",
-      "target": "In progress",
-      "source": "Task tracker",
-      "ref": "ISMS-877",
-      "link": "#"
-    }
-  ]
+    { "ctrl": "8.1", "issue": "Endpoint disk encryption not enforced on all laptops", "owner": "Priya Shah", "sev": "HIGH", "target": "2026-10-15", "source": "External audit 2026", "ref": "NC-103", "link": "#" },
+    { "ctrl": "5.12", "issue": "Classification scheme differs between sites", "owner": "Alex Morgan", "sev": "HIGH", "target": "2026-10-31", "source": "External audit 2026", "ref": "NC-101", "link": "#" },
+    { "ctrl": "7.4", "issue": "CCTV coverage not risk assessed at Harbour office", "owner": "Tom Becker", "sev": "MEDIUM", "target": "2026-11-30", "source": "External audit 2026", "ref": "NC-104", "link": "#" },
+    { "ctrl": "8.10", "issue": "CRM records kept beyond the retention period", "owner": "Alex Morgan", "sev": "MEDIUM", "target": "2026-11-15", "source": "External audit 2026", "ref": "NC-105", "link": "#" },
+    { "ctrl": "6.1.3", "issue": "Risk-owner acceptance of residual risk not recorded", "owner": "Alex Morgan", "sev": "MEDIUM", "target": "2026-12-15", "source": "Internal audit 2026", "ref": "CA-2026-04", "link": "#" },
+    { "ctrl": "5.26", "issue": "Out-of-hours incident response not tested at Northgate office", "owner": "Priya Shah", "sev": "HIGH", "target": "Overdue", "source": "Internal audit 2026", "ref": "CA-2026-07", "link": "#" }
+  ],
+  "AS_OF": "2026-09-01",
+  "REFRESH_NOTE": "Demo data for Northwind Ltd, a fictional company. All names, dates and references are invented.",
+  "SYSTEMS_NOTE": "'Connected' means a live API pull exists. In this demo only the learning platform is connected; everything else is a manual export or not wired at all."
 }

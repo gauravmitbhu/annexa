@@ -38,744 +38,744 @@
       "id": "5.1",
       "group": "org",
       "name": "Policies for information security",
-      "owner": "Alex",
-      "last": "2026-06-09",
+      "owner": "Alex Morgan",
+      "last": "2026-08-03",
       "status": "ok"
     },
     {
       "id": "5.2",
       "group": "org",
       "name": "Information security roles and responsibilities",
-      "owner": "Alex",
-      "last": "2026-06-12",
+      "owner": "Alex Morgan",
+      "last": "2026-08-03",
       "status": "ok"
     },
     {
       "id": "5.3",
       "group": "org",
       "name": "Segregation of duties",
-      "owner": "Alex",
-      "last": "2026-02-12",
-      "status": "amber"
+      "owner": "Alex Morgan",
+      "last": "2025-10-15",
+      "status": "ok"
     },
     {
       "id": "5.4",
       "group": "org",
       "name": "Management responsibilities",
-      "owner": "Alex",
-      "last": "—",
+      "owner": "Alex Morgan",
+      "last": "2025-10-15",
       "status": "ok"
     },
     {
       "id": "5.5",
       "group": "org",
       "name": "Contact with authorities",
-      "owner": "Alex",
-      "last": "2026-01-08",
+      "owner": "Alex Morgan",
+      "last": "2026-01-10",
       "status": "ok"
     },
     {
       "id": "5.6",
       "group": "org",
       "name": "Contact with special interest groups",
-      "owner": "Alex",
-      "last": "2026-01-08",
+      "owner": "Alex Morgan",
+      "last": "2025-10-15",
       "status": "ok"
     },
     {
       "id": "5.7",
       "group": "org",
       "name": "Threat intelligence",
-      "owner": "Sam",
-      "last": "2026-01-28",
-      "status": "amber"
+      "owner": "Alex Morgan",
+      "last": "2026-01-15",
+      "status": "ok"
     },
     {
       "id": "5.8",
       "group": "org",
       "name": "Information security in project management",
-      "owner": "Alex",
-      "last": "—",
-      "status": "ok"
+      "owner": "Jonas Weber",
+      "last": "2026-08-03",
+      "status": "amber"
     },
     {
       "id": "5.9",
       "group": "org",
       "name": "Inventory of information and other associated assets",
-      "owner": "Sam",
-      "last": "2026-01-14",
-      "status": "ok"
+      "owner": "Alex Morgan",
+      "last": "2026-01-22",
+      "status": "amber"
     },
     {
       "id": "5.10",
       "group": "org",
       "name": "Acceptable use of information and other associated assets",
-      "owner": "Alex",
-      "last": "2026-01-09",
+      "owner": "Alex Morgan",
+      "last": "2026-08-03",
       "status": "ok"
     },
     {
       "id": "5.11",
       "group": "org",
       "name": "Return of assets",
-      "owner": "Riley",
-      "last": "2026-01-09",
+      "owner": "Lena Fischer",
+      "last": "2025-10-15",
       "status": "ok"
     },
     {
       "id": "5.12",
       "group": "org",
       "name": "Classification of information",
-      "owner": "Alex",
-      "last": "2026-06-09",
-      "status": "ok"
+      "owner": "Alex Morgan",
+      "last": "2026-06-25",
+      "status": "amber"
     },
     {
       "id": "5.13",
       "group": "org",
       "name": "Labelling of information",
-      "owner": "Alex",
-      "last": "—",
-      "status": "ok"
+      "owner": "Alex Morgan",
+      "last": "2026-06-25",
+      "status": "amber"
     },
     {
       "id": "5.14",
       "group": "org",
       "name": "Information transfer",
-      "owner": "Alex",
-      "last": "2026-01-12",
+      "owner": "Alex Morgan",
+      "last": "2026-01-20",
       "status": "ok"
     },
     {
       "id": "5.15",
       "group": "org",
       "name": "Access control",
-      "owner": "Alex",
-      "last": "2026-03-04",
+      "owner": "Alex Morgan",
+      "last": "2026-02-28",
       "status": "amber"
     },
     {
       "id": "5.16",
       "group": "org",
       "name": "Identity management",
-      "owner": "Sam",
-      "last": "—",
+      "owner": "Priya Shah",
+      "last": "2025-10-15",
       "status": "ok"
     },
     {
       "id": "5.17",
       "group": "org",
       "name": "Authentication information",
-      "owner": "Sam",
-      "last": "—",
+      "owner": "Priya Shah",
+      "last": "2025-10-15",
       "status": "ok"
     },
     {
       "id": "5.18",
       "group": "org",
       "name": "Access rights",
-      "owner": "Sam",
-      "last": "2026-01-20",
-      "status": "ok"
+      "owner": "Priya Shah",
+      "last": "2026-02-28",
+      "status": "amber"
     },
     {
       "id": "5.19",
       "group": "org",
       "name": "Information security in supplier relationships",
-      "owner": "Alex",
-      "last": "2026-01-13",
-      "status": "ok"
+      "owner": "Omar Haddad",
+      "last": "2026-01-20",
+      "status": "amber"
     },
     {
       "id": "5.20",
       "group": "org",
       "name": "Addressing information security in supplier agreements",
-      "owner": "Alex",
-      "last": "2026-01-13",
+      "owner": "Omar Haddad",
+      "last": "2026-01-20",
       "status": "amber"
     },
     {
       "id": "5.21",
       "group": "org",
       "name": "Managing information security in the ICT supply chain",
-      "owner": "Alex",
-      "last": "2026-01-16",
+      "owner": "Omar Haddad",
+      "last": "2026-01-20",
       "status": "ok"
     },
     {
       "id": "5.22",
       "group": "org",
       "name": "Monitoring, review and change management of supplier services",
-      "owner": "Alex",
-      "last": "2026-01-16",
-      "status": "ok"
+      "owner": "Omar Haddad",
+      "last": "2026-01-20",
+      "status": "amber"
     },
     {
       "id": "5.23",
       "group": "org",
       "name": "Information security for cloud services",
-      "owner": "Alex",
-      "last": "2026-01-09",
+      "owner": "Alex Morgan",
+      "last": "2026-02-25",
       "status": "ok"
     },
     {
       "id": "5.24",
       "group": "org",
       "name": "Information security incident management planning and preparation",
-      "owner": "Alex",
-      "last": "—",
+      "owner": "Alex Morgan",
+      "last": "2026-01-10",
       "status": "ok"
     },
     {
       "id": "5.25",
       "group": "org",
       "name": "Assessment and decision on information security events",
-      "owner": "Alex",
-      "last": "—",
+      "owner": "Alex Morgan",
+      "last": "2026-01-10",
       "status": "ok"
     },
     {
       "id": "5.26",
       "group": "org",
       "name": "Response to information security incidents",
-      "owner": "Alex",
-      "last": "2026-05-19",
+      "owner": "Alex Morgan",
+      "last": "2026-06-18",
       "status": "amber"
     },
     {
       "id": "5.27",
       "group": "org",
       "name": "Learning from information security incidents",
-      "owner": "Alex",
-      "last": "—",
+      "owner": "Alex Morgan",
+      "last": "2025-05-01",
       "status": "ok"
     },
     {
       "id": "5.28",
       "group": "org",
       "name": "Collection of evidence",
-      "owner": "Alex",
-      "last": "2026-01-12",
+      "owner": "Alex Morgan",
+      "last": "2025-10-10",
       "status": "ok"
     },
     {
       "id": "5.29",
       "group": "org",
       "name": "Information security during disruption",
-      "owner": "Casey",
-      "last": "—",
-      "status": "ok"
+      "owner": "Jonas Weber",
+      "last": "2026-08-03",
+      "status": "amber"
     },
     {
       "id": "5.30",
       "group": "org",
       "name": "ICT readiness for business continuity",
-      "owner": "Casey",
-      "last": "2026-02-22",
+      "owner": "Jonas Weber",
+      "last": "2026-08-03",
       "status": "amber"
     },
     {
       "id": "5.31",
       "group": "org",
       "name": "Legal, statutory, regulatory and contractual requirements",
-      "owner": "Alex",
-      "last": "2026-01-13",
-      "status": "ok"
+      "owner": "Alex Morgan",
+      "last": "2026-01-22",
+      "status": "amber"
     },
     {
       "id": "5.32",
       "group": "org",
       "name": "Intellectual property rights",
-      "owner": "Jordan",
-      "last": "2026-01-19",
-      "status": "amber"
+      "owner": "Alex Morgan",
+      "last": "2026-01-15",
+      "status": "ok"
     },
     {
       "id": "5.33",
       "group": "org",
       "name": "Protection of records",
-      "owner": "Alex",
-      "last": "—",
+      "owner": "Priya Shah",
+      "last": "2026-01-15",
       "status": "ok"
     },
     {
       "id": "5.34",
       "group": "org",
       "name": "Privacy and protection of PII",
-      "owner": "Alex",
-      "last": "—",
-      "status": "ok"
+      "owner": "Alex Morgan",
+      "last": "2026-06-25",
+      "status": "amber"
     },
     {
       "id": "5.35",
       "group": "org",
       "name": "Independent review of information security",
-      "owner": "Alex",
-      "last": "2026-01-16",
-      "status": "ok"
+      "owner": "Alex Morgan",
+      "last": "2026-06-25",
+      "status": "amber"
     },
     {
       "id": "5.36",
       "group": "org",
       "name": "Compliance with policies, rules and standards",
-      "owner": "Alex",
-      "last": "2026-01-16",
+      "owner": "Alex Morgan",
+      "last": "2026-08-03",
       "status": "ok"
     },
     {
       "id": "5.37",
       "group": "org",
       "name": "Documented operating procedures",
-      "owner": "Alex",
-      "last": "2026-06-09",
+      "owner": "Alex Morgan",
+      "last": "2026-08-03",
       "status": "ok"
     },
     {
       "id": "6.1",
       "group": "ppl",
       "name": "Screening",
-      "owner": "Riley",
-      "last": "—",
+      "owner": "Lena Fischer",
+      "last": "2025-10-10",
       "status": "ok"
     },
     {
       "id": "6.2",
       "group": "ppl",
       "name": "Terms and conditions of employment",
-      "owner": "Jordan",
-      "last": "—",
+      "owner": "Lena Fischer",
+      "last": "2025-10-10",
       "status": "ok"
     },
     {
       "id": "6.3",
       "group": "ppl",
       "name": "Information security awareness, education and training",
-      "owner": "Alex",
-      "last": "2026-06-03",
+      "owner": "Alex Morgan",
+      "last": "2026-02-19",
       "status": "ok"
     },
     {
       "id": "6.4",
       "group": "ppl",
       "name": "Disciplinary process",
-      "owner": "Jordan",
-      "last": "—",
+      "owner": "Lena Fischer",
+      "last": "2025-10-10",
       "status": "ok"
     },
     {
       "id": "6.5",
       "group": "ppl",
       "name": "Responsibilities after termination or change of employment",
-      "owner": "Riley",
-      "last": "—",
+      "owner": "Lena Fischer",
+      "last": "2025-10-10",
       "status": "ok"
     },
     {
       "id": "6.6",
       "group": "ppl",
       "name": "Confidentiality or non-disclosure agreements",
-      "owner": "Alex",
-      "last": "2026-01-19",
+      "owner": "Lena Fischer",
+      "last": "2025-10-10",
       "status": "ok"
     },
     {
       "id": "6.7",
       "group": "ppl",
       "name": "Remote working",
-      "owner": "Alex",
-      "last": "2026-06-03",
-      "status": "ok"
+      "owner": "Alex Morgan",
+      "last": "2026-04-01",
+      "status": "amber"
     },
     {
       "id": "6.8",
       "group": "ppl",
       "name": "Information security event reporting",
-      "owner": "Alex",
-      "last": "—",
+      "owner": "Alex Morgan",
+      "last": "2026-08-03",
       "status": "ok"
     },
     {
       "id": "7.1",
       "group": "phy",
       "name": "Physical security perimeters",
-      "owner": "Morgan",
-      "last": "—",
+      "owner": "Tom Becker",
+      "last": "2026-05-27",
       "status": "ok"
     },
     {
       "id": "7.2",
       "group": "phy",
       "name": "Physical entry",
-      "owner": "Riley",
-      "last": "—",
-      "status": "ok"
+      "owner": "Jonas Weber",
+      "last": "2026-06-25",
+      "status": "amber"
     },
     {
       "id": "7.3",
       "group": "phy",
       "name": "Securing offices, rooms and facilities",
-      "owner": "Morgan",
-      "last": "—",
+      "owner": "Jonas Weber",
+      "last": "2026-06-01",
       "status": "ok"
     },
     {
       "id": "7.4",
       "group": "phy",
       "name": "Physical security monitoring",
-      "owner": "Morgan",
-      "last": "—",
-      "status": "ok"
+      "owner": "Tom Becker",
+      "last": "2026-06-25",
+      "status": "amber"
     },
     {
       "id": "7.5",
       "group": "phy",
       "name": "Protecting against physical and environmental threats",
-      "owner": "Morgan",
-      "last": "—",
+      "owner": "Tom Becker",
+      "last": "2026-05-27",
       "status": "ok"
     },
     {
       "id": "7.6",
       "group": "phy",
       "name": "Working in secure areas",
-      "owner": "Morgan",
-      "last": "—",
+      "owner": "Tom Becker",
+      "last": "2026-05-27",
       "status": "ok"
     },
     {
       "id": "7.7",
       "group": "phy",
       "name": "Clear desk and clear screen",
-      "owner": "Morgan",
-      "last": "—",
-      "status": "ok"
+      "owner": "Alex Morgan",
+      "last": "2026-05-27",
+      "status": "amber"
     },
     {
       "id": "7.8",
       "group": "phy",
       "name": "Equipment siting and protection",
-      "owner": "Morgan",
-      "last": "—",
+      "owner": "Tom Becker",
+      "last": "2026-05-27",
       "status": "ok"
     },
     {
       "id": "7.9",
       "group": "phy",
       "name": "Security of assets off-premises",
-      "owner": "Morgan",
-      "last": "—",
+      "owner": "Tom Becker",
+      "last": "2026-05-27",
       "status": "ok"
     },
     {
       "id": "7.10",
       "group": "phy",
       "name": "Storage media",
-      "owner": "Morgan",
-      "last": "—",
-      "status": "ok"
+      "owner": "Sam Novak",
+      "last": "2026-05-27",
+      "status": "amber"
     },
     {
       "id": "7.11",
       "group": "phy",
       "name": "Supporting utilities",
-      "owner": "Morgan",
-      "last": "2026-02-03",
+      "owner": "Tom Becker",
+      "last": "2026-05-27",
       "status": "ok"
     },
     {
       "id": "7.12",
       "group": "phy",
       "name": "Cabling security",
-      "owner": "Morgan",
-      "last": "2026-02-03",
+      "owner": "Tom Becker",
+      "last": "2026-05-27",
       "status": "ok"
     },
     {
       "id": "7.13",
       "group": "phy",
       "name": "Equipment maintenance",
-      "owner": "Morgan",
-      "last": "—",
-      "status": "ok"
+      "owner": "Tom Becker",
+      "last": "2026-05-27",
+      "status": "amber"
     },
     {
       "id": "7.14",
       "group": "phy",
       "name": "Secure disposal or re-use of equipment",
-      "owner": "Morgan",
-      "last": "—",
+      "owner": "Tom Becker",
+      "last": "2026-05-27",
       "status": "ok"
     },
     {
       "id": "8.1",
       "group": "tech",
       "name": "User endpoint devices",
-      "owner": "Sam",
-      "last": "—",
-      "status": "ok"
+      "owner": "Priya Shah",
+      "last": "2026-06-25",
+      "status": "red"
     },
     {
       "id": "8.2",
       "group": "tech",
       "name": "Privileged access rights",
-      "owner": "Sam",
-      "last": "2026-05-19",
+      "owner": "Priya Shah",
+      "last": "2026-02-28",
       "status": "amber"
     },
     {
       "id": "8.3",
       "group": "tech",
       "name": "Information access restriction",
-      "owner": "Sam",
-      "last": "—",
+      "owner": "Priya Shah",
+      "last": "2026-01-15",
       "status": "ok"
     },
     {
       "id": "8.4",
       "group": "tech",
       "name": "Access to source code",
-      "owner": "Sam",
-      "last": "—",
+      "owner": "Priya Shah",
+      "last": "2026-08-03",
       "status": "ok"
     },
     {
       "id": "8.5",
       "group": "tech",
       "name": "Secure authentication",
-      "owner": "Sam",
-      "last": "—",
+      "owner": "Priya Shah",
+      "last": "2026-01-15",
       "status": "ok"
     },
     {
       "id": "8.6",
       "group": "tech",
       "name": "Capacity management",
-      "owner": "Sam",
-      "last": "—",
+      "owner": "Priya Shah",
+      "last": "2026-06-02",
       "status": "ok"
     },
     {
       "id": "8.7",
       "group": "tech",
       "name": "Protection against malware",
-      "owner": "Sam",
-      "last": "—",
+      "owner": "Priya Shah",
+      "last": "2026-06-02",
       "status": "ok"
     },
     {
       "id": "8.8",
       "group": "tech",
       "name": "Management of technical vulnerabilities",
-      "owner": "Sam",
-      "last": "2026-06-03",
+      "owner": "Priya Shah",
+      "last": "2025-11-01",
       "status": "ok"
     },
     {
       "id": "8.9",
       "group": "tech",
       "name": "Configuration management",
-      "owner": "Sam",
-      "last": "2026-06-03",
-      "status": "ok"
+      "owner": "Alex Morgan",
+      "last": "2026-06-02",
+      "status": "amber"
     },
     {
       "id": "8.10",
       "group": "tech",
       "name": "Information deletion",
-      "owner": "Sam",
-      "last": "2026-02-14",
-      "status": "red"
+      "owner": "Alex Morgan",
+      "last": "2026-06-25",
+      "status": "amber"
     },
     {
       "id": "8.11",
       "group": "tech",
       "name": "Data masking",
-      "owner": "Morgan",
-      "last": "—",
+      "owner": "Priya Shah",
+      "last": "2026-08-03",
       "status": "ok"
     },
     {
       "id": "8.12",
       "group": "tech",
       "name": "Data leakage prevention",
-      "owner": "Sam",
-      "last": "—",
+      "owner": "Priya Shah",
+      "last": "2026-02-25",
       "status": "ok"
     },
     {
       "id": "8.13",
       "group": "tech",
       "name": "Information backup",
-      "owner": "Sam",
-      "last": "2026-06-03",
-      "status": "ok"
+      "owner": "Priya Shah",
+      "last": "2026-06-02",
+      "status": "amber"
     },
     {
       "id": "8.14",
       "group": "tech",
       "name": "Redundancy of information processing facilities",
-      "owner": "Sam",
-      "last": "2026-06-03",
+      "owner": "Priya Shah",
+      "last": "2026-06-02",
       "status": "ok"
     },
     {
       "id": "8.15",
       "group": "tech",
       "name": "Logging",
-      "owner": "Sam",
-      "last": "2026-06-03",
+      "owner": "Priya Shah",
+      "last": "2026-06-02",
       "status": "ok"
     },
     {
       "id": "8.16",
       "group": "tech",
       "name": "Monitoring activities",
-      "owner": "Sam",
-      "last": "2026-06-13",
-      "status": "amber"
+      "owner": "Priya Shah",
+      "last": "2026-06-02",
+      "status": "ok"
     },
     {
       "id": "8.17",
       "group": "tech",
       "name": "Clock synchronization",
-      "owner": "—",
-      "last": "2025-11-02",
-      "status": "na"
+      "owner": "Priya Shah",
+      "last": "2026-06-02",
+      "status": "ok"
     },
     {
       "id": "8.18",
       "group": "tech",
       "name": "Use of privileged utility programs",
-      "owner": "Sam",
-      "last": "2026-06-03",
+      "owner": "Priya Shah",
+      "last": "2025-10-10",
       "status": "ok"
     },
     {
       "id": "8.19",
       "group": "tech",
       "name": "Installation of software on operational systems",
-      "owner": "Sam",
-      "last": "2026-06-03",
+      "owner": "Priya Shah",
+      "last": "2026-06-02",
       "status": "ok"
     },
     {
       "id": "8.20",
       "group": "tech",
       "name": "Networks security",
-      "owner": "Sam",
-      "last": "2026-06-03",
+      "owner": "Priya Shah",
+      "last": "2026-06-02",
       "status": "ok"
     },
     {
       "id": "8.21",
       "group": "tech",
       "name": "Security of network services",
-      "owner": "Sam",
-      "last": "2026-06-03",
-      "status": "ok"
+      "owner": "Priya Shah",
+      "last": "2026-06-02",
+      "status": "amber"
     },
     {
       "id": "8.22",
       "group": "tech",
       "name": "Segregation of networks",
-      "owner": "Sam",
-      "last": "2026-06-03",
+      "owner": "Priya Shah",
+      "last": "2026-06-02",
       "status": "ok"
     },
     {
       "id": "8.23",
       "group": "tech",
       "name": "Web filtering",
-      "owner": "Sam",
-      "last": "2026-06-03",
+      "owner": "Priya Shah",
+      "last": "2026-06-02",
       "status": "ok"
     },
     {
       "id": "8.24",
       "group": "tech",
       "name": "Use of cryptography",
-      "owner": "Sam",
-      "last": "2026-06-03",
+      "owner": "Priya Shah",
+      "last": "2026-06-02",
       "status": "ok"
     },
     {
       "id": "8.25",
       "group": "tech",
       "name": "Secure development life cycle",
-      "owner": "Sam",
-      "last": "2026-06-03",
+      "owner": "Priya Shah",
+      "last": "2026-06-24",
       "status": "ok"
     },
     {
       "id": "8.26",
       "group": "tech",
       "name": "Application security requirements",
-      "owner": "Sam",
-      "last": "2026-06-03",
+      "owner": "Priya Shah",
+      "last": "2026-06-24",
       "status": "ok"
     },
     {
       "id": "8.27",
       "group": "tech",
       "name": "Secure system architecture and engineering principles",
-      "owner": "Sam",
-      "last": "2026-06-03",
+      "owner": "Priya Shah",
+      "last": "2026-06-24",
       "status": "ok"
     },
     {
       "id": "8.28",
       "group": "tech",
       "name": "Secure coding",
-      "owner": "Sam",
-      "last": "2026-06-03",
+      "owner": "Priya Shah",
+      "last": "2026-06-24",
       "status": "ok"
     },
     {
       "id": "8.29",
       "group": "tech",
       "name": "Security testing in development and acceptance",
-      "owner": "Sam",
-      "last": "2026-06-03",
+      "owner": "Priya Shah",
+      "last": "2026-06-24",
       "status": "ok"
     },
     {
       "id": "8.30",
       "group": "tech",
       "name": "Outsourced development",
-      "owner": "Sam",
-      "last": "2026-06-03",
+      "owner": "Priya Shah",
+      "last": "2026-06-24",
       "status": "ok"
     },
     {
       "id": "8.31",
       "group": "tech",
       "name": "Separation of development, test and production environments",
-      "owner": "Sam",
-      "last": "2026-06-03",
+      "owner": "Priya Shah",
+      "last": "2026-06-24",
       "status": "ok"
     },
     {
       "id": "8.32",
       "group": "tech",
       "name": "Change management",
-      "owner": "Sam",
-      "last": "2026-06-03",
-      "status": "ok"
+      "owner": "Alex Morgan",
+      "last": "2026-06-18",
+      "status": "amber"
     },
     {
       "id": "8.33",
       "group": "tech",
       "name": "Test information",
-      "owner": "Sam",
-      "last": "2026-06-03",
+      "owner": "Priya Shah",
+      "last": "2026-06-24",
       "status": "ok"
     },
     {
       "id": "8.34",
       "group": "tech",
       "name": "Protection of information systems during audit testing",
-      "owner": "Sam",
-      "last": "2026-06-03",
+      "owner": "Alex Morgan",
+      "last": "2025-10-10",
       "status": "ok"
     }
   ]

@@ -11,7 +11,7 @@ function ControlSquare({ ctrl }) {
     }}>
       <div className="tt-body">
         <div style={{ fontWeight: 600 }}>A.{ctrl.id} · {ctrl.name}</div>
-        <div style={{ color:'#9CA3AF', marginTop: 2 }}>Owner: {ctrl.owner} · reviewed {ctrl.last}</div>
+        <div style={{ color:'#9A968C', marginTop: 2 }}>Owner: {ctrl.owner} · reviewed {ctrl.last}</div>
         <div style={{ color: c.bg, marginTop: 2, fontWeight: 600 }}>{c.label}</div>
       </div>
     </div>
@@ -23,10 +23,13 @@ function HeatmapRow({ group }) {
   return (
     <div style={{ display:'flex', alignItems:'center', gap: 14 }}>
       <div style={{ width: 130, flexShrink: 0 }}>
-        <div style={{ fontSize: 12.5, fontWeight: 600, color:'#111827' }}>{group.label}</div>
-        <div style={{ fontSize: 10.5, color:'#6B7280', marginTop: 1 }}>A.{group.range} · {ctrls.length}</div>
+        <div style={{ fontSize: 12.5, fontWeight: 600, color:'var(--brand-ink)' }}>{group.label}</div>
+        <div style={{ fontSize: 10.5, color:'var(--brand-muted)', marginTop: 1 }}>A.{group.range} · {ctrls.length}</div>
       </div>
-      <div style={{ display:'flex', flexWrap:'wrap', gap: 4 }}>
+      {/* flex:1 + minWidth:0 so the squares wrap inside the available width.
+          Without minWidth a flex item will not shrink past its content, so the
+          row pushed ~140px past the column instead of wrapping. */}
+      <div style={{ display:'flex', flexWrap:'wrap', gap: 4, flex: 1, minWidth: 0 }}>
         {ctrls.map(c => <ControlSquare key={c.id} ctrl={c}/>)}
       </div>
     </div>
@@ -36,13 +39,15 @@ function HeatmapRow({ group }) {
 function Heatmap() {
   return (
     <Card padding={20}>
-      <div style={{ display:'flex', alignItems:'baseline', justifyContent:'space-between', marginBottom: 16 }}>
-        <div>
-          <h2 style={{ margin: 0, fontSize: 15, fontWeight: 600, color:'#111827' }}>Annex A Control Heatmap</h2>
-          <div style={{ fontSize: 11.5, color:'#6B7280', marginTop: 2 }}>93 controls · ISO/IEC 27001:2022</div>
+      {/* A long subtitle may not fit beside the legend, so title and legend no longer
+          fit on one line — let the legend wrap beneath rather than widen the card. */}
+      <div style={{ display:'flex', alignItems:'baseline', justifyContent:'space-between', marginBottom: 16, gap: 12, flexWrap:'wrap' }}>
+        <div style={{ minWidth: 0 }}>
+          <h2 style={{ margin: 0, fontSize: 15, fontWeight: 600, color:'var(--brand-ink)' }}>Annex A control heatmap</h2>
+          <div style={{ fontSize: 11.5, color:'var(--brand-muted)', marginTop: 2 }}>{CONTROLS.length} controls · ISO/IEC 27001:2022</div>
         </div>
-        <div style={{ display:'flex', gap: 12, fontSize: 11, color:'#6B7280' }}>
-          {Object.entries(STATUS_COLOR).map(([k,v]) => (
+        <div style={{ display:'flex', gap: 12, fontSize: 11, color:'var(--brand-muted)', flexWrap:'wrap' }}>
+          {Object.entries(STATUS_COLOR).filter(([k]) => k !== 'na').map(([k,v]) => (
             <div key={k} style={{ display:'flex', alignItems:'center', gap: 5 }}>
               <span style={{ width: 10, height: 10, borderRadius: 3, background: v.bg, display:'inline-block' }}/>
               {v.label}

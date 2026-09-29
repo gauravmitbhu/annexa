@@ -1,0 +1,20 @@
+{
+  "SITE_COUNTRIES": [
+    { "code": "GB", "label": "United Kingdom", "itOperator": "IT Operations (in-house)", "facilityOwner": "Maria Lopez", "note": "The office team handles premises and physical security; IT is run centrally by IT Operations." },
+    { "code": "IE", "label": "Ireland",        "itOperator": "External MSP under IT Operations oversight", "facilityOwner": "Office Manager (Harbour)", "note": "Desk-side IT support is outsourced to a managed service provider; the Office Manager oversees the relationship." },
+    { "code": "CA", "label": "Canada",         "itOperator": "Local office team",                           "facilityOwner": "Ethan Brooks", "note": "The local office lead handles laptop provisioning and local support under central IT policies." }
+  ],
+  "SITES": [
+    { "id": "A1", "name": "HQ – Riverside", "country": "GB", "owner": "Maria Lopez", "itOperator": "IT Operations", "open": 2,
+      "notes": "Head office with the engineering and customer-support teams. Production workloads run with a cloud hosting provider, not on premises. Open: e-waste store not segregated or labelled (demo NC-001)." },
+    { "id": "B1", "name": "Office – Harbour",   "country": "IE", "owner": "Office Manager (Harbour)", "itOperator": "MSP", "open": 1,
+      "notes": "Sales and professional-services office. Unlabelled cleaning chemicals found during an office walk (demo NC-002)." },
+    { "id": "C1", "name": "Office – Northgate", "country": "CA", "owner": "Ethan Brooks", "itOperator": "Local office team", "open": 0,
+      "notes": "Newest office. Covered by the group fire-safety and access-review sweeps." }
+  ],
+  "SITE_AUTHORITIES": [
+    { "country": "GB", "bodies": ["National CSIRT (GB)", "Data Protection Authority (GB)"] },
+    { "country": "IE", "bodies": ["National CSIRT (IE)", "Data Protection Authority (IE)"] },
+    { "country": "CA", "bodies": ["National CSIRT (CA)", "Privacy Commissioner (CA)"] }
+  ]
+}

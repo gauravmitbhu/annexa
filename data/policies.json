@@ -1,253 +1,46 @@
 {
+  "POLICY_META": {
+    "approver": "Daniel Price (COO) — change approvals recorded in the change register",
+    "library": "Compliance library › Policies (Approved / Under review / Archived) and Processes › Approved",
+    "note": "Naming migrated to the POL_ / STD_ / PRC_ prefixes during 2026; older documents still carry the previous prefix. Fifteen approved policies and standards were shared with the certification body for the latest audit."
+  },
   "POLICY_REGISTER": [
-    {
-      "num": "00",
-      "name": "Common Definitions & Reference",
-      "ver": "v1.0",
-      "updated": "19.03.2026",
-      "url": "#",
-      "pdf": "#"
-    },
-    {
-      "num": "01",
-      "name": "Policy Creation & Policy Template",
-      "ver": "v1.0",
-      "updated": "09.06.2026",
-      "url": "#",
-      "pdf": "#"
-    },
-    {
-      "num": "02",
-      "name": "Change Management Policy",
-      "ver": "v1.0",
-      "updated": "09.06.2026",
-      "url": "#",
-      "pdf": "#"
-    },
-    {
-      "num": "03",
-      "name": "Information Security Policy (incl. CI)",
-      "ver": "v1.0",
-      "updated": "09.06.2026",
-      "url": "#",
-      "pdf": "#"
-    },
-    {
-      "num": "04",
-      "name": "Business Continuity Policy & DRP",
-      "ver": "v1.1",
-      "updated": "10.06.2026",
-      "url": "#",
-      "pdf": "#"
-    },
-    {
-      "num": "05",
-      "name": "Security Incident Response Policy",
-      "ver": "v1.0",
-      "updated": "09.06.2026",
-      "url": "#",
-      "pdf": "#"
-    },
-    {
-      "num": "06",
-      "name": "Teleworking (Remote Working) Policy",
-      "ver": "v1.0",
-      "updated": "19.03.2026",
-      "url": "#",
-      "pdf": "#"
-    },
-    {
-      "num": "07",
-      "name": "Physical Security Monitoring Policy",
-      "ver": "v1.0",
-      "updated": "09.06.2026",
-      "url": "#",
-      "pdf": "#"
-    },
-    {
-      "num": "08",
-      "name": "Environmental Security Monitoring Policy",
-      "ver": "v1.0",
-      "updated": "09.06.2026",
-      "url": "#",
-      "pdf": "#"
-    },
-    {
-      "num": "09",
-      "name": "Backup Policy",
-      "ver": "v1.0",
-      "updated": "09.06.2026",
-      "url": "#",
-      "pdf": "#"
-    },
-    {
-      "num": "10",
-      "name": "Access & Password Control Policy",
-      "ver": "v1.0",
-      "updated": "09.06.2026",
-      "url": "#",
-      "pdf": "#"
-    },
-    {
-      "num": "11",
-      "name": "Network Security Policy",
-      "ver": "v1.0",
-      "updated": "09.06.2026",
-      "url": "#",
-      "pdf": "#"
-    },
-    {
-      "num": "12",
-      "name": "Secure Software Development Policy",
-      "ver": "v1.0",
-      "updated": "09.06.2026",
-      "url": "#",
-      "pdf": "#"
-    },
-    {
-      "num": "13",
-      "name": "Logging and Monitoring Policy",
-      "ver": "v1.0",
-      "updated": "09.06.2026",
-      "url": "#",
-      "pdf": "#"
-    },
-    {
-      "num": "14",
-      "name": "Patch Management Policy",
-      "ver": "v1.0",
-      "updated": "09.06.2026",
-      "url": "#",
-      "pdf": "#"
-    },
-    {
-      "num": "15",
-      "name": "Technical Vulnerability Management Policy",
-      "ver": "v1.0",
-      "updated": "09.06.2026",
-      "url": "#",
-      "pdf": "#"
-    },
-    {
-      "num": "16",
-      "name": "Data Classification and Handling Policy",
-      "ver": "v1.0",
-      "updated": "09.06.2026",
-      "url": "#",
-      "pdf": "#"
-    },
-    {
-      "num": "17",
-      "name": "Asset Management Policy",
-      "ver": "v1.0",
-      "updated": "09.06.2026",
-      "url": "#",
-      "pdf": "#"
-    },
-    {
-      "num": "18",
-      "name": "Cryptography Key, Control & Encryption Mgmt",
-      "ver": "v1.0",
-      "updated": "09.06.2026",
-      "url": "#",
-      "pdf": "#"
-    },
-    {
-      "num": "19",
-      "name": "Acceptable Use Policy",
-      "ver": "v1.0",
-      "updated": "19.03.2026",
-      "url": "#",
-      "pdf": "#"
-    },
-    {
-      "num": "20",
-      "name": "InfoSec Awareness and Training Policy",
-      "ver": "v1.0",
-      "updated": "09.06.2026",
-      "url": "#",
-      "pdf": "#"
-    },
-    {
-      "num": "21",
-      "name": "Cloud Policy",
-      "ver": "v2.0",
-      "updated": "09.06.2026",
-      "url": "#",
-      "pdf": "#"
-    },
-    {
-      "num": "22",
-      "name": "Third Party Supplier Security Policy",
-      "ver": "v1.0",
-      "updated": "09.06.2026",
-      "url": "#",
-      "pdf": "#"
-    },
-    {
-      "num": "23",
-      "name": "Information Security Risk Management Policy",
-      "ver": "v1.0",
-      "updated": "10.06.2026",
-      "url": "#",
-      "pdf": "#"
-    },
-    {
-      "num": "24",
-      "name": "Operating Procedures Policy",
-      "ver": "v1.0",
-      "updated": "09.06.2026",
-      "url": "#",
-      "pdf": "#"
-    },
-    {
-      "num": "25",
-      "name": "Information Transfer Policy",
-      "ver": "v1.0",
-      "updated": "09.06.2026",
-      "url": "#",
-      "pdf": "#"
-    },
-    {
-      "num": "26",
-      "name": "Records and Information Management Policy",
-      "ver": "v1.0",
-      "updated": "09.06.2026",
-      "url": "#",
-      "pdf": "#"
-    },
-    {
-      "num": "27",
-      "name": "Outsourcing Policy",
-      "ver": "v1.0",
-      "updated": "2026",
-      "url": "#",
-      "pdf": "#"
-    },
-    {
-      "num": "28",
-      "name": "Artificial Intelligence (AI) Usage Policy",
-      "ver": "v1.1",
-      "updated": "19.05.2026",
-      "url": "#",
-      "pdf": "#"
-    }
+    { "num": "POL-01", "name": "Information Security Policy",            "ver": "v2.0", "updated": "2026",       "state": "Approved",     "std": "27001", "url": "#", "pdf": "#" },
+    { "num": "POL-02", "name": "Acceptable Use Policy (Global)",         "ver": "v1.0", "updated": "2026",       "state": "Approved",     "std": "27001", "url": "#", "pdf": "" },
+    { "num": "POL-03", "name": "AI Policy",                              "ver": "v1.0", "updated": "2026-06-09", "state": "Approved",     "std": "27001", "url": "#", "pdf": "" },
+    { "num": "POL-04", "name": "Clean Desk Policy",                      "ver": "v1.0", "updated": "2026",       "state": "Approved",     "std": "27001", "url": "#", "pdf": "" },
+    { "num": "POL-05", "name": "Cloud Services Policy",                  "ver": "v1.0", "updated": "2026-06-09", "state": "Approved",     "std": "27001", "url": "#", "pdf": "" },
+    { "num": "POL-06", "name": "Document Management Policy",             "ver": "v1.0", "updated": "2026",       "state": "Approved",     "std": "all",   "url": "#", "pdf": "" },
+    { "num": "POL-07", "name": "Environmental Policy",                   "ver": "v1.0", "updated": "2025-09-26", "state": "Approved",     "std": "14001", "url": "#", "pdf": "#" },
+    { "num": "POL-08", "name": "Internal Privacy Notice",                "ver": "v1.0", "updated": "2026",       "state": "Approved",     "std": "27001", "url": "#", "pdf": "" },
+    { "num": "POL-09", "name": "Public Privacy Policy",                  "ver": "v2.0", "updated": "2026-06-30", "state": "Approved",     "std": "27001", "url": "#", "pdf": "#" },
+    { "num": "POL-10", "name": "Physical Key Policy (Global)",           "ver": "v1.0", "updated": "2026",       "state": "Approved",     "std": "27001", "url": "#", "pdf": "" },
+    { "num": "POL-11", "name": "Physical Security Policy (Global)",      "ver": "v1.0", "updated": "2026-06-01", "state": "Approved",     "std": "27001", "url": "#", "pdf": "" },
+    { "num": "POL-12", "name": "Quality Management Policy",              "ver": "v1.0", "updated": "2025-09-18", "state": "Approved",     "std": "9001",  "url": "#", "pdf": "" },
+    { "num": "POL-13", "name": "Risk Management Policy (Global)",        "ver": "v2.0", "updated": "2026",       "state": "Approved",     "std": "all",   "url": "#", "pdf": "" },
+    { "num": "POL-14", "name": "Suppliers Code of Conduct",              "ver": "v1.0", "updated": "2026",       "state": "Approved",     "std": "all",   "url": "#", "pdf": "" },
+    { "num": "STD-01", "name": "Information Security Standard",          "ver": "v1.0", "updated": "2026",       "state": "Approved",     "std": "27001", "url": "#", "pdf": "" },
+    { "num": "STD-02", "name": "Physical Security Standard (Global)",    "ver": "v1.0", "updated": "2026-06-01", "state": "Approved",     "std": "27001", "url": "#", "pdf": "" },
+
+    { "num": "POL-15", "name": "Information Security Policy",            "ver": "v3.0", "updated": "2026",       "state": "Under review", "std": "27001", "url": "#", "pdf": "" },
+    { "num": "POL-16", "name": "AI Policy",                              "ver": "v2.0", "updated": "2026",       "state": "Under review", "std": "27001", "url": "#", "pdf": "" },
+    { "num": "POL-17", "name": "Asset Classification & Handling Policy", "ver": "v1.0", "updated": "2026",       "state": "Under review", "std": "27001", "url": "#", "pdf": "" },
+    { "num": "POL-18", "name": "Code of Conduct (Global)",               "ver": "v1.0", "updated": "2025-12-04", "state": "Under review", "std": "all",   "url": "#", "pdf": "" },
+    { "num": "POL-19", "name": "Bug Bounty Policy",                      "ver": "v0.1", "updated": "2026",       "state": "Under review", "std": "27001", "url": "#", "pdf": "" },
+    { "num": "POL-20", "name": "Cloud Collaboration Governance Framework",        "ver": "v0.1", "updated": "2026",       "state": "Under review", "std": "27001", "url": "#", "pdf": "" },
+    { "num": "STD-03", "name": "Endpoint Security Standard (Global)",    "ver": "—",    "updated": "due 2026-09-30", "state": "To author", "std": "27001", "url": "#", "pdf": "" },
+
+    { "num": "ARC-01", "name": "Information Security Policy",            "ver": "v1.0", "updated": "2025",       "state": "Archived",     "std": "27001", "url": "#", "pdf": "" },
+    { "num": "ARC-02", "name": "Internal Privacy Policy (Global)",       "ver": "v1.0", "updated": "2025",       "state": "Archived",     "std": "27001", "url": "#", "pdf": "" },
+    { "num": "ARC-03", "name": "Public Privacy Policy",                  "ver": "v1.0", "updated": "2025",       "state": "Archived",     "std": "27001", "url": "#", "pdf": "" },
+    { "num": "ARC-04", "name": "Information Security Standard",          "ver": "v1.0", "updated": "2025",       "state": "Archived",     "std": "27001", "url": "#", "pdf": "" }
   ],
   "POLICY_EVIDENCE": [
-    {
-      "label": "ISMS Policy Log (single source of truth)",
-      "url": "#",
-      "type": "doc"
-    },
-    {
-      "label": "Policies folder (canonical)",
-      "url": "#",
-      "type": "doc"
-    },
-    {
-      "label": "Released policies — markdown + branded PDFs",
-      "url": "#",
-      "type": "doc"
-    }
+    { "label": "Policies › Approved (canonical library)", "url": "#", "type": "doc" },
+    { "label": "Policy template", "url": "#", "type": "doc" },
+    { "label": "POL_Document Management Policy — version control rules", "url": "#", "type": "doc" },
+    { "label": "Change register — policy and standard changes (CHG-nnn)", "url": "#", "type": "ticket" },
+    { "label": "Files shared with the certification body — 15 policies and standards", "url": "#", "type": "doc" },
+    { "label": "CA-2026-12 — harmonise policy vs routine/guideline terminology across offices", "url": "#", "type": "ticket" }
   ]
 }
